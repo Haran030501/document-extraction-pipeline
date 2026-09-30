@@ -123,7 +123,7 @@ with an Opus re-check on low-confidence documents.
 - **v2 → v3 is within noise** at this sample size (30 documents). The semantic-validation retry loop
   **never fired** on this dataset, because every structured output already passed the business-rule checks. The
   loop is still tested (`tests/test_core.py`) as a safety net, but none of the measured gain comes from it.
-- Sonnet 5.5 comes within about 1 point of Opus 5.5 at 43% of the cost and 2.4× the speed.
+- On the held-out split, Sonnet 5.5 comes within 1.3 points of Opus 5.5 (96.8% vs. 98.1%) at 44% of the cost and 2.5× the speed.
 - Most remaining misses are judgment calls rather than clear errors: for example, whether a non-appellate
   co-defendant's role is `defendant` or `other`, and whether CPLR counts as a statute or a procedural rule.
 - Labels: after the first run, every disagreement was checked against the source text. Two labels were
