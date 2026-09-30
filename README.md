@@ -85,10 +85,35 @@ python -m eval.run_eval --versions v1 v2 v3 --split test  # held-out only
 
 **Model comparison, v1 → v3 field-level accuracy (effort `high`):**
 
-| Model | All 30 docs | Test split (18) | Cost / doc (v3) | Avg latency (v3) |
+| Model | All 30 docs | Test split (18) | Cost / doc (v3, all docs) | Avg latency (v3, all docs) |
 |---|---:|---:|---:|---:|
 | Claude Opus 5.5 | 93.6% → 98.4% | 91.9% → 98.1% | $0.037 | 6.5 s |
 | Claude Sonnet 5.5 | 93.7% → 97.3% | 92.4% → 96.8% | $0.016 | 2.7 s |
+
+**Opus 5.5 vs. Sonnet 5.5, per field (v3, held-out test split, 18 opinions):**
+
+| Field | Opus 5.5 | Sonnet 5.5 | Δ |
+|---|---:|---:|---:|
+| case_name, docket_number, court, decision_date, judges | 100.0% | 100.0% | — |
+| author_judge | 94.4% | 94.4% | — |
+| parties | 97.8% | 98.1% | +0.4 |
+| monetary_amounts | 97.2% | 94.8% | −2.4 |
+| disposition | 100.0% | 94.4% | −5.6 |
+| cited_statutes | 91.1% | 85.7% | −5.4 |
+| **Field-level accuracy** | **98.1%** | **96.8%** | **−1.3** |
+| Fields exactly correct | 97.2% | 94.4% | −2.8 |
+| Cost / doc | $0.037 | $0.016 | 44% of Opus |
+| Avg latency | 6.5 s | 2.6 s | 2.5× faster |
+
+The models are identical on the header fields (case name, docket, court, date and judges). Sonnet
+loses accuracy on fields that need reading the whole opinion. It **misses** more statute citations (7 missed
+vs. 4 for Opus; neither model added citations that weren't there). It also reports **statutory thresholds**
+as amounts at issue, such as the $0.75-per-page copy cap and the $10,000 aggravated-felony threshold, which
+the prompt says to exclude and Opus did. Its disposition gap is a single
+document (`tex_23_0408`, a statement about a denied rehearing) where Sonnet returned null instead of
+`dismissed`. **For production:** Sonnet 5.5 suits high-volume ingestion where header fields are what
+matter. Opus 5.5 is worth the cost when statutes and amounts need to be complete, or Sonnet can be used
+with an Opus re-check on low-confidence documents.
 
 **How to read these numbers**
 
