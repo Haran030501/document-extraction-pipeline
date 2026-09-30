@@ -1,0 +1,85 @@
+{
+  "source_pdf": "ca9_21_56237_scanned.pdf",
+  "split": "dev",
+  "entities": {
+    "case_name": "Chinaryan v. City of Los Angeles",
+    "docket_number": "21-56237",
+    "court": "United States Court of Appeals for the Ninth Circuit",
+    "decision_date": "2024-12-04",
+    "judges": [
+      "Sidney R. Thomas",
+      "Jacqueline H. Nguyen",
+      "Danielle J. Forrest"
+    ],
+    "author_judge": null,
+    "parties": [
+      {
+        "name": "Hasmik Jasmine Chinaryan",
+        "role": "appellant"
+      },
+      {
+        "name": "Mariana Manukyan",
+        "role": "appellant"
+      },
+      {
+        "name": "City of Los Angeles",
+        "role": "appellee"
+      },
+      {
+        "name": "Los Angeles Police Department",
+        "role": "appellee"
+      },
+      {
+        "name": "Michel Moore",
+        "role": "appellee"
+      },
+      {
+        "name": "Romero Gonzalez",
+        "role": "appellee"
+      },
+      {
+        "name": "Fred Cueto",
+        "role": "appellee"
+      },
+      {
+        "name": "Rodrigo Soria",
+        "role": "appellee"
+      },
+      {
+        "name": "Airam Potter",
+        "role": "appellee"
+      },
+      {
+        "name": "Brittany Oke",
+        "role": "appellee"
+      },
+      {
+        "name": "Jeff Rodd",
+        "role": "appellee"
+      },
+      {
+        "name": "Daniel Martinez",
+        "role": "appellee"
+      },
+      {
+        "name": "Daniel Gayton",
+        "role": "appellee"
+      },
+      {
+        "name": "Eduardo Piche",
+        "role": "appellee"
+      },
+      {
+        "name": "Mario Menses",
+        "role": "appellee"
+      },
+      {
+        "name": "Brittany Primo",
+        "role": "appellee"
+      }
+    ],
+    "disposition": "other",
+    "monetary_amounts": [],
+    "cited_statutes": []
+  }
+}

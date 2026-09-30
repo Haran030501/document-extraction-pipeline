@@ -1,0 +1,38 @@
+{
+  "source_pdf": "ca10_21_1094.pdf",
+  "split": "dev",
+  "entities": {
+    "case_name": "Fourstar v. Williams",
+    "docket_number": "21-1094",
+    "court": "United States Court of Appeals for the Tenth Circuit",
+    "decision_date": "2021-12-17",
+    "judges": [
+      "Tymkovich",
+      "Hartz",
+      "Matheson"
+    ],
+    "author_judge": "Tymkovich",
+    "parties": [
+      {
+        "name": "Victor Charles Fourstar, Jr.",
+        "role": "appellant"
+      },
+      {
+        "name": "Charles Williams",
+        "role": "appellee"
+      }
+    ],
+    "disposition": "dismissed",
+    "monetary_amounts": [
+      {
+        "value": 5.0,
+        "currency": "USD",
+        "context": "district court filing fee"
+      }
+    ],
+    "cited_statutes": [
+      "28 U.S.C. § 2241",
+      "28 U.S.C. § 1291"
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "source_pdf": "ca3_24_2500.pdf",
+  "split": "test",
+  "entities": {
+    "case_name": "United States v. McCormack",
+    "docket_number": "24-2500",
+    "court": "United States Court of Appeals for the Third Circuit",
+    "decision_date": "2025-09-18",
+    "judges": [
+      "Bibas",
+      "Montgomery-Reeves",
+      "Ambro"
+    ],
+    "author_judge": "Bibas",
+    "parties": [
+      {
+        "name": "United States of America",
+        "role": "appellee"
+      },
+      {
+        "name": "Ben McCormack",
+        "role": "appellant"
+      }
+    ],
+    "disposition": "affirmed_in_part",
+    "monetary_amounts": [
+      {
+        "value": 57044.96,
+        "currency": "USD",
+        "context": "restitution ordered on remand"
+      }
+    ],
+    "cited_statutes": [
+      "18 U.S.C. § 922(u)",
+      "18 U.S.C. § 371",
+      "18 U.S.C. § 3663A",
+      "18 U.S.C. § 3664(e)"
+    ]
+  }
+}

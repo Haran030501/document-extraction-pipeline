@@ -1,0 +1,38 @@
+{
+  "source_pdf": "ca4_19_4137.pdf",
+  "split": "dev",
+  "entities": {
+    "case_name": "United States v. Loughry",
+    "docket_number": "19-4137",
+    "court": "United States Court of Appeals for the Fourth Circuit",
+    "decision_date": "2021-05-20",
+    "judges": [
+      "Gregory",
+      "Wilkinson",
+      "Niemeyer",
+      "Motz",
+      "Agee",
+      "Keenan",
+      "Wynn",
+      "Diaz",
+      "Floyd",
+      "Harris",
+      "Richardson",
+      "Quattlebaum"
+    ],
+    "author_judge": null,
+    "parties": [
+      {
+        "name": "United States of America",
+        "role": "appellee"
+      },
+      {
+        "name": "Allen H. Loughry, II",
+        "role": "appellant"
+      }
+    ],
+    "disposition": "affirmed",
+    "monetary_amounts": [],
+    "cited_statutes": []
+  }
+}

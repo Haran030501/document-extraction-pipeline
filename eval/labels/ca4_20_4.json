@@ -1,0 +1,44 @@
+{
+  "source_pdf": "ca4_20_4.pdf",
+  "split": "dev",
+  "entities": {
+    "case_name": "Bryant v. Stephan",
+    "docket_number": "20-4",
+    "court": "United States Court of Appeals for the Fourth Circuit",
+    "decision_date": "2021-11-15",
+    "judges": [
+      "Gregory",
+      "Wilkinson",
+      "Niemeyer",
+      "Motz",
+      "King",
+      "Agee",
+      "Wynn",
+      "Diaz",
+      "Floyd",
+      "Thacker",
+      "Harris",
+      "Richardson",
+      "Quattlebaum",
+      "Rushing"
+    ],
+    "author_judge": null,
+    "parties": [
+      {
+        "name": "James Nathaniel Bryant, III",
+        "role": "appellee"
+      },
+      {
+        "name": "Michael Stephan",
+        "role": "appellant"
+      },
+      {
+        "name": "Bryan P. Stirling",
+        "role": "appellant"
+      }
+    ],
+    "disposition": "affirmed",
+    "monetary_amounts": [],
+    "cited_statutes": []
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "source_pdf": "cal_s244549.pdf",
+  "split": "test",
+  "entities": {
+    "case_name": "Ramirez v. City of Gardena",
+    "docket_number": "S244549",
+    "court": "Supreme Court of California",
+    "decision_date": "2018-08-13",
+    "judges": [
+      "Chin",
+      "Cantil-Sakauye",
+      "Corrigan",
+      "Liu",
+      "Cuéllar",
+      "Kruger",
+      "Lavin"
+    ],
+    "author_judge": "Chin",
+    "parties": [
+      {
+        "name": "Irma Ramirez",
+        "role": "appellant"
+      },
+      {
+        "name": "City of Gardena",
+        "role": "respondent"
+      }
+    ],
+    "disposition": "affirmed",
+    "monetary_amounts": [],
+    "cited_statutes": [
+      "Cal. Veh. Code § 17004.7",
+      "Cal. Veh. Code § 17001",
+      "Cal. Gov. Code § 815",
+      "Cal. Penal Code § 13519.8",
+      "Cal. Penal Code § 13500"
+    ]
+  }
+}

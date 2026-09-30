@@ -1,0 +1,33 @@
+{
+  "source_pdf": "ca8_23_3104.pdf",
+  "split": "dev",
+  "entities": {
+    "case_name": "Clark v. United States",
+    "docket_number": "23-3104",
+    "court": "United States Court of Appeals for the Eighth Circuit",
+    "decision_date": "2025-01-03",
+    "judges": [
+      "Colloton",
+      "Benton",
+      "Kelly"
+    ],
+    "author_judge": "Benton",
+    "parties": [
+      {
+        "name": "Xzavier Justin Lee Clark",
+        "role": "appellant"
+      },
+      {
+        "name": "United States of America",
+        "role": "appellee"
+      }
+    ],
+    "disposition": "affirmed",
+    "monetary_amounts": [],
+    "cited_statutes": [
+      "18 U.S.C. § 922(g)(3)",
+      "28 U.S.C. § 2255",
+      "28 U.S.C. § 1291"
+    ]
+  }
+}

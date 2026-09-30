@@ -1,0 +1,40 @@
+{
+  "source_pdf": "cadc_23_1333.pdf",
+  "split": "test",
+  "entities": {
+    "case_name": "El Puente de Williamsburg, Inc. v. Federal Energy Regulatory Commission",
+    "docket_number": "23-1333",
+    "court": "United States Court of Appeals for the District of Columbia Circuit",
+    "decision_date": "2025-09-19",
+    "judges": [
+      "Katsas",
+      "Garcia",
+      "Ginsburg"
+    ],
+    "author_judge": "Katsas",
+    "parties": [
+      {
+        "name": "El Puente de Williamsburg, Inc.-Enlace Latino de Acción Climática, Inc.",
+        "role": "petitioner"
+      },
+      {
+        "name": "Federal Energy Regulatory Commission",
+        "role": "respondent"
+      },
+      {
+        "name": "NFEnergía LLC",
+        "role": "other"
+      }
+    ],
+    "disposition": "dismissed",
+    "monetary_amounts": [],
+    "cited_statutes": [
+      "15 U.S.C. § 717b",
+      "15 U.S.C. § 717a(11)",
+      "15 U.S.C. § 717s(a)",
+      "15 U.S.C. § 717t-1",
+      "15 U.S.C. § 717r(b)",
+      "5 U.S.C. § 701(a)(2)"
+    ]
+  }
+}

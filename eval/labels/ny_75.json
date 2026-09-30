@@ -1,0 +1,36 @@
+{
+  "source_pdf": "ny_75.pdf",
+  "split": "test",
+  "entities": {
+    "case_name": "Sage Systems, Inc. v. Liss",
+    "docket_number": "75",
+    "court": "New York Court of Appeals",
+    "decision_date": "2022-10-20",
+    "judges": [
+      "Rivera",
+      "Cannataro",
+      "Garcia",
+      "Wilson",
+      "Singas",
+      "Troutman"
+    ],
+    "author_judge": "Rivera",
+    "parties": [
+      {
+        "name": "Sage Systems, Inc.",
+        "role": "respondent"
+      },
+      {
+        "name": "Michael Liss",
+        "role": "appellant"
+      }
+    ],
+    "disposition": "reversed",
+    "monetary_amounts": [],
+    "cited_statutes": [
+      "N.Y. Dom. Rel. Law § 237",
+      "CPLR 8601",
+      "42 U.S.C. § 1988"
+    ]
+  }
+}

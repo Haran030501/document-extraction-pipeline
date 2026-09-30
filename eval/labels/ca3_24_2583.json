@@ -1,0 +1,42 @@
+{
+  "source_pdf": "ca3_24_2583.pdf",
+  "split": "test",
+  "entities": {
+    "case_name": "Lanoue v. Attorney General United States of America",
+    "docket_number": "24-2583",
+    "court": "United States Court of Appeals for the Third Circuit",
+    "decision_date": "2025-07-01",
+    "judges": [
+      "Hardiman",
+      "Bibas",
+      "Fisher"
+    ],
+    "author_judge": "Bibas",
+    "parties": [
+      {
+        "name": "Robert Wayne Lanoue",
+        "role": "petitioner"
+      },
+      {
+        "name": "Attorney General of the United States of America",
+        "role": "respondent"
+      }
+    ],
+    "disposition": "dismissed",
+    "monetary_amounts": [
+      {
+        "value": 3000000.0,
+        "currency": "USD",
+        "context": "loss to the VA / restitution from false claims"
+      }
+    ],
+    "cited_statutes": [
+      "18 U.S.C. § 287",
+      "18 U.S.C. § 2",
+      "8 U.S.C. § 1182(h)",
+      "8 U.S.C. § 1252(a)(2)(B)(i)",
+      "8 U.S.C. § 1227(a)(2)",
+      "8 U.S.C. § 1101(a)(43)(M)(i)"
+    ]
+  }
+}

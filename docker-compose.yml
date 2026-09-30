@@ -1,0 +1,36 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: extraction
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d extraction"]
+      interval: 5s
+      retries: 10
+
+  api:
+    build: .
+    environment:
+      DATABASE_URL: postgresql+psycopg://postgres:postgres@db:5432/extraction
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
+      MODEL: ${MODEL:-claude-opus-5-5}
+      EFFORT: ${EFFORT:-high}
+      PROMPT_VERSION: ${PROMPT_VERSION:-v3}
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./data:/app/data
+      - ./eval/labels:/app/eval/labels
+      - ./eval/results:/app/eval/results
+
+volumes:
+  pgdata:

@@ -1,0 +1,41 @@
+{
+  "source_pdf": "cadc_20_1376.pdf",
+  "split": "dev",
+  "entities": {
+    "case_name": "Hemp Industries Association v. Drug Enforcement Administration",
+    "docket_number": "20-1376",
+    "court": "United States Court of Appeals for the District of Columbia Circuit",
+    "decision_date": "2022-06-10",
+    "judges": [
+      "Henderson",
+      "Rogers",
+      "Silberman"
+    ],
+    "author_judge": "Silberman",
+    "parties": [
+      {
+        "name": "Hemp Industries Association",
+        "role": "petitioner"
+      },
+      {
+        "name": "RE Botanicals, Inc.",
+        "role": "petitioner"
+      },
+      {
+        "name": "Drug Enforcement Administration",
+        "role": "respondent"
+      },
+      {
+        "name": "Anne Milgram",
+        "role": "respondent"
+      }
+    ],
+    "disposition": "dismissed",
+    "monetary_amounts": [],
+    "cited_statutes": [
+      "21 U.S.C. § 802(16)",
+      "21 U.S.C. § 812",
+      "7 U.S.C. § 1639o"
+    ]
+  }
+}

@@ -1,0 +1,3683 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": "high",
+  "split": "test",
+  "summaries": [
+    {
+      "version": "v1",
+      "n_docs": 18,
+      "field_accuracy": 0.9187143493761141,
+      "exact_field_rate": 0.8666666666666667,
+      "per_field": {
+        "case_name": 1.0,
+        "docket_number": 0.8888888888888888,
+        "court": 1.0,
+        "decision_date": 1.0,
+        "author_judge": 0.9444444444444444,
+        "disposition": 0.8333333333333334,
+        "judges": 1.0,
+        "parties": 0.9260101010101011,
+        "monetary_amounts": 0.8925925925925926,
+        "cited_statutes": 0.7018741334917805
+      },
+      "ok_rate": 1,
+      "failure_rate": 0,
+      "avg_attempts": 1,
+      "retry_rate": 0,
+      "avg_latency_s": 8.535,
+      "cost_per_doc_usd": 0.03182755555555555
+    },
+    {
+      "version": "v2",
+      "n_docs": 18,
+      "field_accuracy": 0.979251012145749,
+      "exact_field_rate": 0.9611111111111111,
+      "per_field": {
+        "case_name": 1.0,
+        "docket_number": 1.0,
+        "court": 1.0,
+        "decision_date": 1.0,
+        "author_judge": 0.9444444444444444,
+        "disposition": 1.0,
+        "judges": 1.0,
+        "parties": 0.9690058479532164,
+        "monetary_amounts": 0.9722222222222222,
+        "cited_statutes": 0.9068376068376068
+      },
+      "ok_rate": 1,
+      "failure_rate": 0,
+      "avg_attempts": 1,
+      "retry_rate": 0,
+      "avg_latency_s": 7.142555555555556,
+      "cost_per_doc_usd": 0.036381333333333335
+    },
+    {
+      "version": "v3",
+      "n_docs": 18,
+      "field_accuracy": 0.9805555555555555,
+      "exact_field_rate": 0.9722222222222222,
+      "per_field": {
+        "case_name": 1.0,
+        "docket_number": 1.0,
+        "court": 1.0,
+        "decision_date": 1.0,
+        "author_judge": 0.9444444444444444,
+        "disposition": 1.0,
+        "judges": 1.0,
+        "parties": 0.9777777777777777,
+        "monetary_amounts": 0.9722222222222222,
+        "cited_statutes": 0.9111111111111111
+      },
+      "ok_rate": 1,
+      "failure_rate": 0,
+      "avg_attempts": 1,
+      "retry_rate": 0,
+      "avg_latency_s": 6.529944444444444,
+      "cost_per_doc_usd": 0.03726511111111111
+    }
+  ],
+  "details": {
+    "v1": [
+      {
+        "version": "v1",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 1475,
+        "output_tokens": 911,
+        "latency_ms": 7673,
+        "entities": {
+          "case_name": "Exby-Stolley v. Board of County Commissioners, Weld County, Colorado",
+          "docket_number": "16-1412",
+          "court": "United States Court of Appeals for the Tenth Circuit",
+          "decision_date": "2018-12-18",
+          "judges": [
+            "Timothy M. Tymkovich",
+            "Mary Beck Briscoe",
+            "Carlos F. Lucero",
+            "Harris L Hartz",
+            "Jerome A. Holmes",
+            "Scott M. Matheson Jr.",
+            "Robert E. Bacharach",
+            "Gregory A. Phillips",
+            "Carolyn B. McHugh",
+            "Nancy L. Moritz",
+            "Allison H. Eid",
+            "Joel M. Carson III",
+            "Paul J. Kelly Jr."
+          ],
+          "author_judge": null,
+          "parties": [
+            {
+              "name": "Laurie Exby-Stolley",
+              "role": "appellant"
+            },
+            {
+              "name": "Board of County Commissioners, Weld County, Colorado",
+              "role": "appellee"
+            },
+            {
+              "name": "Colorado Plaintiff Employment Lawyers Association",
+              "role": "other"
+            }
+          ],
+          "disposition": "other",
+          "monetary_amounts": [],
+          "cited_statutes": [
+            "42 U.S.C. \u00a7\u00a7 12101\u2013213 (Americans with Disabilities Act)"
+          ]
+        },
+        "doc_id": "ca10_16_1412",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 0.8,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v1",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 1685,
+        "output_tokens": 719,
+        "latency_ms": 7532,
+        "entities": {
+          "case_name": "Uzuegbunam v. Preczewski",
+          "docket_number": "18-12676",
+          "court": "United States Court of Appeals for the Eleventh Circuit",
+          "decision_date": "2021-04-16",
+          "judges": [
+            "Black",
+            "Marcus",
+            "Jane A. Restani"
+          ],
+          "author_judge": null,
+          "parties": [
+            {
+              "name": "Chike Uzuegbunam",
+              "role": "appellant"
+            },
+            {
+              "name": "Joseph Bradford",
+              "role": "appellant"
+            },
+            {
+              "name": "Stanley C. Preczewski",
+              "role": "appellee"
+            },
+            {
+              "name": "Lois C. Richardson",
+              "role": "appellee"
+            },
+            {
+              "name": "Jim B. Fatzinger",
+              "role": "appellee"
+            },
+            {
+              "name": "Tomas Jiminez",
+              "role": "appellee"
+            },
+            {
+              "name": "Aileen C. Dowell",
+              "role": "appellee"
+            },
+            {
+              "name": "Gene Ruffin",
+              "role": "appellee"
+            },
+            {
+              "name": "Catherine Jannick Downey",
+              "role": "appellee"
+            },
+            {
+              "name": "Terrance Schneider",
+              "role": "appellee"
+            },
+            {
+              "name": "Corey Hughes",
+              "role": "appellee"
+            },
+            {
+              "name": "Rebecca A. Lawler",
+              "role": "appellee"
+            },
+            {
+              "name": "Shenna Perry",
+              "role": "appellee"
+            }
+          ],
+          "disposition": "reversed",
+          "monetary_amounts": [],
+          "cited_statutes": []
+        },
+        "doc_id": "ca11_18_12676",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v1",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 1873,
+        "output_tokens": 537,
+        "latency_ms": 6244,
+        "entities": {
+          "case_name": "Savannah College of Art and Design, Inc. v. Sportswear, Inc.",
+          "docket_number": "19-11258",
+          "court": "United States Court of Appeals for the Eleventh Circuit",
+          "decision_date": "2020-11-02",
+          "judges": [
+            "William Pryor",
+            "Rosenbaum",
+            "K. Michael Moore"
+          ],
+          "author_judge": null,
+          "parties": [
+            {
+              "name": "Savannah College of Art and Design, Inc.",
+              "role": "appellee"
+            },
+            {
+              "name": "Sportswear, Inc., d.b.a. PrepSportswear",
+              "role": "appellant"
+            }
+          ],
+          "disposition": "remanded",
+          "monetary_amounts": [],
+          "cited_statutes": [
+            "28 U.S.C. \u00a7 1291"
+          ]
+        },
+        "doc_id": "ca11_19_11258",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v1",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 2790,
+        "output_tokens": 659,
+        "latency_ms": 9161,
+        "entities": {
+          "case_name": "Pietrangelo v. Sununu",
+          "docket_number": "21-1366",
+          "court": "United States Court of Appeals for the First Circuit",
+          "decision_date": "2021-10-01",
+          "judges": [
+            "Lynch",
+            "Barron",
+            "Burroughs"
+          ],
+          "author_judge": "Lynch",
+          "parties": [
+            {
+              "name": "James E. Pietrangelo, II",
+              "role": "appellant"
+            },
+            {
+              "name": "Christopher Sununu",
+              "role": "appellee"
+            },
+            {
+              "name": "Lisa Morris",
+              "role": "appellee"
+            },
+            {
+              "name": "Lori Shibinette",
+              "role": "appellee"
+            },
+            {
+              "name": "Elizabeth Daly",
+              "role": "appellee"
+            },
+            {
+              "name": "Unknown Does",
+              "role": "defendant"
+            }
+          ],
+          "disposition": "dismissed",
+          "monetary_amounts": [],
+          "cited_statutes": [
+            "Fed. R. App. P. 10",
+            "Fed. R. Evid. 201(b)(2)"
+          ]
+        },
+        "doc_id": "ca1_21_1366p",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 0.9090909090909091,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 0.0
+        }
+      },
+      {
+        "version": "v1",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 2211,
+        "output_tokens": 896,
+        "latency_ms": 8798,
+        "entities": {
+          "case_name": "Ortiz v. Ciox Health LLC",
+          "docket_number": "19-1649-cv",
+          "court": "United States Court of Appeals for the Second Circuit",
+          "decision_date": "2021-12-16",
+          "judges": [
+            "Chin",
+            "Sullivan",
+            "Nardini"
+          ],
+          "author_judge": null,
+          "parties": [
+            {
+              "name": "Hector Ortiz, as Temporary Administrator of the Estate of Vicky Ortiz",
+              "role": "appellant"
+            },
+            {
+              "name": "Ciox Health LLC",
+              "role": "appellee"
+            },
+            {
+              "name": "The New York and Presbyterian Hospital",
+              "role": "appellee"
+            },
+            {
+              "name": "IOD Inc.",
+              "role": "defendant"
+            },
+            {
+              "name": "Columbia Presbyterian Medical Center",
+              "role": "defendant"
+            },
+            {
+              "name": "Vicky Ortiz",
+              "role": "other"
+            }
+          ],
+          "disposition": "affirmed",
+          "monetary_amounts": [
+            {
+              "value": 0.75,
+              "currency": "USD",
+              "context": "Statutory maximum charge per page for paper copies of medical records under N.Y. Public Health Law \u00a7 18(2)(e)"
+            },
+            {
+              "value": 1.5,
+              "currency": "USD",
+              "context": "Per-page charge imposed on Ms. Ortiz for copies of her medical records by Ciox's predecessor in interest"
+            }
+          ],
+          "cited_statutes": [
+            "N.Y. Public Health Law \u00a7 18(2)(e)",
+            "Second Circuit Local Rule 27.2",
+            "N.Y. Comp. Codes R. & Regs. tit. 22, \u00a7 500.27"
+          ]
+        },
+        "doc_id": "ca2_19_1649_cv",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 0.9090909090909091,
+          "monetary_amounts": 0.6666666666666666,
+          "cited_statutes": 0.5
+        }
+      },
+      {
+        "version": "v1",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 2811,
+        "output_tokens": 551,
+        "latency_ms": 5602,
+        "entities": {
+          "case_name": "RSD Leasing, Inc. v. Navistar International Corp.",
+          "docket_number": "22-282-cv",
+          "court": "United States Court of Appeals for the Second Circuit",
+          "decision_date": "2024-07-02",
+          "judges": [
+            "Lynch",
+            "Lohier",
+            "Bianco"
+          ],
+          "author_judge": null,
+          "parties": [
+            {
+              "name": "RSD Leasing, Inc.",
+              "role": "appellant"
+            },
+            {
+              "name": "Navistar International Corp.",
+              "role": "appellee"
+            },
+            {
+              "name": "Navistar, Inc.",
+              "role": "appellee"
+            }
+          ],
+          "disposition": "affirmed",
+          "monetary_amounts": [],
+          "cited_statutes": [
+            "Vermont Consumer Protection Act",
+            "9 V.S.A. \u00a7 2451a(1)"
+          ]
+        },
+        "doc_id": "ca2_22_282",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 0.6666666666666666
+        }
+      },
+      {
+        "version": "v1",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 3445,
+        "output_tokens": 737,
+        "latency_ms": 7535,
+        "entities": {
+          "case_name": "United States v. McCormack",
+          "docket_number": "24-2500",
+          "court": "United States Court of Appeals for the Third Circuit",
+          "decision_date": "2025-09-18",
+          "judges": [
+            "Bibas",
+            "Montgomery-Reeves",
+            "Ambro"
+          ],
+          "author_judge": "Bibas",
+          "parties": [
+            {
+              "name": "United States of America",
+              "role": "appellee"
+            },
+            {
+              "name": "Ben McCormack",
+              "role": "appellant"
+            }
+          ],
+          "disposition": "affirmed_in_part",
+          "monetary_amounts": [
+            {
+              "value": 57044.96,
+              "currency": "USD",
+              "context": "Restitution ordered by the District Court on remand after the evidentiary hearing"
+            }
+          ],
+          "cited_statutes": [
+            "18 U.S.C. \u00a7 922(u)",
+            "18 U.S.C. \u00a7 371",
+            "18 U.S.C. \u00a7 3663A(a)(1)",
+            "18 U.S.C. \u00a7 3663A(b)(1)",
+            "18 U.S.C. \u00a7 3663A(b)(4)",
+            "18 U.S.C. \u00a7 3663A(c)(1)",
+            "18 U.S.C. \u00a7 3664(e)",
+            "Mandatory Victims Restitution Act"
+          ]
+        },
+        "doc_id": "ca3_24_2500",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 0.6666666666666666
+        }
+      },
+      {
+        "version": "v1",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 3902,
+        "output_tokens": 1244,
+        "latency_ms": 13857,
+        "entities": {
+          "case_name": "Lanoue v. Attorney General of the United States of America",
+          "docket_number": "24-2583",
+          "court": "United States Court of Appeals for the Third Circuit",
+          "decision_date": "2025-07-01",
+          "judges": [
+            "Hardiman",
+            "Bibas",
+            "Fisher"
+          ],
+          "author_judge": "Bibas",
+          "parties": [
+            {
+              "name": "Robert Wayne Lanoue",
+              "role": "petitioner"
+            },
+            {
+              "name": "Attorney General of the United States of America",
+              "role": "respondent"
+            }
+          ],
+          "disposition": "other",
+          "monetary_amounts": [
+            {
+              "value": 10000.0,
+              "currency": "USD",
+              "context": "Loss threshold for an aggravated felony involving fraud or deceit under 8 U.S.C. \u00a7 1101(a)(43)(M)(i)"
+            },
+            {
+              "value": 3000000.0,
+              "currency": "USD",
+              "context": "Lanoue's false claims cost the Department of Veterans Affairs more than this amount; restitution loss in plea agreement"
+            },
+            {
+              "value": 1500000.0,
+              "currency": "USD",
+              "context": "Lower bound of stipulated loss range to the government"
+            },
+            {
+              "value": 3500000.0,
+              "currency": "USD",
+              "context": "Upper bound of stipulated loss range to the government"
+            }
+          ],
+          "cited_statutes": [
+            "18 U.S.C. \u00a7 287",
+            "18 U.S.C. \u00a7 2",
+            "8 U.S.C. \u00a7 1252(a)(2)(B)(i)",
+            "8 U.S.C. \u00a7 1252(a)(2)(C)",
+            "8 U.S.C. \u00a7 1252(a)(2)(D)",
+            "8 U.S.C. \u00a7 1227(a)(2)",
+            "8 U.S.C. \u00a7 1227(a)(2)(A)(iii)",
+            "8 U.S.C. \u00a7 1101(a)(43)(M)(i)",
+            "8 U.S.C. \u00a7 1182(h)",
+            "8 U.S.C. \u00a7 1101(a)(13)(C)(v)",
+            "INA \u00a7 212(h)"
+          ]
+        },
+        "doc_id": "ca3_24_2583",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 0.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 0.4,
+          "cited_statutes": 0.7058823529411764
+        }
+      },
+      {
+        "version": "v1",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 14320,
+        "output_tokens": 1516,
+        "latency_ms": 12425,
+        "entities": {
+          "case_name": "In re Deepwater Horizon (Lake Eugenie Land & Development, Inc. v. Halliburton Energy Services, Inc.)",
+          "docket_number": "18-30243 c/w 18-30413 & 18-30533",
+          "court": "United States Court of Appeals for the Fifth Circuit",
+          "decision_date": "2019-08-13",
+          "judges": [
+            "King",
+            "Elrod",
+            "Engelhardt"
+          ],
+          "author_judge": null,
+          "parties": [
+            {
+              "name": "Lake Eugenie Land & Development, Incorporated",
+              "role": "plaintiff"
+            },
+            {
+              "name": "John M. Petitjean",
+              "role": "plaintiff"
+            },
+            {
+              "name": "Economic and Property Damages Settlement Class",
+              "role": "plaintiff"
+            },
+            {
+              "name": "Halliburton Energy Services, Incorporated",
+              "role": "appellee"
+            },
+            {
+              "name": "Transocean Holdings, L.L.C.",
+              "role": "appellee"
+            },
+            {
+              "name": "Halliburton Company",
+              "role": "appellee"
+            },
+            {
+              "name": "Triton Asset Leasing GmbH",
+              "role": "appellee"
+            },
+            {
+              "name": "Transocean Deepwater, Incorporated",
+              "role": "appellee"
+            },
+            {
+              "name": "Transocean Offshore Deepwater Drilling, Incorporated",
+              "role": "appellee"
+            },
+            {
+              "name": "Julius Barbour",
+              "role": "appellant"
+            },
+            {
+              "name": "Edward Barnhill, Jr.",
+              "role": "appellant"
+            },
+            {
+              "name": "Edward Barnhill, Sr.",
+              "role": "appellant"
+            },
+            {
+              "name": "Karen Barnhill",
+              "role": "appellant"
+            },
+            {
+              "name": "Scott Black",
+              "role": "appellant"
+            },
+            {
+              "name": "Dobby Darna",
+              "role": "appellant"
+            },
+            {
+              "name": "Darrin Covert",
+              "role": "appellant"
+            },
+            {
+              "name": "Richard Delacey",
+              "role": "appellant"
+            },
+            {
+              "name": "Joseph Williamson",
+              "role": "appellant"
+            },
+            {
+              "name": "George Zirlott",
+              "role": "appellant"
+            }
+          ],
+          "disposition": "affirmed",
+          "monetary_amounts": [
+            {
+              "value": 0.0,
+              "currency": "USD",
+              "context": "Under the Distribution Model and Claim Form, a claim would be assigned a value of $0 if the claimant failed to comply with PTO 60."
+            }
+          ],
+          "cited_statutes": [
+            "Fed. R. Civ. P. 60(b)"
+          ]
+        },
+        "doc_id": "ca5_18_30243",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 0.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 0.0,
+          "cited_statutes": 0.0
+        }
+      },
+      {
+        "version": "v1",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 2453,
+        "output_tokens": 963,
+        "latency_ms": 11118,
+        "entities": {
+          "case_name": "Cameron Parish Recreation #6 v. Indian Harbor Insurance Company",
+          "docket_number": "23-30181 c/w Nos. 23-30182, 23-30183",
+          "court": "United States Court of Appeals for the Fifth Circuit",
+          "decision_date": "2024-02-19",
+          "judges": [
+            "Jones",
+            "Haynes",
+            "Douglas"
+          ],
+          "author_judge": null,
+          "parties": [
+            {
+              "name": "Cameron Parish Recreation #6",
+              "role": "appellee"
+            },
+            {
+              "name": "Police Jury of Cameron Parish",
+              "role": "appellee"
+            },
+            {
+              "name": "School Board of Cameron Parish",
+              "role": "appellee"
+            },
+            {
+              "name": "Indian Harbor Insurance Company",
+              "role": "appellant"
+            },
+            {
+              "name": "QBE Specialty Insurance Company",
+              "role": "appellant"
+            },
+            {
+              "name": "Steadfast Insurance Company",
+              "role": "appellant"
+            },
+            {
+              "name": "General Security Indemnity Company of Arizona",
+              "role": "appellant"
+            },
+            {
+              "name": "United Specialty Insurance Company",
+              "role": "appellant"
+            },
+            {
+              "name": "Lexington Insurance Company",
+              "role": "appellant"
+            },
+            {
+              "name": "Safety Specialty Insurance Company",
+              "role": "appellant"
+            },
+            {
+              "name": "Old Republic Union Insurance Company",
+              "role": "appellant"
+            }
+          ],
+          "disposition": "vacated",
+          "monetary_amounts": [],
+          "cited_statutes": [
+            "9 U.S.C. \u00a7 3",
+            "9 U.S.C. \u00a7 4",
+            "9 U.S.C. \u00a7 16(a)(1)(A)",
+            "9 U.S.C. \u00a7 202"
+          ]
+        },
+        "doc_id": "ca5_23_30183",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 0.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v1",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 1749,
+        "output_tokens": 691,
+        "latency_ms": 11784,
+        "entities": {
+          "case_name": "Bennett v. Dart",
+          "docket_number": "22-8016",
+          "court": "United States Court of Appeals for the Seventh Circuit",
+          "decision_date": "2022-11-14",
+          "judges": [
+            "Easterbrook",
+            "Rovner",
+            "Wood"
+          ],
+          "author_judge": null,
+          "parties": [
+            {
+              "name": "Preston Bennett",
+              "role": "petitioner"
+            },
+            {
+              "name": "Thomas Dart, Sheriff of Cook County",
+              "role": "respondent"
+            },
+            {
+              "name": "Cook County, Illinois",
+              "role": "respondent"
+            }
+          ],
+          "disposition": "reversed",
+          "monetary_amounts": [],
+          "cited_statutes": [
+            "42 U.S.C. \u00a7\u00a7 12131\u201334",
+            "29 U.S.C. \u00a7 794",
+            "28 C.F.R. \u00a7 42.522(b)(1)",
+            "Fed. R. Civ. P. 23(f)",
+            "Fed. R. Civ. P. 23(c)(4)"
+          ]
+        },
+        "doc_id": "ca7_22_8016",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 0.4000000000000001
+        }
+      },
+      {
+        "version": "v1",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 1708,
+        "output_tokens": 527,
+        "latency_ms": 4825,
+        "entities": {
+          "case_name": "United States v. Alexander Laurel-Olea",
+          "docket_number": "24-2479",
+          "court": "United States Court of Appeals for the Eighth Circuit",
+          "decision_date": "2025-07-16",
+          "judges": [
+            "Colloton",
+            "Erickson",
+            "Grasz"
+          ],
+          "author_judge": "Colloton",
+          "parties": [
+            {
+              "name": "United States of America",
+              "role": "appellee"
+            },
+            {
+              "name": "Alexander Laurel-Olea",
+              "role": "appellant"
+            }
+          ],
+          "disposition": "affirmed",
+          "monetary_amounts": [
+            {
+              "value": 38000.0,
+              "currency": "USD",
+              "context": "Restitution obligation that Laurel-Olea made no efforts to meet"
+            }
+          ],
+          "cited_statutes": [
+            "18 U.S.C. \u00a7 922(g)(3)",
+            "18 U.S.C. \u00a7 3583(e)"
+          ]
+        },
+        "doc_id": "ca8_24_2479",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v1",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 4918,
+        "output_tokens": 958,
+        "latency_ms": 8733,
+        "entities": {
+          "case_name": "El Puente de Williamsburg, Inc.-Enlace Latino de Acci\u00f3n Clim\u00e1tica, Inc., et al. v. Federal Energy Regulatory Commission",
+          "docket_number": "23-1333",
+          "court": "United States Court of Appeals for the District of Columbia Circuit",
+          "decision_date": "2025-09-19",
+          "judges": [
+            "Katsas",
+            "Garcia",
+            "Ginsburg"
+          ],
+          "author_judge": "Katsas",
+          "parties": [
+            {
+              "name": "El Puente de Williamsburg, Inc.-Enlace Latino de Acci\u00f3n Clim\u00e1tica, Inc.",
+              "role": "petitioner"
+            },
+            {
+              "name": "Federal Energy Regulatory Commission",
+              "role": "respondent"
+            },
+            {
+              "name": "NFEnerg\u00eda LLC",
+              "role": "other"
+            }
+          ],
+          "disposition": "other",
+          "monetary_amounts": [],
+          "cited_statutes": [
+            "15 U.S.C. \u00a7 717b(a)",
+            "15 U.S.C. \u00a7 717b(e)(1)",
+            "15 U.S.C. \u00a7 717a(11)",
+            "15 U.S.C. \u00a7 717s(a)",
+            "15 U.S.C. \u00a7 717t-1",
+            "15 U.S.C. \u00a7 717t-1(a)",
+            "15 U.S.C. \u00a7 717r(b)",
+            "5 U.S.C. \u00a7 701(a)(2)",
+            "Natural Gas Act",
+            "National Environmental Policy Act",
+            "Administrative Procedure Act"
+          ]
+        },
+        "doc_id": "cadc_23_1333",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 0.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 0.7058823529411764
+        }
+      },
+      {
+        "version": "v1",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 8464,
+        "output_tokens": 1134,
+        "latency_ms": 10718,
+        "entities": {
+          "case_name": "Newport Harbor Ventures, LLC v. Morris Cerullo World Evangelism",
+          "docket_number": "S239777",
+          "court": "Supreme Court of California",
+          "decision_date": "2018-03-22",
+          "judges": [
+            "Chin",
+            "Cantil-Sakauye",
+            "Corrigan",
+            "Liu",
+            "Cuellar",
+            "Kruger",
+            "Raye"
+          ],
+          "author_judge": "Chin",
+          "parties": [
+            {
+              "name": "Newport Harbor Ventures, LLC",
+              "role": "respondent"
+            },
+            {
+              "name": "Vertical Media Group, Inc.",
+              "role": "respondent"
+            },
+            {
+              "name": "Morris Cerullo World Evangelism",
+              "role": "appellant"
+            },
+            {
+              "name": "Roger Artz",
+              "role": "appellant"
+            }
+          ],
+          "disposition": "affirmed",
+          "monetary_amounts": [],
+          "cited_statutes": [
+            "Code Civ. Proc. \u00a7 425.16",
+            "Code Civ. Proc. \u00a7 425.16, subd. (a)",
+            "Code Civ. Proc. \u00a7 425.16, subd. (b)(1)",
+            "Code Civ. Proc. \u00a7 425.16, subd. (e)",
+            "Code Civ. Proc. \u00a7 425.16, subd. (f)",
+            "Code Civ. Proc. \u00a7 425.16, subd. (g)",
+            "Code Civ. Proc. \u00a7 425.16, subd. (i)",
+            "Code Civ. Proc. \u00a7 904.1",
+            "Cal. Const., art. VI, \u00a7 6"
+          ]
+        },
+        "doc_id": "cal_s239777",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 0.3636363636363636
+        }
+      },
+      {
+        "version": "v1",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 7294,
+        "output_tokens": 1008,
+        "latency_ms": 8483,
+        "entities": {
+          "case_name": "Ramirez v. City of Gardena",
+          "docket_number": "S244549",
+          "court": "Supreme Court of California",
+          "decision_date": "2018-08-13",
+          "judges": [
+            "Chin",
+            "Cantil-Sakauye",
+            "Corrigan",
+            "Liu",
+            "Cu\u00e9llar",
+            "Kruger",
+            "Lavin"
+          ],
+          "author_judge": "Chin",
+          "parties": [
+            {
+              "name": "Irma Ramirez",
+              "role": "appellant"
+            },
+            {
+              "name": "City of Gardena",
+              "role": "appellee"
+            },
+            {
+              "name": "League of California Cities",
+              "role": "other"
+            },
+            {
+              "name": "California Police Chiefs Association",
+              "role": "other"
+            },
+            {
+              "name": "California State Sheriffs' Association",
+              "role": "other"
+            },
+            {
+              "name": "California Peace Officers' Association",
+              "role": "other"
+            }
+          ],
+          "disposition": "affirmed",
+          "monetary_amounts": [],
+          "cited_statutes": [
+            "Vehicle Code \u00a7 17004.7",
+            "Vehicle Code \u00a7 17004.7, subd. (a)",
+            "Vehicle Code \u00a7 17004.7, subd. (b)(1)",
+            "Vehicle Code \u00a7 17004.7, subd. (b)(2)",
+            "Vehicle Code \u00a7 17004.7, subd. (c)",
+            "Vehicle Code \u00a7 17004.7, subd. (d)",
+            "Vehicle Code \u00a7 17001",
+            "Government Code \u00a7 815, subd. (a)",
+            "Penal Code \u00a7 13519.8",
+            "Penal Code \u00a7 13500, subd. (a)",
+            "California Constitution, article VI, section 6"
+          ]
+        },
+        "doc_id": "cal_s244549",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 0.25,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 0.625
+        }
+      },
+      {
+        "version": "v1",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 2400,
+        "output_tokens": 605,
+        "latency_ms": 6596,
+        "entities": {
+          "case_name": "David M. Bonczar v. American Multi-Cinema, Inc.",
+          "docket_number": "26",
+          "court": "Court of Appeals of the State of New York",
+          "decision_date": "2022-04-28",
+          "judges": [
+            "Chief Judge DiFiore",
+            "Judge Rivera",
+            "Judge Garcia",
+            "Judge Wilson",
+            "Judge Singas",
+            "Judge Cannataro"
+          ],
+          "author_judge": null,
+          "parties": [
+            {
+              "name": "David M. Bonczar",
+              "role": "appellant"
+            },
+            {
+              "name": "American Multi-Cinema, Inc.",
+              "role": "respondent"
+            }
+          ],
+          "disposition": "affirmed",
+          "monetary_amounts": [],
+          "cited_statutes": [
+            "Labor Law \u00a7 240 (1)",
+            "CPLR 5602 (a) (1) (i)",
+            "CPLR 5501 (a)",
+            "CPLR 5601 (d)"
+          ]
+        },
+        "doc_id": "ny_26",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v1",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 4617,
+        "output_tokens": 534,
+        "latency_ms": 5948,
+        "entities": {
+          "case_name": "Sage Systems, Inc. v. Liss",
+          "docket_number": "75",
+          "court": "New York Court of Appeals",
+          "decision_date": "2022-10-20",
+          "judges": [
+            "Rivera",
+            "Cannataro",
+            "Garcia",
+            "Wilson",
+            "Singas",
+            "Troutman"
+          ],
+          "author_judge": "Rivera",
+          "parties": [
+            {
+              "name": "Sage Systems, Inc.",
+              "role": "respondent"
+            },
+            {
+              "name": "Michael Liss",
+              "role": "appellant"
+            },
+            {
+              "name": "Robert Liss",
+              "role": "other"
+            }
+          ],
+          "disposition": "reversed",
+          "monetary_amounts": [],
+          "cited_statutes": [
+            "DRL \u00a7 237",
+            "CPLR 8601",
+            "42 USC \u00a7 1988"
+          ]
+        },
+        "doc_id": "ny_75",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 0.8,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v1",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 1284,
+        "output_tokens": 575,
+        "latency_ms": 6598,
+        "entities": {
+          "case_name": "Nautilus Insurance Company v. HOF Partners LLC",
+          "docket_number": "23-0408",
+          "court": "Supreme Court of Texas",
+          "decision_date": "2025-06-27",
+          "judges": [
+            "Evan A. Young",
+            "James P. Sullivan"
+          ],
+          "author_judge": null,
+          "parties": [
+            {
+              "name": "Nautilus Insurance Company",
+              "role": "petitioner"
+            },
+            {
+              "name": "HOF Partners LLC",
+              "role": "respondent"
+            }
+          ],
+          "disposition": "other",
+          "monetary_amounts": [],
+          "cited_statutes": [
+            "Texas Insurance Code Chapter 981"
+          ]
+        },
+        "doc_id": "tex_23_0408",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 0.0,
+          "disposition": 0.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      }
+    ],
+    "v2": [
+      {
+        "version": "v2",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 3924,
+        "output_tokens": 633,
+        "latency_ms": 8970,
+        "entities": {
+          "case_name": "Exby-Stolley v. Board of County Commissioners",
+          "docket_number": "16-1412",
+          "court": "United States Court of Appeals for the Tenth Circuit",
+          "decision_date": "2018-12-18",
+          "judges": [
+            "Tymkovich",
+            "Briscoe",
+            "Lucero",
+            "Hartz",
+            "Holmes",
+            "Matheson",
+            "Bacharach",
+            "Phillips",
+            "McHugh",
+            "Moritz",
+            "Eid",
+            "Carson",
+            "Paul J. Kelly"
+          ],
+          "author_judge": null,
+          "parties": [
+            {
+              "name": "Laurie Exby-Stolley",
+              "role": "appellant"
+            },
+            {
+              "name": "Board of County Commissioners, Weld County, Colorado",
+              "role": "appellee"
+            }
+          ],
+          "disposition": "other",
+          "monetary_amounts": [],
+          "cited_statutes": [
+            "42 U.S.C. \u00a7\u00a7 12101\u201312213"
+          ]
+        },
+        "doc_id": "ca10_16_1412",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v2",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 4134,
+        "output_tokens": 443,
+        "latency_ms": 11684,
+        "entities": {
+          "case_name": "Uzuegbunam v. Preczewski",
+          "docket_number": "18-12676",
+          "court": "United States Court of Appeals for the Eleventh Circuit",
+          "decision_date": "2021-04-16",
+          "judges": [
+            "Black",
+            "Marcus",
+            "Jane A. Restani"
+          ],
+          "author_judge": null,
+          "parties": [
+            {
+              "name": "Chike Uzuegbunam",
+              "role": "appellant"
+            },
+            {
+              "name": "Joseph Bradford",
+              "role": "appellant"
+            },
+            {
+              "name": "Stanley C. Preczewski",
+              "role": "appellee"
+            },
+            {
+              "name": "Lois C. Richardson",
+              "role": "appellee"
+            },
+            {
+              "name": "Jim B. Fatzinger",
+              "role": "appellee"
+            },
+            {
+              "name": "Tomas Jiminez",
+              "role": "appellee"
+            },
+            {
+              "name": "Aileen C. Dowell",
+              "role": "appellee"
+            },
+            {
+              "name": "Gene Ruffin",
+              "role": "appellee"
+            },
+            {
+              "name": "Catherine Jannick Downey",
+              "role": "appellee"
+            },
+            {
+              "name": "Terrance Schneider",
+              "role": "appellee"
+            },
+            {
+              "name": "Corey Hughes",
+              "role": "appellee"
+            },
+            {
+              "name": "Rebecca A. Lawler",
+              "role": "appellee"
+            },
+            {
+              "name": "Shenna Perry",
+              "role": "appellee"
+            }
+          ],
+          "disposition": "reversed",
+          "monetary_amounts": [],
+          "cited_statutes": []
+        },
+        "doc_id": "ca11_18_12676",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v2",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 4322,
+        "output_tokens": 354,
+        "latency_ms": 5907,
+        "entities": {
+          "case_name": "Savannah College of Art and Design, Inc. v. Sportswear, Inc.",
+          "docket_number": "19-11258",
+          "court": "United States Court of Appeals for the Eleventh Circuit",
+          "decision_date": "2020-11-02",
+          "judges": [
+            "William Pryor",
+            "Rosenbaum",
+            "K. Michael Moore"
+          ],
+          "author_judge": null,
+          "parties": [
+            {
+              "name": "Savannah College of Art and Design, Inc.",
+              "role": "appellee"
+            },
+            {
+              "name": "Sportswear, Inc.",
+              "role": "appellant"
+            }
+          ],
+          "disposition": "remanded",
+          "monetary_amounts": [],
+          "cited_statutes": [
+            "28 U.S.C. \u00a7 1291"
+          ]
+        },
+        "doc_id": "ca11_19_11258",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v2",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 5239,
+        "output_tokens": 250,
+        "latency_ms": 3631,
+        "entities": {
+          "case_name": "Pietrangelo v. Sununu",
+          "docket_number": "21-1366",
+          "court": "United States Court of Appeals for the First Circuit",
+          "decision_date": "2021-10-01",
+          "judges": [
+            "Lynch",
+            "Barron",
+            "Burroughs"
+          ],
+          "author_judge": "Lynch",
+          "parties": [
+            {
+              "name": "James E. Pietrangelo, II",
+              "role": "appellant"
+            },
+            {
+              "name": "Christopher Sununu",
+              "role": "appellee"
+            },
+            {
+              "name": "Lisa Morris",
+              "role": "appellee"
+            },
+            {
+              "name": "Lori Shibinette",
+              "role": "appellee"
+            },
+            {
+              "name": "Elizabeth Daly",
+              "role": "appellee"
+            }
+          ],
+          "disposition": "dismissed",
+          "monetary_amounts": [],
+          "cited_statutes": []
+        },
+        "doc_id": "ca1_21_1366p",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v2",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 4660,
+        "output_tokens": 604,
+        "latency_ms": 5521,
+        "entities": {
+          "case_name": "Ortiz v. Ciox Health LLC",
+          "docket_number": "19-1649-cv",
+          "court": "United States Court of Appeals for the Second Circuit",
+          "decision_date": "2021-12-16",
+          "judges": [
+            "Chin",
+            "Sullivan",
+            "Nardini"
+          ],
+          "author_judge": null,
+          "parties": [
+            {
+              "name": "Hector Ortiz",
+              "role": "appellant"
+            },
+            {
+              "name": "Ciox Health LLC",
+              "role": "appellee"
+            },
+            {
+              "name": "The New York and Presbyterian Hospital",
+              "role": "appellee"
+            },
+            {
+              "name": "IOD Inc.",
+              "role": "other"
+            },
+            {
+              "name": "Columbia Presbyterian Medical Center",
+              "role": "other"
+            }
+          ],
+          "disposition": "affirmed",
+          "monetary_amounts": [
+            {
+              "value": 1.5,
+              "currency": "USD",
+              "context": "per-page charge for copies of medical records"
+            }
+          ],
+          "cited_statutes": [
+            "N.Y. Pub. Health Law \u00a7 18(2)(e)"
+          ]
+        },
+        "doc_id": "ca2_19_1649_cv",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 0.6,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v2",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 5260,
+        "output_tokens": 235,
+        "latency_ms": 3589,
+        "entities": {
+          "case_name": "RSD Leasing, Inc. v. Navistar Int'l Corp.",
+          "docket_number": "22-282-cv",
+          "court": "United States Court of Appeals for the Second Circuit",
+          "decision_date": "2024-07-02",
+          "judges": [
+            "Lynch",
+            "Lohier",
+            "Bianco"
+          ],
+          "author_judge": null,
+          "parties": [
+            {
+              "name": "RSD Leasing, Inc.",
+              "role": "appellant"
+            },
+            {
+              "name": "Navistar International Corp.",
+              "role": "appellee"
+            },
+            {
+              "name": "Navistar, Inc.",
+              "role": "appellee"
+            }
+          ],
+          "disposition": "affirmed",
+          "monetary_amounts": [],
+          "cited_statutes": [
+            "9 V.S.A. \u00a7 2451a"
+          ]
+        },
+        "doc_id": "ca2_22_282",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v2",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 5894,
+        "output_tokens": 446,
+        "latency_ms": 4636,
+        "entities": {
+          "case_name": "United States v. McCormack",
+          "docket_number": "24-2500",
+          "court": "United States Court of Appeals for the Third Circuit",
+          "decision_date": "2025-09-18",
+          "judges": [
+            "Bibas",
+            "Montgomery-Reeves",
+            "Ambro"
+          ],
+          "author_judge": "Bibas",
+          "parties": [
+            {
+              "name": "United States of America",
+              "role": "appellee"
+            },
+            {
+              "name": "Ben McCormack",
+              "role": "appellant"
+            }
+          ],
+          "disposition": "affirmed_in_part",
+          "monetary_amounts": [
+            {
+              "value": 57044.96,
+              "currency": "USD",
+              "context": "restitution ordered on remand"
+            }
+          ],
+          "cited_statutes": [
+            "18 U.S.C. \u00a7 922(u)",
+            "18 U.S.C. \u00a7 371",
+            "18 U.S.C. \u00a7 3663A",
+            "18 U.S.C. \u00a7 3664"
+          ]
+        },
+        "doc_id": "ca3_24_2500",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v2",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 6351,
+        "output_tokens": 944,
+        "latency_ms": 20095,
+        "entities": {
+          "case_name": "Lanoue v. Attorney General of the United States of America",
+          "docket_number": "24-2583",
+          "court": "United States Court of Appeals for the Third Circuit",
+          "decision_date": "2025-07-01",
+          "judges": [
+            "Hardiman",
+            "Bibas",
+            "Fisher"
+          ],
+          "author_judge": "Bibas",
+          "parties": [
+            {
+              "name": "Robert Wayne Lanoue",
+              "role": "petitioner"
+            },
+            {
+              "name": "Attorney General of the United States of America",
+              "role": "respondent"
+            }
+          ],
+          "disposition": "dismissed",
+          "monetary_amounts": [
+            {
+              "value": 3000000.0,
+              "currency": "USD",
+              "context": "loss to Department of Veterans Affairs from false claims / restitution (more than $3 million)"
+            },
+            {
+              "value": 1500000.0,
+              "currency": "USD",
+              "context": "lower bound of stipulated loss range"
+            },
+            {
+              "value": 3500000.0,
+              "currency": "USD",
+              "context": "upper bound of stipulated loss range"
+            }
+          ],
+          "cited_statutes": [
+            "18 U.S.C. \u00a7 287",
+            "18 U.S.C. \u00a7 2",
+            "8 U.S.C. \u00a7 1182(h)",
+            "8 U.S.C. \u00a7 1252(a)(2)",
+            "8 U.S.C. \u00a7 1227(a)(2)",
+            "8 U.S.C. \u00a7 1101(a)(43)(M)(i)",
+            "8 U.S.C. \u00a7 1101(a)(13)(C)(v)"
+          ]
+        },
+        "doc_id": "ca3_24_2583",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 0.5,
+          "cited_statutes": 0.923076923076923
+        }
+      },
+      {
+        "version": "v2",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 16769,
+        "output_tokens": 1099,
+        "latency_ms": 9960,
+        "entities": {
+          "case_name": "In re Deepwater Horizon",
+          "docket_number": "18-30243",
+          "court": "United States Court of Appeals for the Fifth Circuit",
+          "decision_date": "2019-08-13",
+          "judges": [
+            "King",
+            "Elrod",
+            "Engelhardt"
+          ],
+          "author_judge": null,
+          "parties": [
+            {
+              "name": "Julius Barbour",
+              "role": "appellant"
+            },
+            {
+              "name": "Edward Barnhill, Jr.",
+              "role": "appellant"
+            },
+            {
+              "name": "Edward Barnhill, Sr.",
+              "role": "appellant"
+            },
+            {
+              "name": "Karen Barnhill",
+              "role": "appellant"
+            },
+            {
+              "name": "Scott Black",
+              "role": "appellant"
+            },
+            {
+              "name": "Dobby Darna",
+              "role": "appellant"
+            },
+            {
+              "name": "Darrin Covert",
+              "role": "appellant"
+            },
+            {
+              "name": "Richard Delacey",
+              "role": "appellant"
+            },
+            {
+              "name": "Joseph Williamson",
+              "role": "appellant"
+            },
+            {
+              "name": "George Zirlott",
+              "role": "appellant"
+            },
+            {
+              "name": "Halliburton Energy Services, Incorporated",
+              "role": "appellee"
+            },
+            {
+              "name": "Transocean Holdings, L.L.C.",
+              "role": "appellee"
+            },
+            {
+              "name": "Halliburton Company",
+              "role": "appellee"
+            },
+            {
+              "name": "Triton Asset Leasing GmbH",
+              "role": "appellee"
+            },
+            {
+              "name": "Transocean Deepwater, Incorporated",
+              "role": "appellee"
+            },
+            {
+              "name": "Transocean Offshore Deepwater Drilling, Incorporated",
+              "role": "appellee"
+            },
+            {
+              "name": "Lake Eugenie Land & Development, Incorporated",
+              "role": "other"
+            },
+            {
+              "name": "John M. Petitjean",
+              "role": "other"
+            },
+            {
+              "name": "Economic and Property Damages Settlement Class",
+              "role": "other"
+            }
+          ],
+          "disposition": "affirmed",
+          "monetary_amounts": [],
+          "cited_statutes": []
+        },
+        "doc_id": "ca5_18_30243",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 0.8421052631578947,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v2",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 4902,
+        "output_tokens": 488,
+        "latency_ms": 5184,
+        "entities": {
+          "case_name": "Cameron Parish Recreation #6 v. Indian Harbor Insurance Company",
+          "docket_number": "23-30181",
+          "court": "United States Court of Appeals for the Fifth Circuit",
+          "decision_date": "2024-02-19",
+          "judges": [
+            "Jones",
+            "Haynes",
+            "Douglas"
+          ],
+          "author_judge": null,
+          "parties": [
+            {
+              "name": "Cameron Parish Recreation #6",
+              "role": "appellee"
+            },
+            {
+              "name": "Police Jury of Cameron Parish",
+              "role": "appellee"
+            },
+            {
+              "name": "School Board of Cameron Parish",
+              "role": "appellee"
+            },
+            {
+              "name": "Indian Harbor Insurance Company",
+              "role": "appellant"
+            },
+            {
+              "name": "QBE Specialty Insurance Company",
+              "role": "appellant"
+            },
+            {
+              "name": "General Security Indemnity Company of Arizona",
+              "role": "appellant"
+            },
+            {
+              "name": "United Specialty Insurance Company",
+              "role": "appellant"
+            },
+            {
+              "name": "Lexington Insurance Company",
+              "role": "appellant"
+            },
+            {
+              "name": "Safety Specialty Insurance Company",
+              "role": "appellant"
+            },
+            {
+              "name": "Old Republic Union Insurance Company",
+              "role": "appellant"
+            },
+            {
+              "name": "Steadfast Insurance Company",
+              "role": "appellant"
+            }
+          ],
+          "disposition": "vacated",
+          "monetary_amounts": [],
+          "cited_statutes": [
+            "9 U.S.C. \u00a7 4",
+            "9 U.S.C. \u00a7 202",
+            "9 U.S.C. \u00a7 3",
+            "9 U.S.C. \u00a7 16"
+          ]
+        },
+        "doc_id": "ca5_23_30183",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v2",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 4198,
+        "output_tokens": 465,
+        "latency_ms": 5209,
+        "entities": {
+          "case_name": "Bennett v. Dart",
+          "docket_number": "22-8016",
+          "court": "United States Court of Appeals for the Seventh Circuit",
+          "decision_date": "2022-11-14",
+          "judges": [
+            "Easterbrook",
+            "Rovner",
+            "Wood"
+          ],
+          "author_judge": null,
+          "parties": [
+            {
+              "name": "Preston Bennett",
+              "role": "petitioner"
+            },
+            {
+              "name": "Thomas Dart",
+              "role": "respondent"
+            },
+            {
+              "name": "Cook County, Illinois",
+              "role": "respondent"
+            }
+          ],
+          "disposition": "reversed",
+          "monetary_amounts": [],
+          "cited_statutes": [
+            "42 U.S.C. \u00a7 12131",
+            "42 U.S.C. \u00a7 12132",
+            "42 U.S.C. \u00a7 12133",
+            "42 U.S.C. \u00a7 12134",
+            "29 U.S.C. \u00a7 794"
+          ]
+        },
+        "doc_id": "ca7_22_8016",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v2",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 4157,
+        "output_tokens": 242,
+        "latency_ms": 3802,
+        "entities": {
+          "case_name": "United States v. Laurel-Olea",
+          "docket_number": "24-2479",
+          "court": "United States Court of Appeals for the Eighth Circuit",
+          "decision_date": "2025-07-16",
+          "judges": [
+            "Colloton",
+            "Erickson",
+            "Grasz"
+          ],
+          "author_judge": "Colloton",
+          "parties": [
+            {
+              "name": "United States of America",
+              "role": "appellee"
+            },
+            {
+              "name": "Alexander Laurel-Olea",
+              "role": "appellant"
+            }
+          ],
+          "disposition": "affirmed",
+          "monetary_amounts": [
+            {
+              "value": 38000.0,
+              "currency": "USD",
+              "context": "restitution obligation"
+            }
+          ],
+          "cited_statutes": [
+            "18 U.S.C. \u00a7 922(g)(3)",
+            "18 U.S.C. \u00a7 3583(e)"
+          ]
+        },
+        "doc_id": "ca8_24_2479",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v2",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 7367,
+        "output_tokens": 853,
+        "latency_ms": 7176,
+        "entities": {
+          "case_name": "El Puente de Williamsburg, Inc.-Enlace Latino de Acci\u00f3n Clim\u00e1tica, Inc. v. Federal Energy Regulatory Commission",
+          "docket_number": "23-1333",
+          "court": "United States Court of Appeals for the District of Columbia Circuit",
+          "decision_date": "2025-09-19",
+          "judges": [
+            "Katsas",
+            "Garcia",
+            "Ginsburg"
+          ],
+          "author_judge": "Katsas",
+          "parties": [
+            {
+              "name": "El Puente de Williamsburg, Inc.-Enlace Latino de Acci\u00f3n Clim\u00e1tica, Inc.",
+              "role": "petitioner"
+            },
+            {
+              "name": "Federal Energy Regulatory Commission",
+              "role": "respondent"
+            },
+            {
+              "name": "NFEnerg\u00eda LLC",
+              "role": "other"
+            }
+          ],
+          "disposition": "dismissed",
+          "monetary_amounts": [],
+          "cited_statutes": [
+            "15 U.S.C. \u00a7 717b",
+            "15 U.S.C. \u00a7 717a",
+            "15 U.S.C. \u00a7 717s",
+            "15 U.S.C. \u00a7 717t-1",
+            "15 U.S.C. \u00a7 717r",
+            "5 U.S.C. \u00a7 701"
+          ]
+        },
+        "doc_id": "cadc_23_1333",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v2",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 10913,
+        "output_tokens": 637,
+        "latency_ms": 6267,
+        "entities": {
+          "case_name": "Newport Harbor Ventures, LLC v. Morris Cerullo World Evangelism",
+          "docket_number": "S239777",
+          "court": "Supreme Court of California",
+          "decision_date": "2018-03-22",
+          "judges": [
+            "Chin",
+            "Cantil-Sakauye",
+            "Corrigan",
+            "Liu",
+            "Cuellar",
+            "Kruger",
+            "Raye"
+          ],
+          "author_judge": "Chin",
+          "parties": [
+            {
+              "name": "Newport Harbor Ventures, LLC",
+              "role": "respondent"
+            },
+            {
+              "name": "Vertical Media Group, Inc.",
+              "role": "respondent"
+            },
+            {
+              "name": "Morris Cerullo World Evangelism",
+              "role": "appellant"
+            },
+            {
+              "name": "Roger Artz",
+              "role": "appellant"
+            }
+          ],
+          "disposition": "affirmed",
+          "monetary_amounts": [],
+          "cited_statutes": [
+            "Cal. Code Civ. Proc. \u00a7 425.16",
+            "Cal. Code Civ. Proc. \u00a7 904.1"
+          ]
+        },
+        "doc_id": "cal_s239777",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v2",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 9743,
+        "output_tokens": 599,
+        "latency_ms": 6446,
+        "entities": {
+          "case_name": "Ramirez v. City of Gardena",
+          "docket_number": "S244549",
+          "court": "Supreme Court of California",
+          "decision_date": "2018-08-13",
+          "judges": [
+            "Chin",
+            "Cantil-Sakauye",
+            "Corrigan",
+            "Liu",
+            "Cu\u00e9llar",
+            "Kruger",
+            "Lavin"
+          ],
+          "author_judge": "Chin",
+          "parties": [
+            {
+              "name": "Irma Ramirez",
+              "role": "appellant"
+            },
+            {
+              "name": "City of Gardena",
+              "role": "respondent"
+            }
+          ],
+          "disposition": "affirmed",
+          "monetary_amounts": [],
+          "cited_statutes": [
+            "Cal. Veh. Code \u00a7 17004.7",
+            "Cal. Veh. Code \u00a7 17001",
+            "Cal. Gov. Code \u00a7 815",
+            "Cal. Penal Code \u00a7 13519.8",
+            "Cal. Penal Code \u00a7 13500"
+          ]
+        },
+        "doc_id": "cal_s244549",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v2",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 4849,
+        "output_tokens": 521,
+        "latency_ms": 8165,
+        "entities": {
+          "case_name": "Bonczar v. American Multi-Cinema, Inc.",
+          "docket_number": "26",
+          "court": "New York Court of Appeals",
+          "decision_date": "2022-04-28",
+          "judges": [
+            "DiFiore",
+            "Rivera",
+            "Garcia",
+            "Wilson",
+            "Singas",
+            "Cannataro"
+          ],
+          "author_judge": null,
+          "parties": [
+            {
+              "name": "David M. Bonczar",
+              "role": "appellant"
+            },
+            {
+              "name": "American Multi-Cinema, Inc.",
+              "role": "respondent"
+            }
+          ],
+          "disposition": "affirmed",
+          "monetary_amounts": [],
+          "cited_statutes": [
+            "N.Y. Labor Law \u00a7 240(1)"
+          ]
+        },
+        "doc_id": "ny_26",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 0.4
+        }
+      },
+      {
+        "version": "v2",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 7066,
+        "output_tokens": 689,
+        "latency_ms": 7108,
+        "entities": {
+          "case_name": "Sage Systems, Inc. v. Liss",
+          "docket_number": "75",
+          "court": "New York Court of Appeals",
+          "decision_date": "2022-10-20",
+          "judges": [
+            "Jenny Rivera",
+            "Anthony Cannataro",
+            "Michael Garcia",
+            "Rowan Wilson",
+            "Madeline Singas",
+            "Shirley Troutman"
+          ],
+          "author_judge": "Jenny Rivera",
+          "parties": [
+            {
+              "name": "Sage Systems, Inc.",
+              "role": "respondent"
+            },
+            {
+              "name": "Michael Liss",
+              "role": "appellant"
+            }
+          ],
+          "disposition": "reversed",
+          "monetary_amounts": [],
+          "cited_statutes": [
+            "N.Y. Dom. Rel. Law \u00a7 237",
+            "N.Y. C.P.L.R. 8601",
+            "42 U.S.C. \u00a7 1988"
+          ]
+        },
+        "doc_id": "ny_75",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v2",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 3733,
+        "output_tokens": 545,
+        "latency_ms": 5216,
+        "entities": {
+          "case_name": "Nautilus Insurance Company v. HOF Partners LLC",
+          "docket_number": "23-0408",
+          "court": "Supreme Court of Texas",
+          "decision_date": "2025-06-27",
+          "judges": [
+            "Evan A. Young",
+            "James P. Sullivan"
+          ],
+          "author_judge": null,
+          "parties": [
+            {
+              "name": "Nautilus Insurance Company",
+              "role": "petitioner"
+            },
+            {
+              "name": "HOF Partners LLC",
+              "role": "respondent"
+            }
+          ],
+          "disposition": "dismissed",
+          "monetary_amounts": [],
+          "cited_statutes": []
+        },
+        "doc_id": "tex_23_0408",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 0.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 0.0
+        }
+      }
+    ],
+    "v3": [
+      {
+        "version": "v3",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 4253,
+        "output_tokens": 584,
+        "latency_ms": 6148,
+        "entities": {
+          "case_name": "Exby-Stolley v. Board of County Commissioners, Weld County, Colorado",
+          "docket_number": "16-1412",
+          "court": "United States Court of Appeals for the Tenth Circuit",
+          "decision_date": "2018-12-18",
+          "judges": [
+            "Tymkovich",
+            "Briscoe",
+            "Lucero",
+            "Hartz",
+            "Holmes",
+            "Matheson",
+            "Bacharach",
+            "Phillips",
+            "McHugh",
+            "Moritz",
+            "Eid",
+            "Carson",
+            "Paul J. Kelly"
+          ],
+          "author_judge": null,
+          "parties": [
+            {
+              "name": "Laurie Exby-Stolley",
+              "role": "appellant"
+            },
+            {
+              "name": "Board of County Commissioners, Weld County, Colorado",
+              "role": "appellee"
+            }
+          ],
+          "disposition": "other",
+          "monetary_amounts": [],
+          "cited_statutes": [
+            "42 U.S.C. \u00a7\u00a7 12101\u201312213"
+          ]
+        },
+        "doc_id": "ca10_16_1412",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v3",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 4463,
+        "output_tokens": 443,
+        "latency_ms": 7904,
+        "entities": {
+          "case_name": "Uzuegbunam v. Preczewski",
+          "docket_number": "18-12676",
+          "court": "United States Court of Appeals for the Eleventh Circuit",
+          "decision_date": "2021-04-16",
+          "judges": [
+            "Black",
+            "Marcus",
+            "Jane A. Restani"
+          ],
+          "author_judge": null,
+          "parties": [
+            {
+              "name": "Chike Uzuegbunam",
+              "role": "appellant"
+            },
+            {
+              "name": "Joseph Bradford",
+              "role": "appellant"
+            },
+            {
+              "name": "Stanley C. Preczewski",
+              "role": "appellee"
+            },
+            {
+              "name": "Lois C. Richardson",
+              "role": "appellee"
+            },
+            {
+              "name": "Jim B. Fatzinger",
+              "role": "appellee"
+            },
+            {
+              "name": "Tomas Jiminez",
+              "role": "appellee"
+            },
+            {
+              "name": "Aileen C. Dowell",
+              "role": "appellee"
+            },
+            {
+              "name": "Gene Ruffin",
+              "role": "appellee"
+            },
+            {
+              "name": "Catherine Jannick Downey",
+              "role": "appellee"
+            },
+            {
+              "name": "Terrance Schneider",
+              "role": "appellee"
+            },
+            {
+              "name": "Corey Hughes",
+              "role": "appellee"
+            },
+            {
+              "name": "Rebecca A. Lawler",
+              "role": "appellee"
+            },
+            {
+              "name": "Shenna Perry",
+              "role": "appellee"
+            }
+          ],
+          "disposition": "reversed",
+          "monetary_amounts": [],
+          "cited_statutes": []
+        },
+        "doc_id": "ca11_18_12676",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v3",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 4651,
+        "output_tokens": 485,
+        "latency_ms": 5129,
+        "entities": {
+          "case_name": "Savannah College of Art and Design, Inc. v. Sportswear, Inc.",
+          "docket_number": "19-11258",
+          "court": "United States Court of Appeals for the Eleventh Circuit",
+          "decision_date": "2020-11-02",
+          "judges": [
+            "William Pryor",
+            "Rosenbaum",
+            "K. Michael Moore"
+          ],
+          "author_judge": null,
+          "parties": [
+            {
+              "name": "Savannah College of Art and Design, Inc.",
+              "role": "appellee"
+            },
+            {
+              "name": "Sportswear, Inc.",
+              "role": "appellant"
+            }
+          ],
+          "disposition": "remanded",
+          "monetary_amounts": [],
+          "cited_statutes": [
+            "28 U.S.C. \u00a7 1291"
+          ]
+        },
+        "doc_id": "ca11_19_11258",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v3",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 5568,
+        "output_tokens": 250,
+        "latency_ms": 8026,
+        "entities": {
+          "case_name": "Pietrangelo v. Sununu",
+          "docket_number": "21-1366",
+          "court": "United States Court of Appeals for the First Circuit",
+          "decision_date": "2021-10-01",
+          "judges": [
+            "Lynch",
+            "Barron",
+            "Burroughs"
+          ],
+          "author_judge": "Lynch",
+          "parties": [
+            {
+              "name": "James E. Pietrangelo, II",
+              "role": "appellant"
+            },
+            {
+              "name": "Christopher Sununu",
+              "role": "appellee"
+            },
+            {
+              "name": "Lisa Morris",
+              "role": "appellee"
+            },
+            {
+              "name": "Lori Shibinette",
+              "role": "appellee"
+            },
+            {
+              "name": "Elizabeth Daly",
+              "role": "appellee"
+            }
+          ],
+          "disposition": "dismissed",
+          "monetary_amounts": [],
+          "cited_statutes": []
+        },
+        "doc_id": "ca1_21_1366p",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v3",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 4989,
+        "output_tokens": 593,
+        "latency_ms": 6975,
+        "entities": {
+          "case_name": "Ortiz v. Ciox Health LLC",
+          "docket_number": "19-1649-cv",
+          "court": "United States Court of Appeals for the Second Circuit",
+          "decision_date": "2021-12-16",
+          "judges": [
+            "Chin",
+            "Sullivan",
+            "Nardini"
+          ],
+          "author_judge": null,
+          "parties": [
+            {
+              "name": "Hector Ortiz",
+              "role": "appellant"
+            },
+            {
+              "name": "Ciox Health LLC",
+              "role": "appellee"
+            },
+            {
+              "name": "The New York and Presbyterian Hospital",
+              "role": "appellee"
+            },
+            {
+              "name": "IOD Inc.",
+              "role": "other"
+            },
+            {
+              "name": "Columbia Presbyterian Medical Center",
+              "role": "other"
+            }
+          ],
+          "disposition": "affirmed",
+          "monetary_amounts": [
+            {
+              "value": 1.5,
+              "currency": "USD",
+              "context": "per-page charge for copies of medical records"
+            }
+          ],
+          "cited_statutes": [
+            "N.Y. Pub. Health Law \u00a7 18(2)(e)"
+          ]
+        },
+        "doc_id": "ca2_19_1649_cv",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 0.6,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v3",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 5589,
+        "output_tokens": 235,
+        "latency_ms": 3007,
+        "entities": {
+          "case_name": "RSD Leasing, Inc. v. Navistar Int'l Corp.",
+          "docket_number": "22-282-cv",
+          "court": "United States Court of Appeals for the Second Circuit",
+          "decision_date": "2024-07-02",
+          "judges": [
+            "Lynch",
+            "Lohier",
+            "Bianco"
+          ],
+          "author_judge": null,
+          "parties": [
+            {
+              "name": "RSD Leasing, Inc.",
+              "role": "appellant"
+            },
+            {
+              "name": "Navistar International Corp.",
+              "role": "appellee"
+            },
+            {
+              "name": "Navistar, Inc.",
+              "role": "appellee"
+            }
+          ],
+          "disposition": "affirmed",
+          "monetary_amounts": [],
+          "cited_statutes": [
+            "9 V.S.A. \u00a7 2451a"
+          ]
+        },
+        "doc_id": "ca2_22_282",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v3",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 6223,
+        "output_tokens": 483,
+        "latency_ms": 5605,
+        "entities": {
+          "case_name": "United States v. McCormack",
+          "docket_number": "24-2500",
+          "court": "United States Court of Appeals for the Third Circuit",
+          "decision_date": "2025-09-18",
+          "judges": [
+            "Bibas",
+            "Montgomery-Reeves",
+            "Ambro"
+          ],
+          "author_judge": "Bibas",
+          "parties": [
+            {
+              "name": "United States of America",
+              "role": "appellee"
+            },
+            {
+              "name": "Ben McCormack",
+              "role": "appellant"
+            }
+          ],
+          "disposition": "affirmed_in_part",
+          "monetary_amounts": [
+            {
+              "value": 57044.96,
+              "currency": "USD",
+              "context": "restitution ordered by District Court on remand"
+            }
+          ],
+          "cited_statutes": [
+            "18 U.S.C. \u00a7 922(u)",
+            "18 U.S.C. \u00a7 371",
+            "18 U.S.C. \u00a7 3663A",
+            "18 U.S.C. \u00a7 3664"
+          ]
+        },
+        "doc_id": "ca3_24_2500",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v3",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 6680,
+        "output_tokens": 915,
+        "latency_ms": 12261,
+        "entities": {
+          "case_name": "Lanoue v. Attorney General of the United States of America",
+          "docket_number": "24-2583",
+          "court": "United States Court of Appeals for the Third Circuit",
+          "decision_date": "2025-07-01",
+          "judges": [
+            "Hardiman",
+            "Bibas",
+            "Fisher"
+          ],
+          "author_judge": "Bibas",
+          "parties": [
+            {
+              "name": "Robert Wayne Lanoue",
+              "role": "petitioner"
+            },
+            {
+              "name": "Attorney General of the United States of America",
+              "role": "respondent"
+            }
+          ],
+          "disposition": "dismissed",
+          "monetary_amounts": [
+            {
+              "value": 3000000.0,
+              "currency": "USD",
+              "context": "loss to Department of Veterans Affairs from false claims / restitution amount (more than $3 million)"
+            },
+            {
+              "value": 1500000.0,
+              "currency": "USD",
+              "context": "low end of stipulated loss range"
+            },
+            {
+              "value": 3500000.0,
+              "currency": "USD",
+              "context": "high end of stipulated loss range"
+            }
+          ],
+          "cited_statutes": [
+            "18 U.S.C. \u00a7 287",
+            "18 U.S.C. \u00a7 2",
+            "8 U.S.C. \u00a7 1252",
+            "8 U.S.C. \u00a7 1227",
+            "8 U.S.C. \u00a7 1101",
+            "8 U.S.C. \u00a7 1182"
+          ]
+        },
+        "doc_id": "ca3_24_2583",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 0.5,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v3",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 17098,
+        "output_tokens": 1130,
+        "latency_ms": 9789,
+        "entities": {
+          "case_name": "In re Deepwater Horizon",
+          "docket_number": "18-30243",
+          "court": "United States Court of Appeals for the Fifth Circuit",
+          "decision_date": "2019-08-13",
+          "judges": [
+            "King",
+            "Elrod",
+            "Engelhardt"
+          ],
+          "author_judge": null,
+          "parties": [
+            {
+              "name": "Julius Barbour",
+              "role": "appellant"
+            },
+            {
+              "name": "Edward Barnhill, Jr.",
+              "role": "appellant"
+            },
+            {
+              "name": "Edward Barnhill, Sr.",
+              "role": "appellant"
+            },
+            {
+              "name": "Karen Barnhill",
+              "role": "appellant"
+            },
+            {
+              "name": "Scott Black",
+              "role": "appellant"
+            },
+            {
+              "name": "Dobby Darna",
+              "role": "appellant"
+            },
+            {
+              "name": "Darrin Covert",
+              "role": "appellant"
+            },
+            {
+              "name": "Richard Delacey",
+              "role": "appellant"
+            },
+            {
+              "name": "Joseph Williamson",
+              "role": "appellant"
+            },
+            {
+              "name": "George Zirlott",
+              "role": "appellant"
+            },
+            {
+              "name": "Halliburton Energy Services, Incorporated",
+              "role": "appellee"
+            },
+            {
+              "name": "Transocean Holdings, L.L.C.",
+              "role": "appellee"
+            },
+            {
+              "name": "Halliburton Company",
+              "role": "appellee"
+            },
+            {
+              "name": "Triton Asset Leasing GmbH",
+              "role": "appellee"
+            },
+            {
+              "name": "Transocean Deepwater, Incorporated",
+              "role": "appellee"
+            },
+            {
+              "name": "Transocean Offshore Deepwater Drilling, Incorporated",
+              "role": "appellee"
+            },
+            {
+              "name": "Lake Eugenie Land & Development, Incorporated",
+              "role": "plaintiff"
+            },
+            {
+              "name": "John M. Petitjean",
+              "role": "plaintiff"
+            },
+            {
+              "name": "Economic and Property Damages Settlement Class",
+              "role": "plaintiff"
+            }
+          ],
+          "disposition": "affirmed",
+          "monetary_amounts": [],
+          "cited_statutes": []
+        },
+        "doc_id": "ca5_18_30243",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v3",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 5231,
+        "output_tokens": 488,
+        "latency_ms": 5469,
+        "entities": {
+          "case_name": "Cameron Parish Recreation #6 v. Indian Harbor Insurance Company",
+          "docket_number": "23-30181",
+          "court": "United States Court of Appeals for the Fifth Circuit",
+          "decision_date": "2024-02-19",
+          "judges": [
+            "Jones",
+            "Haynes",
+            "Douglas"
+          ],
+          "author_judge": null,
+          "parties": [
+            {
+              "name": "Cameron Parish Recreation #6",
+              "role": "appellee"
+            },
+            {
+              "name": "Police Jury of Cameron Parish",
+              "role": "appellee"
+            },
+            {
+              "name": "School Board of Cameron Parish",
+              "role": "appellee"
+            },
+            {
+              "name": "Indian Harbor Insurance Company",
+              "role": "appellant"
+            },
+            {
+              "name": "QBE Specialty Insurance Company",
+              "role": "appellant"
+            },
+            {
+              "name": "General Security Indemnity Company of Arizona",
+              "role": "appellant"
+            },
+            {
+              "name": "United Specialty Insurance Company",
+              "role": "appellant"
+            },
+            {
+              "name": "Lexington Insurance Company",
+              "role": "appellant"
+            },
+            {
+              "name": "Safety Specialty Insurance Company",
+              "role": "appellant"
+            },
+            {
+              "name": "Old Republic Union Insurance Company",
+              "role": "appellant"
+            },
+            {
+              "name": "Steadfast Insurance Company",
+              "role": "appellant"
+            }
+          ],
+          "disposition": "vacated",
+          "monetary_amounts": [],
+          "cited_statutes": [
+            "9 U.S.C. \u00a7 4",
+            "9 U.S.C. \u00a7 202",
+            "9 U.S.C. \u00a7 3",
+            "9 U.S.C. \u00a7 16"
+          ]
+        },
+        "doc_id": "ca5_23_30183",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v3",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 4527,
+        "output_tokens": 262,
+        "latency_ms": 3703,
+        "entities": {
+          "case_name": "Bennett v. Dart",
+          "docket_number": "22-8016",
+          "court": "United States Court of Appeals for the Seventh Circuit",
+          "decision_date": "2022-11-14",
+          "judges": [
+            "Easterbrook",
+            "Rovner",
+            "Wood"
+          ],
+          "author_judge": null,
+          "parties": [
+            {
+              "name": "Preston Bennett",
+              "role": "petitioner"
+            },
+            {
+              "name": "Thomas Dart",
+              "role": "respondent"
+            },
+            {
+              "name": "Cook County, Illinois",
+              "role": "respondent"
+            }
+          ],
+          "disposition": "reversed",
+          "monetary_amounts": [],
+          "cited_statutes": [
+            "42 U.S.C. \u00a7 12131",
+            "42 U.S.C. \u00a7 12132",
+            "42 U.S.C. \u00a7 12133",
+            "42 U.S.C. \u00a7 12134",
+            "29 U.S.C. \u00a7 794"
+          ]
+        },
+        "doc_id": "ca7_22_8016",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v3",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 4486,
+        "output_tokens": 242,
+        "latency_ms": 3645,
+        "entities": {
+          "case_name": "United States v. Laurel-Olea",
+          "docket_number": "24-2479",
+          "court": "United States Court of Appeals for the Eighth Circuit",
+          "decision_date": "2025-07-16",
+          "judges": [
+            "Colloton",
+            "Erickson",
+            "Grasz"
+          ],
+          "author_judge": "Colloton",
+          "parties": [
+            {
+              "name": "United States of America",
+              "role": "appellee"
+            },
+            {
+              "name": "Alexander Laurel-Olea",
+              "role": "appellant"
+            }
+          ],
+          "disposition": "affirmed",
+          "monetary_amounts": [
+            {
+              "value": 38000.0,
+              "currency": "USD",
+              "context": "restitution obligation"
+            }
+          ],
+          "cited_statutes": [
+            "18 U.S.C. \u00a7 922(g)(3)",
+            "18 U.S.C. \u00a7 3583(e)"
+          ]
+        },
+        "doc_id": "ca8_24_2479",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v3",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 7696,
+        "output_tokens": 694,
+        "latency_ms": 8024,
+        "entities": {
+          "case_name": "El Puente de Williamsburg, Inc.-Enlace Latino de Acci\u00f3n Clim\u00e1tica, Inc. v. Federal Energy Regulatory Commission",
+          "docket_number": "23-1333",
+          "court": "United States Court of Appeals for the District of Columbia Circuit",
+          "decision_date": "2025-09-19",
+          "judges": [
+            "Katsas",
+            "Garcia",
+            "Ginsburg"
+          ],
+          "author_judge": "Katsas",
+          "parties": [
+            {
+              "name": "El Puente de Williamsburg, Inc.-Enlace Latino de Acci\u00f3n Clim\u00e1tica, Inc.",
+              "role": "petitioner"
+            },
+            {
+              "name": "Federal Energy Regulatory Commission",
+              "role": "respondent"
+            },
+            {
+              "name": "NFEnerg\u00eda LLC",
+              "role": "other"
+            }
+          ],
+          "disposition": "dismissed",
+          "monetary_amounts": [],
+          "cited_statutes": [
+            "15 U.S.C. \u00a7 717b",
+            "15 U.S.C. \u00a7 717a",
+            "15 U.S.C. \u00a7 717s",
+            "15 U.S.C. \u00a7 717t-1",
+            "15 U.S.C. \u00a7 717r",
+            "5 U.S.C. \u00a7 701"
+          ]
+        },
+        "doc_id": "cadc_23_1333",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v3",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 11242,
+        "output_tokens": 680,
+        "latency_ms": 7173,
+        "entities": {
+          "case_name": "Newport Harbor Ventures, LLC v. Morris Cerullo World Evangelism",
+          "docket_number": "S239777",
+          "court": "Supreme Court of California",
+          "decision_date": "2018-03-22",
+          "judges": [
+            "Chin",
+            "Cantil-Sakauye",
+            "Corrigan",
+            "Liu",
+            "Cuellar",
+            "Kruger",
+            "Raye"
+          ],
+          "author_judge": "Chin",
+          "parties": [
+            {
+              "name": "Newport Harbor Ventures, LLC",
+              "role": "respondent"
+            },
+            {
+              "name": "Vertical Media Group, Inc.",
+              "role": "respondent"
+            },
+            {
+              "name": "Morris Cerullo World Evangelism",
+              "role": "appellant"
+            },
+            {
+              "name": "Roger Artz",
+              "role": "appellant"
+            }
+          ],
+          "disposition": "affirmed",
+          "monetary_amounts": [],
+          "cited_statutes": [
+            "Cal. Civ. Proc. Code \u00a7 425.16",
+            "Cal. Civ. Proc. Code \u00a7 904.1"
+          ]
+        },
+        "doc_id": "cal_s239777",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v3",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 10072,
+        "output_tokens": 559,
+        "latency_ms": 6067,
+        "entities": {
+          "case_name": "Ramirez v. City of Gardena",
+          "docket_number": "S244549",
+          "court": "Supreme Court of California",
+          "decision_date": "2018-08-13",
+          "judges": [
+            "Chin",
+            "Cantil-Sakauye",
+            "Corrigan",
+            "Liu",
+            "Cu\u00e9llar",
+            "Kruger",
+            "Lavin"
+          ],
+          "author_judge": "Chin",
+          "parties": [
+            {
+              "name": "Irma Ramirez",
+              "role": "appellant"
+            },
+            {
+              "name": "City of Gardena",
+              "role": "respondent"
+            }
+          ],
+          "disposition": "affirmed",
+          "monetary_amounts": [],
+          "cited_statutes": [
+            "Cal. Veh. Code \u00a7 17004.7",
+            "Cal. Veh. Code \u00a7 17001",
+            "Cal. Gov. Code \u00a7 815",
+            "Cal. Penal Code \u00a7 13519.8",
+            "Cal. Penal Code \u00a7 13500"
+          ]
+        },
+        "doc_id": "cal_s244549",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v3",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 5178,
+        "output_tokens": 554,
+        "latency_ms": 5478,
+        "entities": {
+          "case_name": "Bonczar v. American Multi-Cinema, Inc.",
+          "docket_number": "26",
+          "court": "Court of Appeals of the State of New York",
+          "decision_date": "2022-04-28",
+          "judges": [
+            "DiFiore",
+            "Rivera",
+            "Garcia",
+            "Wilson",
+            "Singas",
+            "Cannataro"
+          ],
+          "author_judge": null,
+          "parties": [
+            {
+              "name": "David M. Bonczar",
+              "role": "appellant"
+            },
+            {
+              "name": "American Multi-Cinema, Inc.",
+              "role": "respondent"
+            }
+          ],
+          "disposition": "affirmed",
+          "monetary_amounts": [],
+          "cited_statutes": [
+            "N.Y. Labor Law \u00a7 240(1)"
+          ]
+        },
+        "doc_id": "ny_26",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 0.4
+        }
+      },
+      {
+        "version": "v3",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 7395,
+        "output_tokens": 560,
+        "latency_ms": 6878,
+        "entities": {
+          "case_name": "Sage Systems, Inc. v. Liss",
+          "docket_number": "75",
+          "court": "Court of Appeals of the State of New York",
+          "decision_date": "2022-10-20",
+          "judges": [
+            "Rivera",
+            "Cannataro",
+            "Garcia",
+            "Wilson",
+            "Singas",
+            "Troutman"
+          ],
+          "author_judge": "Rivera",
+          "parties": [
+            {
+              "name": "Sage Systems, Inc.",
+              "role": "respondent"
+            },
+            {
+              "name": "Michael Liss",
+              "role": "appellant"
+            }
+          ],
+          "disposition": "reversed",
+          "monetary_amounts": [],
+          "cited_statutes": [
+            "N.Y. Dom. Rel. Law \u00a7 237",
+            "N.Y. C.P.L.R. 8601",
+            "42 U.S.C. \u00a7 1988"
+          ]
+        },
+        "doc_id": "ny_75",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 1.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 1.0
+        }
+      },
+      {
+        "version": "v3",
+        "model": "claude-opus-5-5",
+        "status": "ok",
+        "attempts": 1,
+        "errors": [],
+        "input_tokens": 4062,
+        "output_tokens": 501,
+        "latency_ms": 6258,
+        "entities": {
+          "case_name": "Nautilus Insurance Company v. HOF Partners LLC",
+          "docket_number": "23-0408",
+          "court": "Supreme Court of Texas",
+          "decision_date": "2025-06-27",
+          "judges": [
+            "Evan A. Young",
+            "James P. Sullivan"
+          ],
+          "author_judge": null,
+          "parties": [
+            {
+              "name": "Nautilus Insurance Company",
+              "role": "petitioner"
+            },
+            {
+              "name": "HOF Partners LLC",
+              "role": "respondent"
+            }
+          ],
+          "disposition": "dismissed",
+          "monetary_amounts": [],
+          "cited_statutes": []
+        },
+        "doc_id": "tex_23_0408",
+        "scores": {
+          "case_name": 1.0,
+          "docket_number": 1.0,
+          "court": 1.0,
+          "decision_date": 1.0,
+          "author_judge": 0.0,
+          "disposition": 1.0,
+          "judges": 1.0,
+          "parties": 1.0,
+          "monetary_amounts": 1.0,
+          "cited_statutes": 0.0
+        }
+      }
+    ]
+  }
+}

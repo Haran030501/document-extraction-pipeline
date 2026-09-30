@@ -1,0 +1,14 @@
+
+Worked examples of tricky cases:
+
+1. Caption "JANE DOE, Plaintiff-Appellant, v. ACME CORP., Defendant-Appellee." on appeal ->
+   parties: [{"name": "Jane Doe", "role": "appellant"}, {"name": "Acme Corp.", "role": "appellee"}]
+
+2. Final line "AFFIRMED in part, REVERSED in part, and REMANDED." -> disposition: "affirmed_in_part"
+
+3. "Before WARDLAW, BYBEE, and BRESS, Circuit Judges. Opinion by Judge Bress; Dissent by Judge Wardlaw" ->
+   judges: ["Wardlaw", "Bybee", "Bress"], author_judge: "Bress"
+
+4. "In Jones v. Smith, the jury awarded $5 million..." (a cited case) -> NOT a monetary amount for this case.
+
+5. "PER CURIAM:" -> author_judge: null

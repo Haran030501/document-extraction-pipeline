@@ -1,0 +1,37 @@
+{
+  "source_pdf": "ca9_19_17556.pdf",
+  "split": "dev",
+  "entities": {
+    "case_name": "Leigh-Pink v. Rio Properties, LLC",
+    "docket_number": "19-17556",
+    "court": "United States Court of Appeals for the Ninth Circuit",
+    "decision_date": "2022-07-22",
+    "judges": [
+      "Ronald M. Gould",
+      "Ryan D. Nelson",
+      "Brian M. Cogan"
+    ],
+    "author_judge": null,
+    "parties": [
+      {
+        "name": "Aaron Leigh-Pink",
+        "role": "appellant"
+      },
+      {
+        "name": "Tana Emerson",
+        "role": "appellant"
+      },
+      {
+        "name": "Rio Properties, LLC",
+        "role": "appellee"
+      }
+    ],
+    "disposition": "affirmed",
+    "monetary_amounts": [],
+    "cited_statutes": [
+      "Nev. Rev. Stat. § 41.600",
+      "Nev. Rev. Stat. § 205.377(1)",
+      "Nev. Rev. Stat. § 598.0923(2)"
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "source_pdf": "ca1_21_1394.pdf",
+  "split": "dev",
+  "entities": {
+    "case_name": "Molinary-Fernández v. BMW of North America, LLC",
+    "docket_number": "21-1394",
+    "court": "United States Court of Appeals for the First Circuit",
+    "decision_date": "2023-07-27",
+    "judges": [
+      "Barron",
+      "Lipez",
+      "Thompson"
+    ],
+    "author_judge": null,
+    "parties": [
+      {
+        "name": "Luis Molinary-Fernández",
+        "role": "appellant"
+      },
+      {
+        "name": "Aileen Cabrera-Vinolo",
+        "role": "appellant"
+      },
+      {
+        "name": "Conjugal Partnership Molinary-Cabrera",
+        "role": "appellant"
+      },
+      {
+        "name": "BMW of North America, LLC",
+        "role": "appellee"
+      }
+    ],
+    "disposition": "affirmed",
+    "monetary_amounts": [],
+    "cited_statutes": []
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "source_pdf": "ca6_18_2371.pdf",
+  "split": "dev",
+  "entities": {
+    "case_name": "Heard v. Finco",
+    "docket_number": "18-2371",
+    "court": "United States Court of Appeals for the Sixth Circuit",
+    "decision_date": "2019-07-15",
+    "judges": [
+      "Guy",
+      "Thapar",
+      "Nalbandian"
+    ],
+    "author_judge": "Thapar",
+    "parties": [
+      {
+        "name": "Lamont Bernard Heard",
+        "role": "appellant"
+      },
+      {
+        "name": "William M. Johnson",
+        "role": "appellant"
+      },
+      {
+        "name": "Jamero T. Moses",
+        "role": "appellant"
+      },
+      {
+        "name": "Anthony Lee Nelson",
+        "role": "appellant"
+      },
+      {
+        "name": "Tom Finco",
+        "role": "defendant"
+      },
+      {
+        "name": "Brad Purves",
+        "role": "appellee"
+      }
+    ],
+    "disposition": "affirmed",
+    "monetary_amounts": [
+      {
+        "value": 900.0,
+        "currency": "USD",
+        "context": "total compensatory damages awarded by jury"
+      },
+      {
+        "value": 150.0,
+        "currency": "USD",
+        "context": "damages per inmate per disrupted Ramadan"
+      },
+      {
+        "value": 300.0,
+        "currency": "USD",
+        "context": "damages each to Heard and Nelson"
+      }
+    ],
+    "cited_statutes": []
+  }
+}

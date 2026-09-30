@@ -1,0 +1,73 @@
+{
+  "source_pdf": "ca11_18_12676.pdf",
+  "split": "test",
+  "entities": {
+    "case_name": "Uzuegbunam v. Preczewski",
+    "docket_number": "18-12676",
+    "court": "United States Court of Appeals for the Eleventh Circuit",
+    "decision_date": "2021-04-16",
+    "judges": [
+      "Black",
+      "Marcus",
+      "Restani"
+    ],
+    "author_judge": null,
+    "parties": [
+      {
+        "name": "Chike Uzuegbunam",
+        "role": "appellant"
+      },
+      {
+        "name": "Joseph Bradford",
+        "role": "appellant"
+      },
+      {
+        "name": "Stanley C. Preczewski",
+        "role": "appellee"
+      },
+      {
+        "name": "Lois C. Richardson",
+        "role": "appellee"
+      },
+      {
+        "name": "Jim B. Fatzinger",
+        "role": "appellee"
+      },
+      {
+        "name": "Tomas Jiminez",
+        "role": "appellee"
+      },
+      {
+        "name": "Aileen C. Dowell",
+        "role": "appellee"
+      },
+      {
+        "name": "Gene Ruffin",
+        "role": "appellee"
+      },
+      {
+        "name": "Catherine Jannick Downey",
+        "role": "appellee"
+      },
+      {
+        "name": "Terrance Schneider",
+        "role": "appellee"
+      },
+      {
+        "name": "Corey Hughes",
+        "role": "appellee"
+      },
+      {
+        "name": "Rebecca A. Lawler",
+        "role": "appellee"
+      },
+      {
+        "name": "Shenna Perry",
+        "role": "appellee"
+      }
+    ],
+    "disposition": "reversed",
+    "monetary_amounts": [],
+    "cited_statutes": []
+  }
+}

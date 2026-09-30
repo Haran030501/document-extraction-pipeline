@@ -1,0 +1,12 @@
+Extract the key entities from this court opinion and return them as JSON with these keys:
+- case_name (string)
+- docket_number (string)
+- court (string)
+- decision_date (YYYY-MM-DD)
+- judges (list of strings)
+- author_judge (string or null)
+- parties (list of {"name": string, "role": one of plaintiff, defendant, appellant, appellee, petitioner, respondent, other})
+- disposition (one of affirmed, reversed, remanded, affirmed_in_part, dismissed, vacated, other)
+- monetary_amounts (list of {"value": number, "currency": string, "context": string})
+- cited_statutes (list of strings)
+Use null or an empty list when something is not present. Return only the JSON.

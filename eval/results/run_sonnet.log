@@ -1,0 +1,205 @@
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+v1 ca11_19_11258 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+v1 ca10_16_1412 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+v1 ca11_18_12676 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+v1 ca10_21_1094 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+v1 ca1_21_1366p -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+v1 ca1_21_1394 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+v1 ca2_22_282 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+v1 ca2_19_1649_cv -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+v1 ca4_19_4137 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+v1 ca3_24_2500 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+v1 ca4_20_4 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+v1 ca3_24_2583 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+v1 ca5_23_30183 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+v1 ca6_18_2371 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+v1 ca6_23_1792 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+v1 ca5_18_30243 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+v1 ca7_18_3392 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+v1 ca8_23_3104 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+v1 ca7_22_8016 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+v1 ca8_24_2479 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+v1 ca9_19_17556 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+v1 cadc_23_1333 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+v1 cadc_20_1376 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+v1 ca9_21_56237 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+v1 ny_26 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+v1 cal_s244549 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+v1 cal_s239777 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+v1 ny_75 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+v1 tex_23_0408 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+v1 tex_17_0637 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v2 ca11_19_11258 -> ok (1 attempts)
+v2 ca10_16_1412 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v2 ca10_21_1094 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v2 ca11_18_12676 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v2 ca1_21_1366p -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v2 ca1_21_1394 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v2 ca2_19_1649_cv -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v2 ca2_22_282 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v2 ca3_24_2500 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v2 ca3_24_2583 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v2 ca4_20_4 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v2 ca4_19_4137 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v2 ca6_18_2371 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v2 ca7_18_3392 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v2 ca5_23_30183 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v2 ca5_18_30243 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v2 ca6_23_1792 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v2 ca8_23_3104 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v2 ca8_24_2479 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v2 ca7_22_8016 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v2 cadc_20_1376 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v2 ca9_19_17556 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v2 ca9_21_56237 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v2 cadc_23_1333 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v2 ny_26 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v2 cal_s244549 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v2 ny_75 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v2 tex_23_0408 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v2 cal_s239777 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v2 tex_17_0637 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v3 ca11_19_11258 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v3 ca10_21_1094 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v3 ca10_16_1412 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v3 ca11_18_12676 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v3 ca1_21_1366p -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v3 ca1_21_1394 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v3 ca2_19_1649_cv -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v3 ca2_22_282 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v3 ca3_24_2500 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v3 ca3_24_2583 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v3 ca4_20_4 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v3 ca4_19_4137 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v3 ca6_23_1792 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v3 ca5_18_30243 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v3 ca6_18_2371 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v3 ca5_23_30183 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v3 ca7_18_3392 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v3 ca7_22_8016 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v3 ca8_23_3104 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v3 ca8_24_2479 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v3 ca9_19_17556 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v3 cadc_20_1376 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v3 ca9_21_56237 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v3 cadc_23_1333 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v3 cal_s239777 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v3 ny_26 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v3 cal_s244549 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v3 ny_75 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v3 tex_23_0408 -> ok (1 attempts)
+HTTP Request: POST https://api.anthropic.com/v1/messages?beta=true "HTTP/1.1 200 OK"
+v3 tex_17_0637 -> ok (1 attempts)
+
+Model: claude-sonnet-5-5 (effort=high)   Docs: 30   Split: all
+
+| Metric | v1 | v2 | v3 |
+|---|---:|---:|---:|
+| **Field-level accuracy** | **93.7%** | **97.0%** | **97.1%** |
+| Fields exactly correct | 87.7% | 94.7% | 94.7% |
+| &nbsp;&nbsp;case_name | 100.0% | 100.0% | 100.0% |
+| &nbsp;&nbsp;docket_number | 90.0% | 100.0% | 100.0% |
+| &nbsp;&nbsp;court | 100.0% | 100.0% | 100.0% |
+| &nbsp;&nbsp;decision_date | 100.0% | 100.0% | 100.0% |
+| &nbsp;&nbsp;author_judge | 96.7% | 96.7% | 96.7% |
+| &nbsp;&nbsp;disposition | 93.3% | 93.3% | 93.3% |
+| &nbsp;&nbsp;judges | 99.7% | 100.0% | 100.0% |
+| &nbsp;&nbsp;parties | 86.0% | 93.6% | 95.2% |
+| &nbsp;&nbsp;monetary_amounts | 90.0% | 96.6% | 96.2% |
+| &nbsp;&nbsp;cited_statutes | 81.1% | 89.8% | 89.5% |
+| Schema-valid & passes checks | 100% | 100% | 100% |
+| Hard failures | 0% | 0% | 0% |
+| Docs needing a retry | 0% | 0% | 0% |
+| Avg attempts | 1.00 | 1.00 | 1.00 |
+| Avg latency (s) | 3.4 | 3.2 | 2.7 |
+| Cost / doc (USD) | $0.012 | $0.016 | $0.016 |
+
+Wrote /home/bob12345/document-extraction-pipeline/eval/results/20260930-170939-claude-sonnet-5-5-high-all.json

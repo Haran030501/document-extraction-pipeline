@@ -1,0 +1,70 @@
+{
+  "source_pdf": "ca5_23_30183.pdf",
+  "split": "test",
+  "entities": {
+    "case_name": "Cameron Parish Recreation #6 v. Indian Harbor Insurance Co.",
+    "docket_number": "23-30181",
+    "court": "United States Court of Appeals for the Fifth Circuit",
+    "decision_date": "2024-02-19",
+    "judges": [
+      "Jones",
+      "Haynes",
+      "Douglas"
+    ],
+    "author_judge": null,
+    "parties": [
+      {
+        "name": "Cameron Parish Recreation #6",
+        "role": "appellee"
+      },
+      {
+        "name": "Police Jury of Cameron Parish",
+        "role": "appellee"
+      },
+      {
+        "name": "School Board of Cameron Parish",
+        "role": "appellee"
+      },
+      {
+        "name": "Indian Harbor Insurance Company",
+        "role": "appellant"
+      },
+      {
+        "name": "QBE Specialty Insurance Company",
+        "role": "appellant"
+      },
+      {
+        "name": "Steadfast Insurance Company",
+        "role": "appellant"
+      },
+      {
+        "name": "General Security Indemnity Company of Arizona",
+        "role": "appellant"
+      },
+      {
+        "name": "United Specialty Insurance Company",
+        "role": "appellant"
+      },
+      {
+        "name": "Lexington Insurance Company",
+        "role": "appellant"
+      },
+      {
+        "name": "Safety Specialty Insurance Company",
+        "role": "appellant"
+      },
+      {
+        "name": "Old Republic Union Insurance Company",
+        "role": "appellant"
+      }
+    ],
+    "disposition": "vacated",
+    "monetary_amounts": [],
+    "cited_statutes": [
+      "9 U.S.C. § 4",
+      "9 U.S.C. § 202",
+      "9 U.S.C. § 3",
+      "9 U.S.C. § 16(a)(1)(A)"
+    ]
+  }
+}

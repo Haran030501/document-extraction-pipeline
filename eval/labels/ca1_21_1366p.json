@@ -1,0 +1,41 @@
+{
+  "source_pdf": "ca1_21_1366p.pdf",
+  "split": "test",
+  "entities": {
+    "case_name": "Pietrangelo v. Sununu",
+    "docket_number": "21-1366",
+    "court": "United States Court of Appeals for the First Circuit",
+    "decision_date": "2021-10-01",
+    "judges": [
+      "Lynch",
+      "Barron",
+      "Burroughs"
+    ],
+    "author_judge": "Lynch",
+    "parties": [
+      {
+        "name": "James E. Pietrangelo, II",
+        "role": "appellant"
+      },
+      {
+        "name": "Christopher Sununu",
+        "role": "appellee"
+      },
+      {
+        "name": "Lisa Morris",
+        "role": "appellee"
+      },
+      {
+        "name": "Lori Shibinette",
+        "role": "appellee"
+      },
+      {
+        "name": "Elizabeth Daly",
+        "role": "appellee"
+      }
+    ],
+    "disposition": "dismissed",
+    "monetary_amounts": [],
+    "cited_statutes": []
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "source_pdf": "ca11_19_11258.pdf",
+  "split": "test",
+  "entities": {
+    "case_name": "Savannah College of Art and Design, Inc. v. Sportswear, Inc.",
+    "docket_number": "19-11258",
+    "court": "United States Court of Appeals for the Eleventh Circuit",
+    "decision_date": "2020-11-02",
+    "judges": [
+      "William Pryor",
+      "Rosenbaum",
+      "Moore"
+    ],
+    "author_judge": null,
+    "parties": [
+      {
+        "name": "Savannah College of Art and Design, Inc.",
+        "role": "appellee"
+      },
+      {
+        "name": "Sportswear, Inc.",
+        "role": "appellant"
+      }
+    ],
+    "disposition": "remanded",
+    "monetary_amounts": [],
+    "cited_statutes": [
+      "28 U.S.C. § 1291"
+    ]
+  }
+}

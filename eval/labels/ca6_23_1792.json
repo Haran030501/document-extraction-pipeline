@@ -1,0 +1,28 @@
+{
+  "source_pdf": "ca6_23_1792.pdf",
+  "split": "dev",
+  "entities": {
+    "case_name": "In re West",
+    "docket_number": "23-1792",
+    "court": "United States Court of Appeals for the Sixth Circuit",
+    "decision_date": "2024-05-29",
+    "judges": [
+      "Stranch",
+      "Bush",
+      "Mathis"
+    ],
+    "author_judge": "Stranch",
+    "parties": [
+      {
+        "name": "Roy Christopher West",
+        "role": "other"
+      }
+    ],
+    "disposition": "vacated",
+    "monetary_amounts": [],
+    "cited_statutes": [
+      "18 U.S.C. § 1958(a)",
+      "28 U.S.C. § 2255"
+    ]
+  }
+}

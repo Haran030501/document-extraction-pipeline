@@ -1,0 +1,37 @@
+{
+  "source_pdf": "ny_26.pdf",
+  "split": "test",
+  "entities": {
+    "case_name": "Bonczar v. American Multi-Cinema, Inc.",
+    "docket_number": "26",
+    "court": "New York Court of Appeals",
+    "decision_date": "2022-04-28",
+    "judges": [
+      "DiFiore",
+      "Rivera",
+      "Garcia",
+      "Wilson",
+      "Singas",
+      "Cannataro"
+    ],
+    "author_judge": null,
+    "parties": [
+      {
+        "name": "David M. Bonczar",
+        "role": "appellant"
+      },
+      {
+        "name": "American Multi-Cinema, Inc.",
+        "role": "respondent"
+      }
+    ],
+    "disposition": "affirmed",
+    "monetary_amounts": [],
+    "cited_statutes": [
+      "N.Y. Labor Law § 240(1)",
+      "CPLR 5602(a)(1)(i)",
+      "CPLR 5501(a)",
+      "CPLR 5601(d)"
+    ]
+  }
+}

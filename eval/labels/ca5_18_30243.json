@@ -1,0 +1,97 @@
+{
+  "source_pdf": "ca5_18_30243.pdf",
+  "split": "test",
+  "entities": {
+    "case_name": "In re Deepwater Horizon",
+    "docket_number": "18-30243",
+    "court": "United States Court of Appeals for the Fifth Circuit",
+    "decision_date": "2019-08-13",
+    "judges": [
+      "King",
+      "Elrod",
+      "Engelhardt"
+    ],
+    "author_judge": null,
+    "parties": [
+      {
+        "name": "Julius Barbour",
+        "role": "appellant"
+      },
+      {
+        "name": "Edward Barnhill, Jr.",
+        "role": "appellant"
+      },
+      {
+        "name": "Edward Barnhill, Sr.",
+        "role": "appellant"
+      },
+      {
+        "name": "Karen Barnhill",
+        "role": "appellant"
+      },
+      {
+        "name": "Scott Black",
+        "role": "appellant"
+      },
+      {
+        "name": "Dobby Darna",
+        "role": "appellant"
+      },
+      {
+        "name": "Darrin Covert",
+        "role": "appellant"
+      },
+      {
+        "name": "Richard Delacey",
+        "role": "appellant"
+      },
+      {
+        "name": "Joseph Williamson",
+        "role": "appellant"
+      },
+      {
+        "name": "George Zirlott",
+        "role": "appellant"
+      },
+      {
+        "name": "Halliburton Energy Services, Inc.",
+        "role": "appellee"
+      },
+      {
+        "name": "Halliburton Company",
+        "role": "appellee"
+      },
+      {
+        "name": "Transocean Holdings, L.L.C.",
+        "role": "appellee"
+      },
+      {
+        "name": "Triton Asset Leasing GmbH",
+        "role": "appellee"
+      },
+      {
+        "name": "Transocean Deepwater, Inc.",
+        "role": "appellee"
+      },
+      {
+        "name": "Transocean Offshore Deepwater Drilling, Inc.",
+        "role": "appellee"
+      },
+      {
+        "name": "Lake Eugenie Land & Development, Inc.",
+        "role": "plaintiff"
+      },
+      {
+        "name": "John M. Petitjean",
+        "role": "plaintiff"
+      },
+      {
+        "name": "Economic and Property Damages Settlement Class",
+        "role": "plaintiff"
+      }
+    ],
+    "disposition": "affirmed",
+    "monetary_amounts": [],
+    "cited_statutes": []
+  }
+}

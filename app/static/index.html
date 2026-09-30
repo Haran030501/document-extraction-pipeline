@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Opinion Extractor</title>
+<style>
+  :root {
+    --bg: #f6f5f1; --panel: #ffffff; --ink: #1d1d1b; --muted: #6b6a64; --line: #e3e1d9;
+    --accent: #2f5d50; --accent-ink: #ffffff; --soft: #eef3f1; --warn: #9a5b13; --warn-soft: #fbf1e3;
+    --bad: #a33a2c; --bad-soft: #fbe9e6; --good: #2f6b3a; --good-soft: #e7f3e9; --code: #f1f0eb;
+    --shadow: 0 1px 2px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.04);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #151614; --panel: #1e1f1c; --ink: #ecebe6; --muted: #9c9b94; --line: #33342f;
+      --accent: #7fbfa8; --accent-ink: #10201a; --soft: #22302b; --warn: #e2a85e; --warn-soft: #3a2e1d;
+      --bad: #ef8a7b; --bad-soft: #3b2320; --good: #8fd09b; --good-soft: #1f3324; --code: #262723;
+      --shadow: none;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+         font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  header { padding: 20px 24px 8px; display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+  header h1 { margin: 0; font-size: 20px; letter-spacing: -.01em; }
+  header p { margin: 0; color: var(--muted); font-size: 14px; }
+  header a { color: var(--muted); font-size: 13px; margin-left: auto; }
+  .app { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 16px; padding: 12px 24px 24px; }
+  .app > *, main > * { min-width: 0; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow); }
+  aside .card { padding: 14px; margin-bottom: 16px; }
+  h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 0 0 10px; font-weight: 600; }
+
+  .drop { border: 1.5px dashed var(--line); border-radius: 8px; padding: 22px 12px; text-align: center;
+          color: var(--muted); cursor: pointer; transition: .15s; font-size: 14px; }
+  .drop:hover, .drop.over { border-color: var(--accent); background: var(--soft); color: var(--ink); }
+  .drop { display: block; }
+  .drop strong { color: var(--ink); display: block; margin-bottom: 2px; }
+  .drop .fname { color: var(--accent); font-weight: 600; word-break: break-all; }
+  .row { display: flex; gap: 8px; align-items: center; margin-top: 10px; }
+  select, button { font: inherit; border-radius: 7px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); padding: 7px 10px; }
+  button { cursor: pointer; }
+  button.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 600; flex: 1; }
+  button:disabled { opacity: .55; cursor: default; }
+  .hint { font-size: 12px; color: var(--muted); margin-top: 8px; }
+
+  .docs { list-style: none; margin: 0; padding: 0; max-height: 52vh; overflow: auto; }
+  .docs li { padding: 8px 8px; border-radius: 7px; cursor: pointer; font-size: 13.5px; }
+  .docs li:hover { background: var(--soft); }
+  .docs li.active { background: var(--soft); outline: 1px solid var(--accent); }
+  .docs .t { font-weight: 600; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .docs .m { color: var(--muted); font-size: 12px; }
+  .empty { color: var(--muted); font-size: 13px; }
+
+  main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; min-height: 70vh; }
+  .pane { display: flex; flex-direction: column; min-height: 0; }
+  .pane-head { display: flex; align-items: center; gap: 8px; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+  .pane-head h2 { margin: 0; }
+  .pane-body { flex: 1; min-height: 0; overflow: auto; }
+  iframe { width: 100%; height: 100%; min-height: 70vh; border: 0; border-radius: 0 0 10px 10px; background: #fff; }
+  pre.text { margin: 0; padding: 14px; white-space: pre-wrap; font: 12.5px/1.55 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--ink); }
+  .placeholder { padding: 40px 24px; color: var(--muted); text-align: center; }
+
+  .ent { padding: 14px; }
+  .case-name { font-size: 19px; font-weight: 650; margin: 0 0 2px; letter-spacing: -.01em; }
+  .court { color: var(--muted); margin: 0 0 12px; }
+  dl.facts { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; margin: 0 0 16px; font-size: 14px; }
+  dl.facts dt { color: var(--muted); }
+  dl.facts dd { margin: 0; }
+  .badge { display: inline-block; padding: 1px 9px; border-radius: 999px; font-size: 12.5px; font-weight: 600;
+           background: var(--soft); color: var(--accent); }
+  .badge.reversed, .badge.vacated { background: var(--bad-soft); color: var(--bad); }
+  .badge.affirmed { background: var(--good-soft); color: var(--good); }
+  .badge.affirmed_in_part, .badge.remanded { background: var(--warn-soft); color: var(--warn); }
+  .section { margin-top: 16px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { background: var(--code); border-radius: 6px; padding: 2px 8px; font-size: 13px; }
+  .chip.author { outline: 1.5px solid var(--accent); }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  th { text-align: left; color: var(--muted); font-weight: 500; font-size: 12px; padding: 4px 6px; border-bottom: 1px solid var(--line); }
+  td { padding: 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .none { color: var(--muted); font-size: 13px; font-style: italic; }
+
+  .runs { display: flex; gap: 6px; flex-wrap: wrap; margin-left: auto; }
+  .runs button { padding: 3px 9px; font-size: 12.5px; }
+  .runs button.active { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .meta { display: flex; flex-wrap: wrap; gap: 6px 14px; padding: 10px 14px; border-top: 1px solid var(--line);
+          font-size: 12.5px; color: var(--muted); }
+  .meta b { color: var(--ink); font-weight: 600; }
+  .status-ok { color: var(--good) !important; }
+  .status-bad { color: var(--bad) !important; }
+  .rerun { display: flex; gap: 6px; align-items: center; padding: 10px 14px; border-top: 1px solid var(--line); font-size: 13px; flex-wrap: wrap; }
+  .rerun span { color: var(--muted); }
+  .errors { margin: 10px 14px 0; padding: 8px 10px; background: var(--warn-soft); color: var(--warn); border-radius: 7px; font-size: 12.5px; }
+
+  .busy { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 48px 20px; color: var(--muted); }
+  .spin { width: 16px; height: 16px; border: 2px solid var(--line); border-top-color: var(--accent); border-radius: 50%; animation: s .8s linear infinite; }
+  @keyframes s { to { transform: rotate(360deg); } }
+  .toast { position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%); background: var(--bad); color: #fff;
+           padding: 9px 14px; border-radius: 8px; font-size: 14px; display: none; max-width: 90vw; }
+
+  @media (max-width: 1100px) {
+    main { grid-template-columns: 1fr; }
+    main > .pane:first-child { order: 2; }
+    main > .pane:first-child .pane-body { max-height: 60vh; }
+    iframe { min-height: 60vh; }
+  }
+  @media (max-width: 760px) {
+    .app { grid-template-columns: 1fr; padding: 8px 16px 16px; }
+    header { padding: 16px 16px 4px; }
+    .docs { max-height: 30vh; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Opinion Extractor</h1>
+  <p>Upload a court opinion PDF → OCR if needed → Claude extracts structured entities → stored in PostgreSQL</p>
+  <a href="/docs">API docs</a>
+</header>
+
+<div class="app">
+  <aside>
+    <div class="card">
+      <h2>Upload</h2>
+      <input type="file" id="file" accept="application/pdf,.pdf" hidden>
+      <label class="drop" id="drop" for="file">
+        <span id="drop-text"><strong>Drop a PDF here</strong>or click to choose a file</span>
+      </label>
+      <div class="row">
+        <select id="version" title="Extraction strategy">
+          <option value="v3" selected>v3 · validated</option>
+          <option value="v2">v2 · structured</option>
+          <option value="v1">v1 · baseline</option>
+        </select>
+        <button class="primary" id="go" disabled>Extract</button>
+      </div>
+      <div class="hint">Scanned PDFs are OCR'd automatically. Each run calls the Claude API (about $0.04).</div>
+    </div>
+    <div class="card">
+      <h2>Documents</h2>
+      <ul class="docs" id="docs"><li class="empty">Loading…</li></ul>
+    </div>
+  </aside>
+
+  <main>
+    <section class="card pane">
+      <div class="pane-head"><h2 id="src-title">Source</h2></div>
+      <div class="pane-body" id="source"><div class="placeholder">Upload a PDF or pick a document to see it here.</div></div>
+    </section>
+    <section class="card pane">
+      <div class="pane-head"><h2>Extracted entities</h2><div class="runs" id="runs"></div></div>
+      <div class="pane-body" id="entities"><div class="placeholder">Extracted case details will appear here.</div></div>
+    </section>
+  </main>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const PRICES = { "claude-opus-5-5": [4, 20], "claude-sonnet-5-5": [2, 10], "claude-opus-5": [5, 25], "claude-haiku-4-5": [1, 5] };
+const VERSION_LABEL = { v1: "v1 baseline", v2: "v2 structured", v3: "v3 validated" };
+let state = { docId: null, runs: [], runIdx: 0, pdfUrl: null, pdfDocId: null, file: null };
+
+// ---------- helpers ----------
+function el(tag, attrs = {}, ...kids) {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === "class") n.className = v; else if (k === "text") n.textContent = v; else n.setAttribute(k, v);
+  }
+  for (const k of kids.flat()) if (k != null) n.append(k instanceof Node ? k : document.createTextNode(k));
+  return n;
+}
+function toast(msg) { const t = $("toast"); t.textContent = msg; t.style.display = "block"; setTimeout(() => t.style.display = "none", 5000); }
+const money = (v, cur = "USD") => { try { return new Intl.NumberFormat(undefined, { style: "currency", currency: cur }).format(v); } catch { return `${v} ${cur}`; } };
+const fmtDate = (d) => d ? new Date(d + "T00:00:00").toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" }) : null;
+function cost(run) { const p = PRICES[run.model]; return p ? (run.input_tokens * p[0] + run.output_tokens * p[1]) / 1e6 : null; }
+async function api(path, opts) {
+  const r = await fetch(path, opts);
+  if (!r.ok) { let m = r.statusText; try { m = (await r.json()).detail || m; } catch {} throw new Error(`${r.status}: ${typeof m === "string" ? m : JSON.stringify(m)}`); }
+  return r.headers.get("content-type")?.includes("json") ? r.json() : r.text();
+}
+function busy(target, msg) {
+  const start = Date.now(), label = el("span", { text: msg });
+  target.replaceChildren(el("div", { class: "busy" }, el("div", { class: "spin" }), label));
+  const iv = setInterval(() => label.textContent = `${msg} ${((Date.now() - start) / 1000).toFixed(0)}s`, 500);
+  return () => clearInterval(iv);
+}
+
+// ---------- document list ----------
+async function loadDocs() {
+  try {
+    const docs = (await api("/documents?limit=200")).reverse();
+    const ul = $("docs");
+    if (!docs.length) { ul.replaceChildren(el("li", { class: "empty", text: "No documents yet." })); return; }
+    ul.replaceChildren(...docs.map(d => {
+      const e = d.latest_extraction?.entities;
+      const li = el("li", { class: d.id === state.docId ? "active" : "" },
+        el("span", { class: "t", text: e?.case_name || d.filename }),
+        el("span", { class: "m", text: [e?.court?.replace("United States Court of Appeals for the ", "") , e?.decision_date?.slice(0, 4), d.ocr_used ? "OCR" : null].filter(Boolean).join(" · ") || d.filename }));
+      li.onclick = () => openDoc(d.id);
+      return li;
+    }));
+  } catch (err) { toast(err.message); }
+}
+
+async function openDoc(id, runId) {
+  state.docId = id;
+  loadDocs();
+  const runs = await api(`/documents/${id}/extractions`);
+  state.runs = runs;
+  state.runIdx = runId ? Math.max(0, runs.findIndex(r => r.id === runId)) : runs.length - 1;
+  renderRuns(); renderEntities();
+  if (state.pdfDocId === id && state.pdfUrl) {
+    $("src-title").textContent = "Source · PDF";
+    $("source").replaceChildren(el("iframe", { src: state.pdfUrl, title: "PDF preview" }));
+  } else {
+    $("src-title").textContent = "Source · extracted text";
+    const stop = busy($("source"), "Loading text…");
+    try { $("source").replaceChildren(el("pre", { class: "text", text: await api(`/documents/${id}/text`) })); }
+    finally { stop(); }
+  }
+}
+
+// ---------- entities ----------
+function renderRuns() {
+  $("runs").replaceChildren(...state.runs.map((r, i) => {
+    const b = el("button", { class: i === state.runIdx ? "active" : "", title: new Date(r.created_at).toLocaleString(), text: `#${i + 1} ${r.prompt_version}` });
+    b.onclick = () => { state.runIdx = i; renderRuns(); renderEntities(); };
+    return b;
+  }));
+}
+
+function renderEntities() {
+  const run = state.runs[state.runIdx], box = $("entities");
+  if (!run) { box.replaceChildren(el("div", { class: "placeholder", text: "No extraction yet." })); return; }
+  const e = run.entities;
+  const parts = [];
+  if (!e) parts.push(el("div", { class: "placeholder", text: `Extraction ${run.status} — no entities produced.` }));
+  else {
+    const facts = [
+      ["Docket", e.docket_number], ["Decided", fmtDate(e.decision_date)],
+      ["Disposition", e.disposition ? el("span", { class: `badge ${e.disposition}`, text: e.disposition.replaceAll("_", " ") }) : null],
+      ["Author", e.author_judge || (e.judges?.length ? "Per curiam / unsigned" : null)],
+    ];
+    parts.push(el("div", { class: "ent" },
+      el("p", { class: "case-name", text: e.case_name || "Untitled case" }),
+      el("p", { class: "court", text: e.court || "" }),
+      el("dl", { class: "facts" }, facts.flatMap(([k, v]) => [el("dt", { text: k }), el("dd", {}, v ?? el("span", { class: "none", text: "—" }))])),
+      section("Judges", e.judges?.length ? el("div", { class: "chips" }, e.judges.map(j =>
+        el("span", { class: "chip" + (e.author_judge && j.toLowerCase().includes(e.author_judge.split(" ").pop().toLowerCase()) ? " author" : ""), text: j }))) : null),
+      section(`Parties (${e.parties?.length || 0})`, e.parties?.length ? table(["Name", "Role"], e.parties.map(p => [p.name, p.role])) : null),
+      section("Monetary amounts", e.monetary_amounts?.length ? table(["Amount", "Context"], e.monetary_amounts.map(a => [money(a.value, a.currency), a.context]), [0]) : null),
+      section("Cited statutes", e.cited_statutes?.length ? el("div", { class: "chips" }, e.cited_statutes.map(s => el("span", { class: "chip", text: s }))) : null),
+    ));
+  }
+  if (run.errors?.length) parts.push(el("div", { class: "errors", text: `Validation notes: ${run.errors.slice(-3).join(" · ")}` }));
+  const c = cost(run);
+  parts.push(el("div", { class: "meta" },
+    el("span", {}, "Strategy ", el("b", { text: VERSION_LABEL[run.prompt_version] || run.prompt_version })),
+    el("span", {}, "Model ", el("b", { text: run.model })),
+    el("span", {}, "Status ", el("b", { class: run.status === "ok" ? "status-ok" : "status-bad", text: run.status })),
+    el("span", {}, "Attempts ", el("b", { text: run.attempts })),
+    el("span", {}, "Tokens ", el("b", { text: `${run.input_tokens.toLocaleString()} in / ${run.output_tokens.toLocaleString()} out` })),
+    el("span", {}, "Latency ", el("b", { text: `${(run.latency_ms / 1000).toFixed(1)}s` })),
+    c != null ? el("span", {}, "Cost ", el("b", { text: `$${c.toFixed(3)}` })) : null,
+  ));
+  const rerun = el("div", { class: "rerun" }, el("span", { text: "Re-run with:" }));
+  for (const v of ["v1", "v2", "v3"]) {
+    const b = el("button", { text: VERSION_LABEL[v] });
+    b.onclick = () => rerunDoc(v);
+    rerun.append(b);
+  }
+  parts.push(rerun);
+  box.replaceChildren(...parts);
+}
+function section(title, body) {
+  return el("div", { class: "section" }, el("h2", { text: title }), body ?? el("span", { class: "none", text: "None found" }));
+}
+function table(head, rows, numCols = []) {
+  return el("table", {}, el("thead", {}, el("tr", {}, head.map(h => el("th", { text: h })))),
+    el("tbody", {}, rows.map(r => el("tr", {}, r.map((c, i) => el("td", { class: numCols.includes(i) ? "num" : "", text: c ?? "" }))))));
+}
+
+// ---------- actions ----------
+function pick(file) {
+  if (!file) return;
+  if (!/\.pdf$/i.test(file.name) && file.type !== "application/pdf") { toast("Please choose a PDF file."); return; }
+  state.file = file;
+  $("drop-text").replaceChildren(el("strong", { class: "fname", text: file.name }), "Click or drop to change");
+  $("go").disabled = false;
+}
+$("file").onchange = (ev) => pick(ev.target.files[0]);
+const drop = $("drop");
+["dragenter", "dragover"].forEach(t => drop.addEventListener(t, ev => { ev.preventDefault(); drop.classList.add("over"); }));
+["dragleave", "drop"].forEach(t => drop.addEventListener(t, ev => { ev.preventDefault(); drop.classList.remove("over"); }));
+drop.addEventListener("drop", ev => pick(ev.dataTransfer.files[0]));
+
+$("go").onclick = async () => {
+  const file = state.file; if (!file) return;
+  $("go").disabled = true;
+  if (state.pdfUrl) URL.revokeObjectURL(state.pdfUrl);
+  state.pdfUrl = URL.createObjectURL(file);
+  $("src-title").textContent = "Source · PDF";
+  $("source").replaceChildren(el("iframe", { src: state.pdfUrl, title: "PDF preview" }));
+  $("runs").replaceChildren();
+  const stop = busy($("entities"), "Extracting text and entities…");
+  try {
+    const fd = new FormData(); fd.append("file", file);
+    const doc = await api(`/documents?prompt_version=${$("version").value}`, { method: "POST", body: fd });
+    state.pdfDocId = doc.id;
+    await openDoc(doc.id, doc.latest_extraction?.id);
+  } catch (err) {
+    toast(err.message);
+    $("entities").replaceChildren(el("div", { class: "placeholder", text: "Extraction failed. " + err.message }));
+  } finally { stop(); $("go").disabled = false; }
+};
+
+async function rerunDoc(v) {
+  const id = state.docId; if (!id) return;
+  const stop = busy($("entities"), `Re-running with ${VERSION_LABEL[v]}…`);
+  try {
+    const run = await api(`/documents/${id}/extractions?prompt_version=${v}`, { method: "POST" });
+    await openDoc(id, run.id);
+  } catch (err) { toast(err.message); renderEntities(); }
+  finally { stop(); }
+}
+
+loadDocs();
+</script>
+</body>
+</html>

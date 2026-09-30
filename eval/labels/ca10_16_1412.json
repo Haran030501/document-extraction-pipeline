@@ -1,0 +1,41 @@
+{
+  "source_pdf": "ca10_16_1412.pdf",
+  "split": "test",
+  "entities": {
+    "case_name": "Exby-Stolley v. Board of County Commissioners",
+    "docket_number": "16-1412",
+    "court": "United States Court of Appeals for the Tenth Circuit",
+    "decision_date": "2018-12-18",
+    "judges": [
+      "Tymkovich",
+      "Briscoe",
+      "Lucero",
+      "Hartz",
+      "Holmes",
+      "Matheson",
+      "Bacharach",
+      "Phillips",
+      "McHugh",
+      "Moritz",
+      "Eid",
+      "Carson",
+      "Kelly"
+    ],
+    "author_judge": null,
+    "parties": [
+      {
+        "name": "Laurie Exby-Stolley",
+        "role": "appellant"
+      },
+      {
+        "name": "Board of County Commissioners, Weld County, Colorado",
+        "role": "appellee"
+      }
+    ],
+    "disposition": "other",
+    "monetary_amounts": [],
+    "cited_statutes": [
+      "42 U.S.C. §§ 12101–213"
+    ]
+  }
+}

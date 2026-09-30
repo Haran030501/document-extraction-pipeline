@@ -1,0 +1,44 @@
+{
+  "source_pdf": "cal_s239777_scanned.pdf",
+  "split": "test",
+  "entities": {
+    "case_name": "Newport Harbor Ventures, LLC v. Morris Cerullo World Evangelism",
+    "docket_number": "S239777",
+    "court": "Supreme Court of California",
+    "decision_date": "2018-03-22",
+    "judges": [
+      "Chin",
+      "Cantil-Sakauye",
+      "Corrigan",
+      "Liu",
+      "Cuéllar",
+      "Kruger",
+      "Raye"
+    ],
+    "author_judge": "Chin",
+    "parties": [
+      {
+        "name": "Newport Harbor Ventures, LLC",
+        "role": "respondent"
+      },
+      {
+        "name": "Vertical Media Group, Inc.",
+        "role": "respondent"
+      },
+      {
+        "name": "Morris Cerullo World Evangelism",
+        "role": "appellant"
+      },
+      {
+        "name": "Roger Artz",
+        "role": "appellant"
+      }
+    ],
+    "disposition": "affirmed",
+    "monetary_amounts": [],
+    "cited_statutes": [
+      "Cal. Civ. Proc. Code § 425.16",
+      "Cal. Civ. Proc. Code § 904.1"
+    ]
+  }
+}

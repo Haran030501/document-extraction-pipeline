@@ -1,0 +1,29 @@
+{
+  "source_pdf": "ca7_18_3392.pdf",
+  "split": "dev",
+  "entities": {
+    "case_name": "Emmis Communications Corp. v. Illinois National Insurance Co.",
+    "docket_number": "18-3392",
+    "court": "United States Court of Appeals for the Seventh Circuit",
+    "decision_date": "2019-07-02",
+    "judges": [
+      "Flaum",
+      "Manion",
+      "Barrett"
+    ],
+    "author_judge": "Barrett",
+    "parties": [
+      {
+        "name": "Emmis Communications Corporation",
+        "role": "appellee"
+      },
+      {
+        "name": "Illinois National Insurance Company",
+        "role": "appellant"
+      }
+    ],
+    "disposition": "reversed",
+    "monetary_amounts": [],
+    "cited_statutes": []
+  }
+}

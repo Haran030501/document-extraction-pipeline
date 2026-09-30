@@ -1,0 +1,38 @@
+{
+  "source_pdf": "ca8_24_2479.pdf",
+  "split": "test",
+  "entities": {
+    "case_name": "United States v. Laurel-Olea",
+    "docket_number": "24-2479",
+    "court": "United States Court of Appeals for the Eighth Circuit",
+    "decision_date": "2025-07-16",
+    "judges": [
+      "Colloton",
+      "Erickson",
+      "Grasz"
+    ],
+    "author_judge": "Colloton",
+    "parties": [
+      {
+        "name": "United States of America",
+        "role": "appellee"
+      },
+      {
+        "name": "Alexander Laurel-Olea",
+        "role": "appellant"
+      }
+    ],
+    "disposition": "affirmed",
+    "monetary_amounts": [
+      {
+        "value": 38000.0,
+        "currency": "USD",
+        "context": "restitution obligation"
+      }
+    ],
+    "cited_statutes": [
+      "18 U.S.C. § 922(g)(3)",
+      "18 U.S.C. § 3583(e)"
+    ]
+  }
+}

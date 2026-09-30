@@ -1,0 +1,30 @@
+{
+  "source_pdf": "tex_23_0408.pdf",
+  "split": "test",
+  "entities": {
+    "case_name": "Nautilus Insurance Co. v. HOF Partners LLC",
+    "docket_number": "23-0408",
+    "court": "Supreme Court of Texas",
+    "decision_date": "2025-06-27",
+    "judges": [
+      "Young",
+      "Sullivan"
+    ],
+    "author_judge": "Young",
+    "parties": [
+      {
+        "name": "Nautilus Insurance Company",
+        "role": "petitioner"
+      },
+      {
+        "name": "HOF Partners LLC",
+        "role": "respondent"
+      }
+    ],
+    "disposition": "dismissed",
+    "monetary_amounts": [],
+    "cited_statutes": [
+      "Tex. Ins. Code ch. 981"
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "source_pdf": "ca7_22_8016.pdf",
+  "split": "test",
+  "entities": {
+    "case_name": "Bennett v. Dart",
+    "docket_number": "22-8016",
+    "court": "United States Court of Appeals for the Seventh Circuit",
+    "decision_date": "2022-11-14",
+    "judges": [
+      "Easterbrook",
+      "Rovner",
+      "Wood"
+    ],
+    "author_judge": null,
+    "parties": [
+      {
+        "name": "Preston Bennett",
+        "role": "petitioner"
+      },
+      {
+        "name": "Thomas Dart",
+        "role": "respondent"
+      },
+      {
+        "name": "Cook County, Illinois",
+        "role": "respondent"
+      }
+    ],
+    "disposition": "reversed",
+    "monetary_amounts": [],
+    "cited_statutes": [
+      "42 U.S.C. § 12131",
+      "42 U.S.C. § 12132",
+      "42 U.S.C. § 12133",
+      "42 U.S.C. § 12134",
+      "29 U.S.C. § 794"
+    ]
+  },
+  "adjudication_notes": [
+    "Expanded '42 U.S.C. §§ 12131-34' into its four sections per the one-entry-per-section rule."
+  ]
+}

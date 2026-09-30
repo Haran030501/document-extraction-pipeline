@@ -1,0 +1,35 @@
+{
+  "source_pdf": "ca2_22_282_scanned.pdf",
+  "split": "test",
+  "entities": {
+    "case_name": "RSD Leasing, Inc. v. Navistar International Corp.",
+    "docket_number": "22-282-cv",
+    "court": "United States Court of Appeals for the Second Circuit",
+    "decision_date": "2024-07-02",
+    "judges": [
+      "Lynch",
+      "Lohier",
+      "Bianco"
+    ],
+    "author_judge": null,
+    "parties": [
+      {
+        "name": "RSD Leasing, Inc.",
+        "role": "appellant"
+      },
+      {
+        "name": "Navistar International Corp.",
+        "role": "appellee"
+      },
+      {
+        "name": "Navistar, Inc.",
+        "role": "appellee"
+      }
+    ],
+    "disposition": "affirmed",
+    "monetary_amounts": [],
+    "cited_statutes": [
+      "9 V.S.A. § 2451a(1)"
+    ]
+  }
+}

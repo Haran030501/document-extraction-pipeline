@@ -1,0 +1,47 @@
+{
+  "source_pdf": "tex_17_0637.pdf",
+  "split": "dev",
+  "entities": {
+    "case_name": "Dallas Morning News, Inc. v. Hall",
+    "docket_number": "17-0637",
+    "court": "Supreme Court of Texas",
+    "decision_date": "2019-05-10",
+    "judges": [
+      "Brown"
+    ],
+    "author_judge": "Brown",
+    "parties": [
+      {
+        "name": "The Dallas Morning News, Inc.",
+        "role": "petitioner"
+      },
+      {
+        "name": "Kevin Krause",
+        "role": "petitioner"
+      },
+      {
+        "name": "Lewis Hall",
+        "role": "respondent"
+      },
+      {
+        "name": "Richard Hall",
+        "role": "respondent"
+      }
+    ],
+    "disposition": "reversed",
+    "monetary_amounts": [],
+    "cited_statutes": [
+      "21 U.S.C. § 353b",
+      "Tex. Civ. Prac. & Rem. Code § 27.005",
+      "Tex. Civ. Prac. & Rem. Code § 27.009",
+      "Tex. Civ. Prac. & Rem. Code § 73.002",
+      "Tex. Civ. Prac. & Rem. Code § 73.005",
+      "Tex. Occ. Code § 556.051",
+      "Tex. Civ. Prac. & Rem. Code § 27.003",
+      "Tex. Civ. Prac. & Rem. Code § 27.006"
+    ]
+  },
+  "adjudication_notes": [
+    "Added Tex. Civ. Prac. & Rem. Code §§ 27.003, 27.006: cited in the opinion (p. 10-11), missed in the original label."
+  ]
+}
