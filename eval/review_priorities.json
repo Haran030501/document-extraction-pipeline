@@ -1,0 +1,85 @@
+{
+  "tex_23_0408": {
+    "tags": ["judgment"],
+    "notes": [
+      "author_judge: labeled 'Young'. The document is a joint statement by Justices Young and Sullivan; null is defensible.",
+      "cited_statutes: labeled 'Tex. Ins. Code ch. 981'. The chapter is only mentioned in prose, not cited to a section; an empty list is defensible.",
+      "disposition: labeled 'dismissed' (the petition and rehearing were denied)."
+    ]
+  },
+  "ny_26": {
+    "tags": ["judgment"],
+    "notes": [
+      "parties: the other side is labeled 'respondent' as printed in the caption; 'appellee' is the alternative.",
+      "cited_statutes: CPLR sections are included as statutes. The prompt excludes procedural rules, so leaving them out is defensible."
+    ]
+  },
+  "ny_75": {
+    "tags": ["judgment"],
+    "notes": [
+      "parties: Sage Systems labeled 'respondent' as printed in the caption; 'appellee' is the alternative.",
+      "cited_statutes: CPLR 8601 included as a statute; excluding it as a procedural rule is defensible."
+    ]
+  },
+  "ca2_19_1649_cv": {
+    "tags": ["judgment"],
+    "notes": [
+      "parties: IOD Inc. and Columbia Presbyterian Medical Center are defendants who are not part of the appeal. Labeled 'defendant'; both models said 'other'.",
+      "monetary_amounts: only the $1.50/page charge is labeled; the $0.75/page statutory cap is excluded as a threshold."
+    ]
+  },
+  "ca6_18_2371": {
+    "tags": ["judgment"],
+    "notes": [
+      "parties: Tom Finco is a defendant who is not part of the appeal. Labeled 'defendant'; both models said 'other'.",
+      "monetary_amounts: three amounts labeled ($900 total, $150 per Ramadan, $300 each to Heard and Nelson); only the $900 total is the alternative."
+    ]
+  },
+  "ca6_23_1792": {
+    "tags": ["judgment"],
+    "notes": [
+      "parties: Roy Christopher West (the 'Movant') is labeled 'other' with no opposing party. The alternative is 'petitioner', with the United States as 'respondent'."
+    ]
+  },
+  "ca10_16_1412": {
+    "tags": ["judgment"],
+    "notes": [
+      "judges: Judge Kelly is included, though he appears only in a footnote saying he elected to sit on the en banc panel. The alternative is only the 12 judges in the 'Before' line.",
+      "disposition: labeled 'other' (an order granting rehearing en banc)."
+    ]
+  },
+  "ca3_24_2583": {
+    "tags": ["judgment"],
+    "notes": [
+      "monetary_amounts: only the >$3M loss/restitution is labeled. The stipulated $1.5M-$3.5M range and the $10,000 statutory threshold are excluded."
+    ]
+  },
+  "tex_17_0637": {
+    "tags": ["long-statutes"],
+    "notes": [
+      "cited_statutes: the original label missed §§ 27.003 and 27.006 (since fixed). Skim every '§' in the opinion for others.",
+      "monetary_amounts: $12M (another lawsuit) and $1M (a cited case) are excluded; confirm you agree."
+    ]
+  },
+  "ca5_18_30243": {
+    "tags": ["long-statutes"],
+    "notes": [
+      "21-page consolidated appeal. No statutes are labeled because none are cited with '§'; confirm.",
+      "parties: 19 parties, including plaintiffs who are not part of the appeal (labeled 'plaintiff'); check the caption on pp. 1-5."
+    ]
+  },
+  "cal_s244549": {"tags": ["long-statutes"], "notes": ["cited_statutes: check the Vehicle, Government and Penal Code citations against the text."]},
+  "cal_s239777": {
+    "tags": ["long-statutes", "scanned"],
+    "notes": [
+      "Scanned copy. Check against the PDF image, not the OCR text (OCR read the docket as '$239777').",
+      "parties: Vertical Media Group, Inc. is named in the text but hidden behind 'et al.' in the caption; it is included."
+    ]
+  },
+  "cadc_23_1333": {"tags": ["long-statutes"], "notes": ["cited_statutes: six U.S.C. sections labeled; skim for any others."]},
+  "ca2_22_282": {"tags": ["scanned"], "notes": ["Scanned copy. Check names and the docket against the PDF image."]},
+  "ca9_21_56237": {"tags": ["scanned"], "notes": ["Scanned copy with 16 parties; check the spellings against the PDF image."]},
+  "ca8_24_2479": {"tags": ["full-read"], "notes": ["Short opinion. Check every field; this catches errors where the label and the model agree."]},
+  "ca11_19_11258": {"tags": ["full-read"], "notes": ["Short order. Check every field; disposition labeled 'remanded' for a limited remand."]},
+  "ca7_22_8016": {"tags": ["full-read"], "notes": ["Short opinion. Check every field."]}
+}

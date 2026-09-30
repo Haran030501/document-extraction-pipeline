@@ -7,6 +7,7 @@ from pathlib import Path
 
 from fastapi import Depends, FastAPI, HTTPException, Query, UploadFile
 from fastapi.responses import FileResponse, PlainTextResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from sqlalchemy import select, text
 from sqlalchemy.dialects.postgresql import distinct_on
@@ -17,6 +18,7 @@ from app.db import get_session, init_db
 from app.extractor import Extractor
 from app.ingest import extract_text
 from app.models import AmountRow, Document, Extraction, PartyRow
+from app.review import router as review_router
 
 logging.basicConfig(level=logging.INFO)
 
@@ -79,6 +81,8 @@ class DocumentOut(BaseModel):
 
 
 STATIC = Path(__file__).parent / "static"
+app.mount("/static", StaticFiles(directory=STATIC), name="static")
+app.include_router(review_router)
 
 
 @app.get("/", include_in_schema=False)

@@ -138,6 +138,20 @@ the extracted case details, judges, parties, amounts and statutes, along with th
 cost of each run. Past documents are listed in the sidebar, and each one can be re-run with another strategy to
 compare results side by side. The UI is plain HTML/JS in `app/static/index.html` with no build step.
 
+## Label review
+
+Open **http://localhost:8000/review** to check the gold labels against their source PDFs. The sidebar
+tracks progress and flags 18 priority labels: judgment calls, long opinions with many statutes, scanned
+copies, and short opinions for a full read. Each flag explains what to check. For every label you can:
+
+- **Verify** it as correct, with an optional note, or
+- **Correct** fields in the form. A note citing the source text is required, and the change is recorded in the label's `adjudication_notes`.
+
+An off-by-default toggle shows where the Opus 5.5 extraction disagrees, so the reviewer's first pass isn't
+anchored on the model's answer. Reviews are written straight to `eval/labels/*.json`, so this page is for
+local use and shouldn't be exposed publicly. After making corrections, rescore from the cache with no API calls:
+`python -m eval.run_eval --versions v1 v2 v3 --split test`.
+
 ## API
 
 | Method | Path | |
@@ -182,8 +196,8 @@ python -m scripts.make_scanned ca2_22_282 cal_s239777 ca9_21_56237
 ## Layout
 
 ```
-app/        config, schemas (pydantic), ingest (PDF/OCR), extractor (v1–v3), models (SQLAlchemy), api (FastAPI)
+app/        config, schemas (pydantic), ingest (PDF/OCR), extractor (v1–v3), models (SQLAlchemy), api (FastAPI), review (label review), static/ (web UI)
 eval/       labels/ (gold), scoring.py, run_eval.py, results/
 scripts/    fetch_opinions.py, make_scanned.py
-tests/      unit tests (schema, scoring, ingest, extractor retry loop) + API tests against Postgres
+tests/      unit tests (schema, scoring, ingest, extractor retry loop), API tests against Postgres, label-review tests
 ```

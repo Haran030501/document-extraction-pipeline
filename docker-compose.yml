@@ -30,6 +30,7 @@ services:
     volumes:
       - ./data:/app/data
       - ./eval/labels:/app/eval/labels
+      - ./eval/cache:/app/eval/cache:ro
       - ./eval/results:/app/eval/results
 
 volumes:

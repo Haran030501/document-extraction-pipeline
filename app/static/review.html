@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Label Review</title>
+<link rel="stylesheet" href="/static/style.css">
+<style>
+  .progress { height: 6px; background: var(--code); border-radius: 99px; overflow: hidden; margin: 6px 0 4px; }
+  .progress > div { height: 100%; background: var(--accent); transition: width .3s; }
+  .progress-label { font-size: 12.5px; color: var(--muted); }
+  .filters { display: flex; gap: 6px; margin: 10px 0 8px; flex-wrap: wrap; }
+  .filters button { padding: 3px 10px; font-size: 12.5px; }
+  .filters button.active { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .docs li { display: flex; gap: 8px; align-items: flex-start; }
+  .docs li > div { min-width: 0; flex: 1; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; margin-top: 6px; flex: none; border: 1.5px solid var(--muted); }
+  .dot.verified { background: var(--good); border-color: var(--good); }
+  .dot.corrected { background: var(--warn); border-color: var(--warn); }
+  .tag { display: inline-block; font-size: 11px; padding: 0 6px; border-radius: 4px; background: var(--warn-soft); color: var(--warn); margin-right: 4px; }
+  .tag.split { background: var(--code); color: var(--muted); }
+
+  .pane-head a { margin-left: auto; font-size: 12.5px; color: var(--muted); }
+  .form { padding: 14px; }
+  .prio { background: var(--warn-soft); color: var(--ink); border-radius: 8px; padding: 10px 12px; margin-bottom: 14px; font-size: 13.5px; }
+  .prio h3 { margin: 0 0 4px; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--warn); }
+  .prio ul { margin: 0; padding-left: 18px; }
+  .prio li { margin: 3px 0; }
+  .reviewed { background: var(--good-soft); color: var(--good); border-radius: 8px; padding: 8px 12px; margin-bottom: 14px; font-size: 13px; }
+  .reviewed.corrected { background: var(--warn-soft); color: var(--warn); }
+
+  .field { margin-bottom: 12px; padding: 8px 10px; border-radius: 8px; border: 1px solid transparent; }
+  .field.changed { border-color: var(--warn); background: var(--warn-soft); }
+  .field > label { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); font-weight: 600; margin-bottom: 4px; text-transform: uppercase; letter-spacing: .04em; }
+  .field > label .chg { color: var(--warn); text-transform: none; letter-spacing: 0; }
+  input[type=text], input[type=date], input[type=number], textarea, .field select {
+    width: 100%; font: inherit; font-size: 14px; padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); color: var(--ink); }
+  textarea { resize: vertical; min-height: 64px; font-size: 13.5px; }
+  .hint-inline { font-size: 11.5px; color: var(--muted); margin-top: 3px; }
+  .rows { display: flex; flex-direction: column; gap: 6px; }
+  .rowline { display: grid; gap: 6px; align-items: center; }
+  .rowline.party { grid-template-columns: minmax(0, 1fr) 130px 30px; }
+  .rowline.amount { grid-template-columns: 120px 70px minmax(0, 1fr) 30px; }
+  .rowline button { padding: 4px 0; color: var(--muted); }
+  .add { font-size: 12.5px; padding: 3px 10px; margin-top: 6px; }
+  .model { margin-top: 6px; font-size: 12.5px; background: var(--soft); border-left: 3px solid var(--accent); padding: 5px 8px; border-radius: 4px; white-space: pre-wrap; }
+  .model b { color: var(--accent); }
+
+  .toggle { display: flex; gap: 8px; align-items: flex-start; font-size: 13px; padding: 10px 12px; background: var(--code); border-radius: 8px; margin-bottom: 14px; }
+  .toggle input { margin-top: 3px; }
+  .toggle small { color: var(--muted); display: block; }
+
+  .actions { position: sticky; bottom: 0; background: var(--panel); border-top: 1px solid var(--line); padding: 12px 14px; }
+  .actions textarea { min-height: 52px; }
+  .actions .btns { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+  .actions .btns button { flex: 1; min-width: 150px; }
+  button.good { background: var(--good); border-color: var(--good); color: #fff; font-weight: 600; }
+  button.warn { background: var(--warn); border-color: var(--warn); color: #fff; font-weight: 600; }
+  @media (prefers-color-scheme: dark) { button.good, button.warn { color: #111; } }
+  .rescore { font-size: 12px; color: var(--muted); margin-top: 10px; }
+  .rescore code { background: var(--code); padding: 1px 4px; border-radius: 4px; font-size: 11.5px; word-break: break-all; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Label Review</h1>
+  <p>Check each gold label against its source PDF. Verify it, or correct it with a note citing the text.</p>
+  <nav><a href="/">Extract</a><a class="here" href="/review">Review labels</a><a href="/docs">API docs</a></nav>
+</header>
+
+<div class="app">
+  <aside>
+    <div class="card">
+      <h2>Progress</h2>
+      <div class="progress"><div id="bar" style="width:0"></div></div>
+      <div class="progress-label" id="progress-label">Loading…</div>
+      <div class="filters" id="filters"></div>
+      <ul class="docs" id="docs"></ul>
+      <div class="rescore">After making corrections, rescore without API calls:<br>
+        <code>python -m eval.run_eval --versions v1 v2 v3 --split test</code></div>
+    </div>
+  </aside>
+
+  <main>
+    <section class="card pane">
+      <div class="pane-head"><h2>Source PDF</h2><a id="pdf-link" target="_blank" rel="noopener" hidden>Open in new tab ↗</a></div>
+      <div class="pane-body" id="pdf"><div class="placeholder">Pick a document to review.</div></div>
+    </section>
+    <section class="card pane">
+      <div class="pane-head"><h2 id="form-title">Gold label</h2></div>
+      <div class="pane-body" id="form"><div class="placeholder">The label's fields will appear here.</div></div>
+    </section>
+  </main>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const ROLES = ["plaintiff", "defendant", "appellant", "appellee", "petitioner", "respondent", "other"];
+const DISPOSITIONS = ["affirmed", "reversed", "remanded", "affirmed_in_part", "dismissed", "vacated", "other"];
+const FILTERS = { all: "All", priority: "Priority", unreviewed: "Unreviewed" };
+let labels = [], filter = "priority", current = null, original = null, showModel = false, disagreements = null;
+
+function el(tag, attrs = {}, ...kids) {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === "class") n.className = v; else if (k === "text") n.textContent = v;
+    else if (k.startsWith("on")) n.addEventListener(k.slice(2), v);
+    else if (v === true) n.setAttribute(k, ""); else if (v !== false && v != null) n.setAttribute(k, v);
+  }
+  for (const k of kids.flat()) if (k != null) n.append(k instanceof Node ? k : document.createTextNode(k));
+  return n;
+}
+function toast(msg, ok = false) { const t = $("toast"); t.textContent = msg; t.style.background = ok ? "var(--good)" : "var(--bad)"; t.style.display = "block"; setTimeout(() => t.style.display = "none", 4000); }
+async function api(path, opts) {
+  const r = await fetch(path, opts);
+  if (!r.ok) { let m = r.statusText; try { m = (await r.json()).detail || m; } catch {} throw new Error(typeof m === "string" ? m : JSON.stringify(m)); }
+  return r.json();
+}
+
+// ---------- sidebar ----------
+function visible() {
+  if (filter === "priority") return labels.filter(l => l.tags.length);
+  if (filter === "unreviewed") return labels.filter(l => l.status === "unreviewed");
+  return labels;
+}
+function renderSidebar() {
+  const done = labels.filter(l => l.status !== "unreviewed").length;
+  const pDone = labels.filter(l => l.tags.length && l.status !== "unreviewed").length, pAll = labels.filter(l => l.tags.length).length;
+  $("bar").style.width = `${labels.length ? 100 * done / labels.length : 0}%`;
+  $("progress-label").textContent = `${done} of ${labels.length} reviewed · priority ${pDone}/${pAll}`;
+  $("filters").replaceChildren(...Object.entries(FILTERS).map(([k, v]) =>
+    el("button", { class: k === filter ? "active" : "", text: v, onclick: () => { filter = k; renderSidebar(); } })));
+  const items = visible();
+  $("docs").replaceChildren(...(items.length ? items.map(l => el("li", { class: l.id === current?.id ? "active" : "", onclick: () => open(l.id) },
+    el("span", { class: `dot ${l.status}`, title: l.status }),
+    el("div", {},
+      el("span", { class: "t", text: l.case_name || l.id }),
+      el("span", { class: "m" }, el("span", { class: "tag split", text: l.split }), ...l.tags.map(t => el("span", { class: "tag", text: t })), l.id)))) :
+    [el("li", { class: "empty", text: "Nothing here." })]));
+}
+
+// ---------- form ----------
+const lines = (v) => v.split("\n").map(s => s.trim()).filter(Boolean);
+const str = (v) => { v = v.trim(); return v === "" ? null : v; };
+function readForm() {
+  const f = $("form");
+  const q = (name) => f.querySelector(`[name="${name}"]`).value;
+  return {
+    case_name: str(q("case_name")), docket_number: str(q("docket_number")), court: str(q("court")),
+    decision_date: str(q("decision_date")), judges: lines(q("judges")), author_judge: str(q("author_judge")),
+    parties: [...f.querySelectorAll(".rowline.party")].map(r => ({ name: r.querySelector("input").value.trim(), role: r.querySelector("select").value })).filter(p => p.name),
+    disposition: str(q("disposition")),
+    monetary_amounts: [...f.querySelectorAll(".rowline.amount")].map(r => {
+      const [v, c, ctx] = r.querySelectorAll("input");
+      return { value: v.value === "" ? null : Number(v.value), currency: c.value.trim() || "USD", context: ctx.value.trim() };
+    }).filter(a => a.value !== null),
+    cited_statutes: lines(q("cited_statutes")),
+  };
+}
+const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+function changedFields() { const now = readForm(); return Object.keys(now).filter(k => !same(now[k], original[k])); }
+function refreshState() {
+  const changed = changedFields();
+  document.querySelectorAll(".field[data-f]").forEach(fd => {
+    const on = changed.includes(fd.dataset.f);
+    fd.classList.toggle("changed", on);
+    fd.querySelector(".chg").textContent = on ? "edited" : "";
+  });
+  const note = $("note").value.trim();
+  $("verify").disabled = changed.length > 0;
+  $("correct").disabled = !(changed.length && note);
+  $("correct").textContent = changed.length ? `Save correction (${changed.length} field${changed.length > 1 ? "s" : ""})` : "Save correction";
+}
+
+function field(name, title, control, hint) {
+  const box = el("div", { class: "field", "data-f": name },
+    el("label", {}, el("span", { text: title }), el("span", { class: "chg" })), control, hint ? el("div", { class: "hint-inline", text: hint }) : null);
+  const d = showModel && disagreements?.fields?.[name];
+  if (d) box.append(el("div", { class: "model" }, el("b", { text: "Model (Opus 5.5 v3) says: " }), fmtModel(name, d.model)));
+  return box;
+}
+function fmtModel(name, v) {
+  if (v == null || (Array.isArray(v) && !v.length)) return "(empty)";
+  if (name === "parties") return v.map(p => `${p.name} — ${p.role}`).join("\n");
+  if (name === "monetary_amounts") return v.map(a => `${a.value} ${a.currency} — ${a.context}`).join("\n");
+  return Array.isArray(v) ? v.join("\n") : String(v);
+}
+const text = (name, v) => el("input", { type: "text", name, value: v ?? "", oninput: refreshState });
+function select(name, opts, v, allowNull) {
+  const s = el("select", { name, onchange: refreshState }, allowNull ? el("option", { value: "", text: "— none —" }) : null,
+    opts.map(o => el("option", { value: o, text: o.replaceAll("_", " ") })));
+  s.value = v ?? ""; return s;
+}
+function partyRow(p = { name: "", role: "other" }) {
+  const row = el("div", { class: "rowline party" },
+    el("input", { type: "text", value: p.name, placeholder: "Party name", oninput: refreshState }),
+    select(null, ROLES, p.role),
+    el("button", { title: "Remove", text: "✕", onclick: () => { row.remove(); refreshState(); } }));
+  return row;
+}
+function amountRow(a = { value: "", currency: "USD", context: "" }) {
+  const row = el("div", { class: "rowline amount" },
+    el("input", { type: "number", step: "any", value: a.value, placeholder: "Amount", oninput: refreshState }),
+    el("input", { type: "text", value: a.currency, oninput: refreshState }),
+    el("input", { type: "text", value: a.context, placeholder: "What it is", oninput: refreshState }),
+    el("button", { title: "Remove", text: "✕", onclick: () => { row.remove(); refreshState(); } }));
+  return row;
+}
+
+function renderForm(label) {
+  const e = label.entities, parts = [];
+  if (label.priority_notes?.length)
+    parts.push(el("div", { class: "prio" }, el("h3", { text: `Why this one is flagged: ${label.tags.join(", ")}` }), el("ul", {}, label.priority_notes.map(n => el("li", { text: n })))));
+  if (label.review)
+    parts.push(el("div", { class: `reviewed ${label.review.status}`, text:
+      `${label.review.status === "verified" ? "Verified" : "Corrected (" + label.review.changed_fields.join(", ") + ")"} on ${new Date(label.review.reviewed_at).toLocaleString()}` }));
+  parts.push(el("label", { class: "toggle" },
+    el("input", { type: "checkbox", checked: showModel, onchange: async (ev) => { showModel = ev.target.checked; await loadDisagreements(); rerenderKeepingEdits(); } }),
+    el("span", {}, "Show where the model disagrees",
+      el("small", { text: "Leave this off on your first pass. Seeing the model's answer first biases you toward it. Only change a label when the PDF supports the change." }))));
+  if (showModel && disagreements && !disagreements.available) parts.push(el("div", { class: "hint-inline", text: "No cached model output for this document." }));
+  if (showModel && disagreements?.available && !Object.keys(disagreements.fields).length) parts.push(el("div", { class: "hint-inline", text: "The model agrees with every field." }));
+
+  const parties = el("div", { class: "rows" }, e.parties.map(partyRow));
+  const amounts = el("div", { class: "rows" }, e.monetary_amounts.map(amountRow));
+  parts.push(
+    field("case_name", "Case name", text("case_name", e.case_name)),
+    field("docket_number", "Docket number", text("docket_number", e.docket_number), "This case's primary docket, without the 'No.' prefix"),
+    field("court", "Court", text("court", e.court), "The court that issued this opinion, not the lower court"),
+    field("decision_date", "Decision date", el("input", { type: "date", name: "decision_date", value: e.decision_date ?? "", oninput: refreshState }), "Decided/filed date, not the argued date"),
+    field("judges", "Judges (one per line)", el("textarea", { name: "judges", oninput: refreshState, text: e.judges.join("\n") }), "Judges who heard this case; exclude lower-court judges"),
+    field("author_judge", "Author", text("author_judge", e.author_judge), "Leave empty for per curiam or unsigned"),
+    field("parties", "Parties", el("div", {}, parties, el("button", { class: "add", text: "+ Add party", onclick: () => { parties.append(partyRow()); refreshState(); } })), "Role in this court: on appeal, appellant/appellee or petitioner/respondent"),
+    field("disposition", "Disposition", select("disposition", DISPOSITIONS, e.disposition, true), "Reversed/vacated and remanded → the stronger (reversed/vacated); mixed outcome → affirmed in part"),
+    field("monetary_amounts", "Monetary amounts", el("div", {}, amounts, el("button", { class: "add", text: "+ Add amount", onclick: () => { amounts.append(amountRow()); refreshState(); } })), "Only amounts at issue in this case; exclude cited cases, statutory thresholds, and hypotheticals"),
+    field("cited_statutes", "Cited statutes (one per line)", el("textarea", { name: "cited_statutes", oninput: refreshState, text: e.cited_statutes.join("\n") }), "One entry per section; exclude cases, constitutional provisions, court rules, and regulations"),
+  );
+  const form = el("div", { class: "form" }, parts);
+  const actions = el("div", { class: "actions" },
+    el("textarea", { id: "note", placeholder: "Note: what you checked, or the source text supporting a correction (e.g. 'p. 3: Judge Kelly sits on the en banc panel')", oninput: refreshState }),
+    el("div", { class: "btns" },
+      el("button", { id: "verify", class: "good", text: "✓ Label is correct", onclick: () => save("verify") }),
+      el("button", { id: "correct", class: "warn", text: "Save correction", onclick: () => save("correct") })));
+  $("form").replaceChildren(form, actions);
+  $("form").scrollTop = 0;
+  refreshState();
+}
+function rerenderKeepingEdits() {
+  const edits = readForm(), note = $("note")?.value || "";
+  renderForm({ ...current, entities: edits });
+  $("note").value = note; refreshState();
+}
+async function loadDisagreements() {
+  if (!showModel || !current) { disagreements = null; return; }
+  try { disagreements = await api(`/api/labels/${current.id}/disagreements`); } catch (err) { toast(err.message); }
+}
+
+// ---------- navigation & saving ----------
+async function open(id) {
+  if (current && original && changedFields().length && !confirm("Discard unsaved edits to this label?")) return;
+  try {
+    current = await api(`/api/labels/${id}`);
+    original = JSON.parse(JSON.stringify(current.entities));
+    disagreements = null; await loadDisagreements();
+    $("form-title").textContent = `Gold label · ${id}`;
+    const url = `/api/labels/${id}/pdf`;
+    $("pdf").replaceChildren(el("iframe", { src: url, title: "Source PDF" }));
+    Object.assign($("pdf-link"), { href: url, hidden: false });
+    renderForm(current); renderSidebar();
+    history.replaceState(null, "", `#${id}`);
+  } catch (err) { toast(err.message); }
+}
+async function save(action) {
+  const body = { action, note: $("note").value };
+  if (action === "correct") body.entities = readForm();
+  try {
+    const res = await api(`/api/labels/${current.id}`, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+    const l = labels.find(x => x.id === current.id); l.status = res.status;
+    if (action === "correct") l.case_name = body.entities.case_name;
+    toast(action === "verify" ? "Marked as verified" : `Saved correction to ${res.changed_fields.join(", ")}`, true);
+    original = readForm();  // edits are now the saved state
+    const order = visible().filter(x => x.status === "unreviewed" && x.id !== current.id);
+    const next = order.find(x => labels.indexOf(x) > labels.indexOf(l)) || order[0];
+    if (next) open(next.id); else { current = await api(`/api/labels/${current.id}`); renderForm(current); renderSidebar(); }
+  } catch (err) { toast(err.message); }
+}
+window.addEventListener("beforeunload", (ev) => { if (current && original && changedFields().length) { ev.preventDefault(); ev.returnValue = ""; } });
+
+(async () => {
+  try {
+    labels = await api("/api/labels");
+    renderSidebar();
+    const start = location.hash.slice(1);
+    const first = labels.find(l => l.id === start) || visible().find(l => l.status === "unreviewed") || labels[0];
+    if (first) open(first.id);
+  } catch (err) { toast(err.message); }
+})();
+</script>
+</body>
+</html>
