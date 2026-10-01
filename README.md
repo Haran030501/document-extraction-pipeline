@@ -2,7 +2,9 @@
 
 Ingests court-opinion PDFs, extracts text (with OCR fallback for scanned pages), uses Claude with a
 pydantic schema to extract structured entities, and stores them in PostgreSQL behind a FastAPI service.
-An evaluation harness measures field-level accuracy against hand-labeled opinions across prompt versions.
+A RAG search layer answers natural-language questions across the opinions, citing each claim to a case and
+page. Evaluation harnesses measure extraction accuracy against labeled opinions and retrieval quality on a
+65-question set.
 
 **Stack:** Python 3.13 · FastAPI · Claude API (Opus 5.5 / Sonnet 5.5, structured outputs) · pydantic v2 ·
 SQLAlchemy 2 / PostgreSQL + pgvector · fastembed · pdfplumber + Tesseract OCR · Docker
@@ -15,6 +17,19 @@ upload    │ pdfplumber│   │ Claude + pydantic    │    │ schema + busin
           │   no text│    │ outputs)             │◀───│  parties, docket, amounts)│    │ parties …  │
           └──────────┘    └──────────────────────┘    └── retry with errors ──────┘    └────────────┘
 ```
+
+## Results at a glance
+
+| Area | Result | Details |
+|---|---|---|
+| Extraction accuracy | **91.9% → 98.1%** field-level accuracy on 18 held-out opinions (v1 baseline → v3), a 76% error reduction | [Results](#results) |
+| Model cost/accuracy | Sonnet 5.5 reaches **96.8%** vs. Opus 5.5's 98.1%, at **44% of the cost** and **2.5× the speed** | [Opus vs. Sonnet](#results) |
+| RAG retrieval | Hybrid search puts **96.7%** of answer passages in the top 8 and ranks the right case first for **93.3%** of questions | [Retrieval evaluation](#retrieval-evaluation) |
+| RAG weak spot | Questions spanning several cases: **80%** of relevant cases retrieved (hybrid); keyword search reaches 93.3% | [Retrieval evaluation](#retrieval-evaluation) |
+
+Scale caveats: 30 opinions from 15 courts. Extraction labels and retrieval questions were drafted with an AI
+assistant, and the label review in [Label review](#label-review) has not been completed, so treat the figures
+as indicative.
 
 ## What gets extracted
 
