@@ -9,6 +9,10 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Bake the embedding model into the image so containers never download it at runtime.
+ENV EMBEDDING_CACHE_DIR=/models
+RUN python -c "from fastembed import TextEmbedding; TextEmbedding('BAAI/bge-small-en-v1.5', cache_dir='/models')"
+
 COPY app ./app
 COPY eval ./eval
 COPY scripts ./scripts

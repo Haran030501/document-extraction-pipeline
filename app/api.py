@@ -18,6 +18,8 @@ from app.db import get_session, init_db
 from app.extractor import Extractor
 from app.ingest import extract_text
 from app.models import AmountRow, Document, Extraction, PartyRow
+from app.rag import index_document
+from app.rag_api import router as rag_router
 from app.review import router as review_router
 
 logging.basicConfig(level=logging.INFO)
@@ -39,6 +41,13 @@ def get_extractor() -> Extractor:
 
 
 ExtractorDep = Annotated[Extractor, Depends(get_extractor)]
+
+
+def get_indexer():
+    return index_document
+
+
+IndexerDep = Annotated[object, Depends(get_indexer)]
 
 
 class ExtractionOut(BaseModel):
@@ -83,6 +92,7 @@ class DocumentOut(BaseModel):
 STATIC = Path(__file__).parent / "static"
 app.mount("/static", StaticFiles(directory=STATIC), name="static")
 app.include_router(review_router)
+app.include_router(rag_router)
 
 
 @app.get("/", include_in_schema=False)
@@ -101,6 +111,7 @@ def upload_document(
     file: UploadFile,
     session: SessionDep,
     extractor: ExtractorDep,
+    indexer: IndexerDep,
     prompt_version: Annotated[str | None, Query(pattern="^v[123]$")] = None,
 ) -> DocumentOut:
     data = file.file.read()
@@ -121,6 +132,12 @@ def upload_document(
     session.add(Extraction.from_result(doc.id, result))
     session.commit()
     session.refresh(doc)
+    try:
+        indexer(session, doc)  # chunk + embed for /ask; uses the new extraction as chunk context
+        session.commit()
+    except Exception:
+        session.rollback()
+        logging.getLogger(__name__).exception("indexing failed for document %s", doc.id)
     return DocumentOut.of(doc)
 
 

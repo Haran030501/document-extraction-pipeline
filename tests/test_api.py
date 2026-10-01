@@ -2,7 +2,7 @@ import pytest
 from fastapi.testclient import TestClient
 
 from app.api import app, get_extractor
-from app.db import Base, engine
+from app.db import Base, engine, init_db
 from app.extractor import ExtractionResult
 from app.schemas import CourtOpinion
 
@@ -25,7 +25,7 @@ def client(gold_dict):
     from app import models  # noqa: F401
 
     Base.metadata.drop_all(engine)
-    Base.metadata.create_all(engine)
+    init_db()
     stub = StubExtractor(CourtOpinion.model_validate(gold_dict))
     app.dependency_overrides[get_extractor] = lambda: stub
     with TestClient(app) as c:

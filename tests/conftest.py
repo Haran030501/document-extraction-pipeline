@@ -49,3 +49,26 @@ def gold_dict() -> dict:
         "monetary_amounts": [{"value": 250000, "currency": "USD", "context": "jury award"}],
         "cited_statutes": ["42 U.S.C. § 1983"],
     }
+
+
+def fake_embed(text: str):
+    """Deterministic bag-of-words hashing embedding: texts sharing words get similar vectors."""
+    import hashlib
+    import re
+
+    import numpy as np
+
+    v = np.zeros(384, dtype=np.float32)
+    for w in re.findall(r"[a-z0-9]+", text.lower()):
+        v[int(hashlib.md5(w.encode()).hexdigest(), 16) % 384] += 1.0
+    n = np.linalg.norm(v)
+    return v / n if n else v + 1e-3
+
+
+@pytest.fixture(autouse=True)
+def offline_embeddings(monkeypatch):
+    """Never download or run the real embedding model in tests."""
+    from app import rag
+
+    monkeypatch.setattr(rag, "embed_passages", lambda texts: [fake_embed(t) for t in texts])
+    monkeypatch.setattr(rag, "embed_query", fake_embed)

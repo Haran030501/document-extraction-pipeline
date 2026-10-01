@@ -1,4 +1,5 @@
 from functools import lru_cache
+from pathlib import Path
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -15,6 +16,12 @@ class Settings(BaseSettings):
     max_retries: int = 2
     # Pages with fewer extracted characters than this are treated as scanned and OCR'd.
     ocr_min_chars: int = 50
+
+    # RAG search
+    embedding_model: str = "BAAI/bge-small-en-v1.5"
+    embedding_dim: int = 384
+    embedding_cache_dir: str = str(Path.home() / ".cache" / "fastembed")
+    answer_model: str | None = None  # defaults to `model`
 
 
 @lru_cache

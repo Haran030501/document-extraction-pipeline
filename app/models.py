@@ -1,9 +1,11 @@
 from datetime import date, datetime
 
-from sqlalchemy import JSON, Date, DateTime, Float, ForeignKey, Integer, String, Text, func
-from sqlalchemy.dialects.postgresql import JSONB
+from pgvector.sqlalchemy import Vector
+from sqlalchemy import JSON, Computed, Date, DateTime, Float, ForeignKey, Index, Integer, String, Text, func
+from sqlalchemy.dialects.postgresql import JSONB, TSVECTOR
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
+from app.config import get_settings
 from app.db import Base
 from app.extractor import ExtractionResult
 
@@ -24,6 +26,7 @@ class Document(Base):
     extractions: Mapped[list["Extraction"]] = relationship(
         back_populates="document", cascade="all, delete-orphan", order_by="Extraction.id"
     )
+    chunks: Mapped[list["ChunkRow"]] = relationship(cascade="all, delete-orphan", order_by="ChunkRow.chunk_index")
 
 
 class Extraction(Base):
@@ -107,3 +110,22 @@ class StatuteRow(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     extraction_id: Mapped[int] = mapped_column(ForeignKey("extractions.id", ondelete="CASCADE"), index=True)
     citation: Mapped[str] = mapped_column(String(256), index=True)
+
+
+class ChunkRow(Base):
+    """A page-scoped passage of a document, embedded for semantic search and indexed for full-text search."""
+
+    __tablename__ = "chunks"
+    __table_args__ = (
+        Index("ix_chunks_embedding_hnsw", "embedding", postgresql_using="hnsw",
+              postgresql_ops={"embedding": "vector_cosine_ops"}),
+        Index("ix_chunks_tsv", "tsv", postgresql_using="gin"),
+    )
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    document_id: Mapped[int] = mapped_column(ForeignKey("documents.id", ondelete="CASCADE"), index=True)
+    chunk_index: Mapped[int] = mapped_column(Integer)
+    page: Mapped[int] = mapped_column(Integer)
+    text: Mapped[str] = mapped_column(Text)
+    embedding = mapped_column(Vector(get_settings().embedding_dim))
+    tsv = mapped_column(TSVECTOR, Computed("to_tsvector('english', text)", persisted=True))

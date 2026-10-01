@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ask the Opinions</title>
+<link rel="stylesheet" href="/static/style.css">
+<style>
+  .wrap { max-width: 980px; margin: 0 auto; padding: 12px 24px 40px; }
+  .askbox { padding: 16px; }
+  .askbox textarea { width: 100%; min-height: 70px; font: inherit; font-size: 16px; padding: 10px 12px; border: 1px solid var(--line);
+                     border-radius: 8px; background: var(--panel); color: var(--ink); resize: vertical; }
+  .controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 10px; }
+  .controls input[type=text] { font: inherit; font-size: 14px; padding: 7px 10px; border: 1px solid var(--line); border-radius: 7px;
+                               background: var(--panel); color: var(--ink); width: 170px; }
+  .controls .spacer { flex: 1; }
+  .controls button.primary { flex: none; min-width: 120px; }
+  .examples { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+  .examples button { font-size: 12.5px; padding: 4px 10px; border-radius: 999px; background: var(--code); border-color: transparent; color: var(--ink); text-align: left; }
+  .examples button:hover { border-color: var(--accent); }
+  .note { font-size: 12px; color: var(--muted); margin-top: 8px; }
+
+  .answer { padding: 16px 18px; margin-top: 16px; }
+  .answer .body { font-size: 15.5px; line-height: 1.65; }
+  .answer .body p { margin: 0 0 10px; }
+  .answer .body ul { margin: 0 0 10px; padding-left: 20px; }
+  .answer .body li { margin: 4px 0; }
+  a.cite { display: inline-block; min-width: 20px; padding: 0 5px; margin: 0 1px; border-radius: 5px; font-size: 12px; font-weight: 700;
+           text-align: center; text-decoration: none; background: var(--soft); color: var(--accent); vertical-align: 1px; }
+  a.cite:hover { background: var(--accent); color: var(--accent-ink); }
+  .meta { border-top: 0; padding: 10px 0 0; }
+  .warn { color: var(--warn); }
+
+  h2.sec { margin: 22px 0 10px; }
+  .source { padding: 12px 14px; margin-bottom: 10px; scroll-margin-top: 16px; transition: box-shadow .2s, border-color .2s; }
+  .source.flash { border-color: var(--accent); box-shadow: 0 0 0 3px var(--soft); }
+  .source.uncited { opacity: .72; }
+  .source header { padding: 0; display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+  .source .num { font-weight: 700; color: var(--accent); }
+  .source .title { font-weight: 650; }
+  .source .sub { color: var(--muted); font-size: 13px; }
+  .source .ranks { margin-left: auto; display: flex; gap: 6px; }
+  .rank { font-size: 11.5px; padding: 1px 7px; border-radius: 999px; background: var(--code); color: var(--muted); white-space: nowrap; }
+  .source .text { font-size: 13.5px; line-height: 1.6; margin-top: 8px; white-space: pre-wrap; max-height: 7.5em; overflow: hidden; position: relative; }
+  .source .text.open { max-height: none; }
+  .source .more { font-size: 12.5px; padding: 2px 8px; margin-top: 6px; }
+  mark { background: var(--warn-soft); color: inherit; padding: 0 1px; border-radius: 2px; }
+  @media (max-width: 760px) { .wrap { padding: 8px 16px 32px; } .source .ranks { margin-left: 0; } .controls input[type=text] { width: 100%; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Ask the Opinions</h1>
+  <p>Natural-language questions over every ingested opinion, answered by Claude with citations to the source passages</p>
+  <nav><a href="/">Extract</a><a class="here" href="/ask">Ask</a><a href="/review">Review labels</a><a href="/docs">API docs</a></nav>
+</header>
+
+<div class="wrap">
+  <section class="card askbox">
+    <textarea id="q" placeholder="e.g. Which cases involved restitution, and how much was owed?"></textarea>
+    <div class="controls">
+      <select id="mode" title="Retrieval method">
+        <option value="hybrid" selected>Hybrid (vector + keyword)</option>
+        <option value="vector">Vector only</option>
+        <option value="keyword">Keyword only</option>
+      </select>
+      <input type="text" id="court" placeholder="Court contains…" title="Filter by court (from extracted entities)">
+      <select id="disposition" title="Filter by outcome (from extracted entities)">
+        <option value="">Any outcome</option>
+        <option>affirmed</option><option>reversed</option><option>vacated</option><option>remanded</option>
+        <option value="affirmed_in_part">affirmed in part</option><option>dismissed</option><option>other</option>
+      </select>
+      <span class="spacer"></span>
+      <button id="search">Search only</button>
+      <button class="primary" id="ask">Ask Claude</button>
+    </div>
+    <div class="examples" id="examples"></div>
+    <div class="note">"Search only" retrieves passages locally at no cost. "Ask Claude" also generates a cited answer (about $0.02–0.04). Press Ctrl+Enter to ask.</div>
+  </section>
+
+  <div id="out"></div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const EXAMPLES = [
+  "Which cases involved restitution, and how much was owed?",
+  "Which appeals were decided by an equally divided en banc court?",
+  "Can hotel guests sue over bacteria in the water system if they got full value for their resort fee?",
+  "How have courts treated challenges to the gun ban for drug users?",
+  "When must an anti-SLAPP motion be filed after an amended complaint?",
+];
+
+function el(tag, attrs = {}, ...kids) {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === "class") n.className = v; else if (k === "text") n.textContent = v;
+    else if (k.startsWith("on")) n.addEventListener(k.slice(2), v); else if (v != null && v !== false) n.setAttribute(k, v);
+  }
+  for (const k of kids.flat()) if (k != null) n.append(k instanceof Node ? k : document.createTextNode(k));
+  return n;
+}
+function toast(msg) { const t = $("toast"); t.textContent = msg; t.style.display = "block"; setTimeout(() => t.style.display = "none", 5000); }
+async function api(path, opts) {
+  const r = await fetch(path, opts);
+  if (!r.ok) { let m = r.statusText; try { m = (await r.json()).detail || m; } catch {} throw new Error(typeof m === "string" ? m : JSON.stringify(m)); }
+  return r.json();
+}
+const esc = (s) => s.replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+// Minimal, safe markdown: escape everything first, then add our own tags only.
+function renderAnswer(text, nSources) {
+  const inline = (s) => esc(s)
+    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+    .replace(/\*(.+?)\*/g, "<em>$1</em>")
+    .replace(/\[(\d+(?:\s*[,–-]\s*\d+)*)\]/g, (m, grp) => grp.split(/\s*,\s*/).flatMap(part => {
+        const r = part.split(/\s*[–-]\s*/).map(Number);
+        return r.length === 2 ? Array.from({ length: r[1] - r[0] + 1 }, (_, i) => r[0] + i) : [r[0]];
+      }).map(n => n >= 1 && n <= nSources ? `<a class="cite" href="#src-${n}" data-n="${n}">${n}</a>` : `[${n}]`).join(""));
+  const html = []; let list = null;
+  for (const line of text.split("\n")) {
+    const li = line.match(/^\s*[-*•]\s+(.*)/) || line.match(/^\s*\d+\.\s+(.*)/);
+    if (li) { list ??= []; list.push(`<li>${inline(li[1])}</li>`); continue; }
+    if (list) { html.push(`<ul>${list.join("")}</ul>`); list = null; }
+    if (line.trim()) html.push(`<p>${inline(line)}</p>`);
+  }
+  if (list) html.push(`<ul>${list.join("")}</ul>`);
+  const div = el("div", { class: "body" }); div.innerHTML = html.join("");
+  div.querySelectorAll("a.cite").forEach(a => a.addEventListener("click", (ev) => { ev.preventDefault(); flash(+a.dataset.n); }));
+  return div;
+}
+function flash(n) {
+  const s = $(`src-${n}`); if (!s) return;
+  s.scrollIntoView({ behavior: "smooth", block: "start" });
+  s.querySelector(".text").classList.add("open");
+  s.classList.add("flash"); setTimeout(() => s.classList.remove("flash"), 1600);
+}
+function highlight(text, query) {
+  // Highlight query words (4+ letters) in the passage to show why it matched.
+  const words = [...new Set((query.toLowerCase().match(/[a-z0-9]{4,}/g) || []))];
+  const frag = document.createDocumentFragment();
+  if (!words.length) { frag.append(text); return frag; }
+  const re = new RegExp(`\\b(${words.map(w => w.slice(0, Math.max(4, w.length - 2))).join("|")})\\w*`, "gi");
+  let last = 0;
+  for (const m of text.matchAll(re)) { frag.append(text.slice(last, m.index), el("mark", { text: m[0] })); last = m.index + m[0].length; }
+  frag.append(text.slice(last)); return frag;
+}
+function sourceCard(h, cited, query) {
+  const text = el("div", { class: "text" }, highlight(h.text, query));
+  const more = el("button", { class: "more", text: "Show full passage", onclick: () => { text.classList.toggle("open"); more.textContent = text.classList.contains("open") ? "Show less" : "Show full passage"; } });
+  const date = h.decision_date ? new Date(h.decision_date + "T00:00:00").toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" }) : null;
+  return el("article", { class: `card source${cited === false ? " uncited" : ""}`, id: `src-${h.n}` },
+    el("header", {},
+      el("span", { class: "num", text: `[${h.n}]` }),
+      el("span", { class: "title", text: h.case_name || h.filename }),
+      el("span", { class: "sub", text: [h.court?.replace("United States Court of Appeals for the ", ""), date, `page ${h.page}`].filter(Boolean).join(" · ") }),
+      el("span", { class: "ranks" },
+        h.vector_rank ? el("span", { class: "rank", title: "Rank in vector (semantic) search", text: `vector #${h.vector_rank}` }) : null,
+        h.keyword_rank ? el("span", { class: "rank", title: "Rank in keyword (full-text) search", text: `keyword #${h.keyword_rank}` }) : null,
+        cited === false ? el("span", { class: "rank", text: "not cited" }) : null)),
+    text, more);
+}
+
+function params() {
+  return { mode: $("mode").value, court: $("court").value.trim() || null, disposition: $("disposition").value || null };
+}
+function busy(msg) {
+  const label = el("span", { text: msg }), start = Date.now();
+  $("out").replaceChildren(el("div", { class: "busy" }, el("div", { class: "spin" }), label));
+  const iv = setInterval(() => label.textContent = `${msg} ${((Date.now() - start) / 1000).toFixed(0)}s`, 500);
+  return () => clearInterval(iv);
+}
+function setDisabled(v) { $("ask").disabled = v; $("search").disabled = v; }
+
+async function run(withAnswer) {
+  const question = $("q").value.trim();
+  if (question.length < 3) { toast("Type a question first."); return; }
+  const p = params();
+  setDisabled(true);
+  const stop = busy(withAnswer ? "Retrieving passages and asking Claude…" : "Searching…");
+  try {
+    let res;
+    if (withAnswer) {
+      res = await api("/ask", { method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question, mode: p.mode, filters: { court: p.court, disposition: p.disposition } }) });
+    } else {
+      const qs = new URLSearchParams({ q: question, mode: p.mode, k: "8" });
+      if (p.court) qs.set("court", p.court); if (p.disposition) qs.set("disposition", p.disposition);
+      res = { sources: await api(`/search/semantic?${qs}`) };
+    }
+    render(res, question, withAnswer);
+  } catch (err) { toast(err.message); $("out").replaceChildren(); }
+  finally { stop(); setDisabled(false); }
+}
+function render(res, question, withAnswer) {
+  const out = [];
+  if (withAnswer) {
+    const cost = { "claude-opus-5-5": [4, 20], "claude-sonnet-5-5": [2, 10] }[res.model];
+    out.push(el("section", { class: "card answer" },
+      el("h2", { text: "Answer" }),
+      renderAnswer(res.answer, res.sources.length),
+      el("div", { class: "meta" },
+        el("span", {}, "Model ", el("b", { text: res.model })),
+        el("span", {}, "Sources cited ", el("b", { text: `${res.cited.length} of ${res.sources.length}` })),
+        el("span", {}, "Latency ", el("b", { text: `${(res.latency_ms / 1000).toFixed(1)}s` })),
+        cost ? el("span", {}, "Cost ", el("b", { text: `$${((res.input_tokens * cost[0] + res.output_tokens * cost[1]) / 1e6).toFixed(3)}` })) : null,
+        res.invalid_citations.length ? el("span", { class: "warn", text: `Invalid citations: ${res.invalid_citations.join(", ")}` }) : null,
+        res.status !== "ok" ? el("span", { class: "warn", text: `Status: ${res.status}` }) : null)));
+  }
+  out.push(el("h2", { class: "sec", text: res.sources.length ? `Retrieved passages (${res.sources.length})` : "No passages matched" }));
+  const cited = new Set(res.cited || []);
+  out.push(...res.sources.map(h => sourceCard(h, withAnswer ? cited.has(h.n) : null, question)));
+  $("out").replaceChildren(...out);
+}
+
+$("ask").onclick = () => run(true);
+$("search").onclick = () => run(false);
+$("q").addEventListener("keydown", (ev) => { if (ev.key === "Enter" && (ev.ctrlKey || ev.metaKey)) run(true); });
+$("examples").replaceChildren(...EXAMPLES.map(q => el("button", { text: q, onclick: () => { $("q").value = q; $("q").focus(); } })));
+</script>
+</body>
+</html>

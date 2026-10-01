@@ -1,0 +1,472 @@
+{
+  "_about": "Retrieval eval. 'lookup': which opinion a question is about (document-level). 'facts': the passage containing a specific fact must be retrieved (evidence string must appear in a retrieved chunk of that document). 'multi': every listed case's evidence must be retrieved. Questions were drafted with an AI assistant; evidence strings are checked against the indexed text by run_rag_eval.py.",
+  "lookup": [
+    {
+      "doc_id": "ca1_21_1394",
+      "question": "Which appeal concerned a hybrid SUV that allegedly caught fire while charging in a garage, where the owners had no expert witness?"
+    },
+    {
+      "doc_id": "ca1_21_1366p",
+      "question": "Which case challenged a state plan that set aside COVID vaccine doses for minority communities, and was the challenge moot?"
+    },
+    {
+      "doc_id": "ca2_22_282",
+      "question": "Is a company that buys trucks to lease them out and later resell them a consumer under Vermont's consumer protection law?"
+    },
+    {
+      "doc_id": "ca2_19_1649_cv",
+      "question": "Can a patient sue for damages when a hospital overcharges for copies of medical records under New York law?"
+    },
+    {
+      "doc_id": "ca3_24_2500",
+      "question": "Which ruling held that the district court double-counted lost sales when ordering a gun-store burglar to repay the victims?"
+    },
+    {
+      "doc_id": "ca3_24_2583",
+      "question": "Does submitting false claims to the government count as a crime of deceit that makes a green-card holder deportable?"
+    },
+    {
+      "doc_id": "ca4_19_4137",
+      "question": "Which criminal appeal from the Southern District of West Virginia was affirmed by an evenly split en banc court?"
+    },
+    {
+      "doc_id": "ca4_20_4",
+      "question": "In which South Carolina habeas case did the full court vacate the panel opinions and affirm because the judges were evenly divided?"
+    },
+    {
+      "doc_id": "ca5_18_30243",
+      "question": "Why were commercial fishermen denied payments from the oil spill punitive damages settlements?"
+    },
+    {
+      "doc_id": "ca5_23_30183",
+      "question": "Which case involved Louisiana parish bodies suing their insurers after a hurricane, with a dispute about pausing the lawsuit for arbitration?"
+    },
+    {
+      "doc_id": "ca6_23_1792",
+      "question": "Which case involved a prisoner serving life for a murder-for-hire conspiracy whose sentencing judge later acknowledged the sentence was unlawful?"
+    },
+    {
+      "doc_id": "ca6_18_2371",
+      "question": "Did inmates who received inadequate meals while fasting for a religious holiday deserve more than the damages the jury awarded?"
+    },
+    {
+      "doc_id": "ca7_22_8016",
+      "question": "Which appeal concerned a jail without grab bars or accessible showers for disabled detainees, after the class was decertified?"
+    },
+    {
+      "doc_id": "ca7_18_3392",
+      "question": "How did the court read the phrase 'as reported' in an insurance policy exclusion for previously noticed claims?"
+    },
+    {
+      "doc_id": "ca8_23_3104",
+      "question": "Can someone who pleaded guilty argue that the federal ban on gun possession by drug users violates the Second Amendment?"
+    },
+    {
+      "doc_id": "ca8_24_2479",
+      "question": "Was a fourteen-month prison term for violating supervised release conditions an unreasonable sentence?"
+    },
+    {
+      "doc_id": "ca9_19_17556",
+      "question": "Can hotel guests recover damages over bacteria in the water system if they received full value for the resort fee they paid?"
+    },
+    {
+      "doc_id": "ca9_21_56237",
+      "question": "Did the appeals court agree to recall its mandate so the city could seek Supreme Court review?"
+    },
+    {
+      "doc_id": "ca10_21_1094",
+      "question": "Which appeal was dismissed because the prisoner paid his filing fee after being denied permission to proceed without paying?"
+    },
+    {
+      "doc_id": "ca10_16_1412",
+      "question": "Which order granted rehearing by the full court on whether an adverse employment action is required for a disability accommodation claim?"
+    },
+    {
+      "doc_id": "ca11_18_12676",
+      "question": "Which case was reversed after the Supreme Court held that nominal damages alone can keep a free speech claim alive?"
+    },
+    {
+      "doc_id": "ca11_19_11258",
+      "question": "Why did the appeals court send a trademark case back to the trial court to explain what its judgment meant?"
+    },
+    {
+      "doc_id": "cadc_20_1376",
+      "question": "Did hemp businesses have standing to challenge the agency rule implementing the 2018 Farm Bill?"
+    },
+    {
+      "doc_id": "cadc_23_1333",
+      "question": "Could environmental groups challenge the energy regulator's decision not to stop construction of a gas pipeline in Puerto Rico?"
+    },
+    {
+      "doc_id": "cal_s244549",
+      "question": "Must every police officer sign the pursuit policy certification for a city to be immune from liability for chase crashes?"
+    },
+    {
+      "doc_id": "cal_s239777",
+      "question": "When must a defendant file a motion to strike a lawsuit targeting free speech if the plaintiff later amends the complaint?"
+    },
+    {
+      "doc_id": "ny_26",
+      "question": "Which case involved a worker who fell from a wobbling ladder while retrofitting a fire alarm system at a movie theater?"
+    },
+    {
+      "doc_id": "ny_75",
+      "question": "Does a broad indemnification clause in a partnership agreement let one partner recover attorney's fees from the other?"
+    },
+    {
+      "doc_id": "tex_17_0637",
+      "question": "Was a newspaper's coverage of a pharmacy business's legal troubles protected against a defamation suit?"
+    },
+    {
+      "doc_id": "tex_23_0408",
+      "question": "Who is allowed to accept premium payments for a surplus-lines insurance policy under Texas insurance law?"
+    }
+  ],
+  "facts": [
+    {
+      "question": "What did the vehicle owner's manual warn about doing with the charging cable?",
+      "evidence": [
+        {
+          "doc_id": "ca1_21_1394",
+          "text": "extend the supplied charging cable"
+        }
+      ]
+    },
+    {
+      "question": "What share of New Hampshire's vaccine supply was set aside for the equity plan?",
+      "evidence": [
+        {
+          "doc_id": "ca1_21_1366p",
+          "text": "up to ten percent"
+        }
+      ]
+    },
+    {
+      "question": "How many trucks did RSD buy for its fleet?",
+      "evidence": [
+        {
+          "doc_id": "ca2_22_282",
+          "text": "40 trucks"
+        }
+      ]
+    },
+    {
+      "question": "What per-page price was the patient charged for copies of her medical records?",
+      "evidence": [
+        {
+          "doc_id": "ca2_19_1649_cv",
+          "text": "$1.50 per page"
+        }
+      ]
+    },
+    {
+      "question": "How much restitution did the district court order after the evidentiary hearing on remand?",
+      "evidence": [
+        {
+          "doc_id": "ca3_24_2500",
+          "text": "$57,044.96"
+        }
+      ]
+    },
+    {
+      "question": "How much did the false claims cost the Department of Veterans Affairs?",
+      "evidence": [
+        {
+          "doc_id": "ca3_24_2583",
+          "text": "more than $3 million"
+        }
+      ]
+    },
+    {
+      "question": "Which judges did not take part in the Loughry en banc decision?",
+      "evidence": [
+        {
+          "doc_id": "ca4_19_4137",
+          "text": "took no part in the consideration"
+        }
+      ]
+    },
+    {
+      "question": "Which earlier panel decision was vacated on rehearing en banc in the South Carolina habeas case?",
+      "evidence": [
+        {
+          "doc_id": "ca4_20_4",
+          "text": "998 F.3d 128"
+        }
+      ]
+    },
+    {
+      "question": "What did the settlement distribution model require commercial fishermen to prove?",
+      "evidence": [
+        {
+          "doc_id": "ca5_18_30243",
+          "text": "timely preservation"
+        }
+      ]
+    },
+    {
+      "question": "Under which statutory provision did the court find jurisdiction over the refusal to stay the case pending arbitration?",
+      "evidence": [
+        {
+          "doc_id": "ca5_23_30183",
+          "text": "16(a)(1)(A)"
+        }
+      ]
+    },
+    {
+      "question": "What was the maximum sentence for the conviction the jury actually returned against West?",
+      "evidence": [
+        {
+          "doc_id": "ca6_23_1792",
+          "text": "statutory maximum"
+        }
+      ]
+    },
+    {
+      "question": "How much did the jury award per disrupted Ramadan?",
+      "evidence": [
+        {
+          "doc_id": "ca6_18_2371",
+          "text": "$150 for each Ramadan"
+        }
+      ]
+    },
+    {
+      "question": "In what year was Division 10 of the Cook County Jail built?",
+      "evidence": [
+        {
+          "doc_id": "ca7_22_8016",
+          "text": "structed in 1992"
+        }
+      ]
+    },
+    {
+      "question": "Which insurer sold Emmis its earlier directors-and-officers policy?",
+      "evidence": [
+        {
+          "doc_id": "ca7_18_3392",
+          "text": "Chubb Insurance Company"
+        }
+      ]
+    },
+    {
+      "question": "How long was Clark's prison sentence?",
+      "evidence": [
+        {
+          "doc_id": "ca8_23_3104",
+          "text": "120 months"
+        }
+      ]
+    },
+    {
+      "question": "How many supervised release violations did Laurel-Olea commit?",
+      "evidence": [
+        {
+          "doc_id": "ca8_24_2479",
+          "text": "fifty-four violations"
+        }
+      ]
+    },
+    {
+      "question": "What bacteria was allegedly in the hotel's water system?",
+      "evidence": [
+        {
+          "doc_id": "ca9_19_17556",
+          "text": "Legionella"
+        }
+      ]
+    },
+    {
+      "question": "What had the panel's earlier opinion remanded the Chinaryan case for?",
+      "evidence": [
+        {
+          "doc_id": "ca9_21_56237",
+          "text": "new trial on all"
+        }
+      ]
+    },
+    {
+      "question": "How much was the filing fee the prisoner paid in the compassionate release case?",
+      "evidence": [
+        {
+          "doc_id": "ca10_21_1094",
+          "text": "five-dollar filing fee"
+        }
+      ]
+    },
+    {
+      "question": "What is the page limit for the appellant's supplemental en banc brief in Exby-Stolley?",
+      "evidence": [
+        {
+          "doc_id": "ca10_16_1412",
+          "text": "limited to 25 pages"
+        }
+      ]
+    },
+    {
+      "question": "When did the Supreme Court reverse the panel's original nominal damages decision?",
+      "evidence": [
+        {
+          "doc_id": "ca11_18_12676",
+          "text": "March 8, 2021"
+        }
+      ]
+    },
+    {
+      "question": "Which claims did SCAD win summary judgment on?",
+      "evidence": [
+        {
+          "doc_id": "ca11_19_11258",
+          "text": "trademark-infringement"
+        }
+      ]
+    },
+    {
+      "question": "What THC concentration threshold defines hemp?",
+      "evidence": [
+        {
+          "doc_id": "cadc_20_1376",
+          "text": "0.3%"
+        }
+      ]
+    },
+    {
+      "question": "How long was the additional pipeline needed to supply the emergency generators in Puerto Rico?",
+      "evidence": [
+        {
+          "doc_id": "cadc_23_1333",
+          "text": "220-foot pipeline"
+        }
+      ]
+    },
+    {
+      "question": "How many of Gardena's officers completed the annual pursuit training within a year of the incident?",
+      "evidence": [
+        {
+          "doc_id": "cal_s244549",
+          "text": "81 of the"
+        }
+      ]
+    },
+    {
+      "question": "Within how many days of service of the complaint may an anti-SLAPP motion be filed?",
+      "evidence": [
+        {
+          "doc_id": "cal_s239777",
+          "text": "within 60 days"
+        }
+      ]
+    },
+    {
+      "question": "Under which Labor Law provision was the ladder-fall claim brought?",
+      "evidence": [
+        {
+          "doc_id": "ny_26",
+          "text": "240 (1)"
+        }
+      ]
+    },
+    {
+      "question": "Which section of the partnership agreement contained the indemnification provision?",
+      "evidence": [
+        {
+          "doc_id": "ny_75",
+          "text": "Section 13.02"
+        }
+      ]
+    },
+    {
+      "question": "How much in unnecessary federal income taxes did Rxpress claim its former bookkeeper caused?",
+      "evidence": [
+        {
+          "doc_id": "tex_17_0637",
+          "text": "$12 million"
+        }
+      ]
+    },
+    {
+      "question": "Which chapter of the Texas Insurance Code applies specifically to surplus lines?",
+      "evidence": [
+        {
+          "doc_id": "tex_23_0408",
+          "text": "Chapter 981"
+        }
+      ]
+    }
+  ],
+  "multi": [
+    {
+      "question": "Which cases involved restitution, and how much was owed?",
+      "evidence": [
+        {
+          "doc_id": "ca3_24_2500",
+          "text": "$57,044.96"
+        },
+        {
+          "doc_id": "ca8_24_2479",
+          "text": "$38,000"
+        },
+        {
+          "doc_id": "ca3_24_2583",
+          "text": "loss requiring restitution"
+        }
+      ]
+    },
+    {
+      "question": "Which cases were affirmed by an equally divided en banc court?",
+      "evidence": [
+        {
+          "doc_id": "ca4_19_4137",
+          "text": "equally divided court"
+        },
+        {
+          "doc_id": "ca4_20_4",
+          "text": "equally divided court"
+        }
+      ]
+    },
+    {
+      "question": "Which appeals were resolved after certifying a question to a state's highest court?",
+      "evidence": [
+        {
+          "doc_id": "ca2_22_282",
+          "text": "certified the following question"
+        },
+        {
+          "doc_id": "ca2_19_1649_cv",
+          "text": "certified a question"
+        },
+        {
+          "doc_id": "ca9_19_17556",
+          "text": "certified the following question"
+        }
+      ]
+    },
+    {
+      "question": "Which cases dealt with the federal ban on firearm possession by unlawful drug users?",
+      "evidence": [
+        {
+          "doc_id": "ca8_23_3104",
+          "text": "922(g)(3)"
+        },
+        {
+          "doc_id": "ca8_24_2479",
+          "text": "922(g)(3)"
+        }
+      ]
+    },
+    {
+      "question": "Which cases involved surplus lines insurance policies?",
+      "evidence": [
+        {
+          "doc_id": "ca5_23_30183",
+          "text": "surplus lines insurance"
+        },
+        {
+          "doc_id": "tex_23_0408",
+          "text": "surplus-lines"
+        }
+      ]
+    }
+  ]
+}

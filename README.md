@@ -5,7 +5,7 @@ pydantic schema to extract structured entities, and stores them in PostgreSQL be
 An evaluation harness measures field-level accuracy against hand-labeled opinions across prompt versions.
 
 **Stack:** Python 3.13 · FastAPI · Claude API (Opus 5.5 / Sonnet 5.5, structured outputs) · pydantic v2 ·
-SQLAlchemy 2 / PostgreSQL · pdfplumber + Tesseract OCR · Docker
+SQLAlchemy 2 / PostgreSQL + pgvector · fastembed · pdfplumber + Tesseract OCR · Docker
 
 ```
           ┌──────────┐    ┌──────────────────────┐    ┌───────────────────────────┐    ┌────────────┐
@@ -138,6 +138,65 @@ the extracted case details, judges, parties, amounts and statutes, along with th
 cost of each run. Past documents are listed in the sidebar, and each one can be re-run with another strategy to
 compare results side by side. The UI is plain HTML/JS in `app/static/index.html` with no build step.
 
+## Natural-language search (RAG)
+
+Open **http://localhost:8000/ask** (or `POST /ask`) and ask questions across every ingested opinion, such as
+*"Which cases involved restitution, and how much was owed?"* Claude answers only from retrieved passages and
+cites each claim as `[n]`. Each citation links to the case, court, and page it came from.
+
+```
+question ─┬─► vector search (pgvector, HNSW, cosine) ─┐
+          │   bge-small-en-v1.5 local embeddings      ├─► reciprocal rank fusion ─► top-k passages ─► Claude ─► cited answer
+          └─► keyword search (Postgres tsvector, GIN) ┘          ▲
+              common terms dropped as stopwords        filters on extracted entities
+                                                       (court, disposition, decision date)
+```
+
+- **Indexing:** each opinion is split into ~1,200-character chunks that never cross a page boundary, so
+  citations point to an exact page. Chunks are embedded with the case name and court prepended for context, and
+  also indexed for Postgres full-text search. Uploads are indexed automatically.
+  `python -m scripts.index_corpus` loads the labeled corpus, reusing cached extractions (no API calls).
+- **Embeddings run locally** (fastembed/ONNX on CPU, 65 MB model baked into the Docker image), so search
+  needs no extra API key and costs nothing. Only the final answer calls Claude.
+- **Keyword stopwords:** Postgres ranking has no IDF, so query terms found in more than 20% of chunks (such as
+  "case" and "order" in legal text) are dropped before matching.
+- **Structured + unstructured:** search can be filtered by the entities the extraction pipeline produced.
+  For example, ask only about reversed Ninth Circuit opinions.
+- `GET /search/semantic?q=…` returns passages without calling the LLM.
+
+### Retrieval evaluation
+
+`python -m eval.run_rag_eval` (local, free) runs 65 questions over the 30-opinion corpus:
+
+- **Case lookup (30):** which opinion is the question about?
+- **Fact passage (30):** is the passage containing a specific fact retrieved? Evidence strings are checked against the index.
+- **Multi-case (5):** for questions spanning several cases, is every relevant case's passage retrieved?
+
+| Retrieval | Case lookup R@1 (30) | Lookup MRR | Fact passage R@3 (30) | Fact passage R@8 | Multi-case coverage@8 (5) | Multi-case all found |
+|---|---:|---:|---:|---:|---:|---:|
+| Keyword (no stopword filter) | 93.3% | 0.953 | 86.7% | 96.7% | 66.7% | 60% |
+| Keyword | 93.3% | 0.961 | 86.7% | 96.7% | 93.3% | 80% |
+| Vector | 90.0% | 0.944 | 86.7% | 90.0% | 73.3% | 60% |
+| Hybrid + cap of 3 chunks per case | 93.3% | 0.967 | 86.7% | 90.0% | 80.0% | 60% |
+| Hybrid (RRF, default) | 93.3% | 0.967 | 86.7% | 96.7% | 80.0% | 60% |
+
+What this showed:
+- **Hybrid retrieval is the best default** for single-fact questions (96.7% of answer passages in the top 8).
+- **The stopword filter raised keyword multi-case coverage** from 66.7% to 93.3%.
+- **A per-case chunk cap made things worse.** It was meant to stop one long opinion from crowding out other
+  cases, but it lowered fact recall to 90.0% and didn't help multi-case questions, so it's off by default.
+- **Cross-case questions are the weak spot.** Keyword search beats hybrid there (93% vs. 80% coverage), but
+  with only 5 questions the fusion wasn't re-weighted, to avoid tuning to the test set.
+
+**Limitations:**
+- **Lookup is easy at this scale.** With 30 opinions, all methods find the right case by rank 5. The fact
+  and multi-case sets are the ones that tell the methods apart.
+- **The questions were drafted with an AI assistant** and the same set guided the defaults above, so treat
+  the numbers as indicative rather than a held-out benchmark.
+- **The small embedding model misses paraphrases with no distinctive terms.** For example, "Can hotel guests
+  recover damages if they got full value?" ranks the right case third, behind a gun-theft restitution opinion
+  that shares generic words like "recover" and "value".
+
 ## Label review
 
 Open **http://localhost:8000/review** to check the gold labels against their source PDFs. The sidebar
@@ -162,7 +221,9 @@ local use and shouldn't be exposed publicly. After making corrections, rescore f
 | POST | `/documents/{id}/extractions?prompt_version=v2` | Re-run extraction with a different strategy |
 | GET | `/search?party=&court=&disposition=&date_from=&date_to=&min_amount=` | Query over the normalized tables |
 | GET | `/documents/{id}/text` | Extracted (or OCR'd) text of the document |
-| GET | `/`, `/health`, `/docs` | Web UI, health check, OpenAPI UI |
+| POST | `/ask` | RAG question answering with cited sources (`question`, `k`, `mode`, `filters`) |
+| GET | `/search/semantic?q=&mode=&k=&court=&disposition=` | Passage retrieval only, no LLM call |
+| GET | `/`, `/ask`, `/review`, `/health`, `/docs` | Web UIs, health check, OpenAPI UI |
 
 ```bash
 curl -F file=@data/pdfs/ca7_18_3392.pdf localhost:8000/documents
@@ -175,16 +236,18 @@ curl "localhost:8000/search?disposition=reversed&court=seventh"
 ```bash
 cp .env.example .env   # set ANTHROPIC_API_KEY
 docker compose up --build
+docker compose exec api python -m scripts.index_corpus   # load + index the 30 opinions for /ask (no API calls)
 ```
 
 **Local**
 ```bash
 python -m venv .venv && .venv/bin/pip install -r requirements.txt
-sudo apt-get install tesseract-ocr poppler-utils   # OCR fallback
+sudo apt-get install tesseract-ocr poppler-utils postgresql-17-pgvector   # OCR fallback + vector search
 createdb extraction && createdb extraction_test
 export ANTHROPIC_API_KEY=...  DATABASE_URL=postgresql+psycopg:///extraction?host=/var/run/postgresql
+python -m scripts.index_corpus    # load + index the labeled corpus for /ask
 uvicorn app.api:app --reload
-pytest   # no API key needed; the Anthropic client is mocked
+pytest   # no API key or model download needed; the Anthropic client and embeddings are faked
 ```
 
 **Rebuild the dataset**
@@ -196,8 +259,9 @@ python -m scripts.make_scanned ca2_22_282 cal_s239777 ca9_21_56237
 ## Layout
 
 ```
-app/        config, schemas (pydantic), ingest (PDF/OCR), extractor (v1–v3), models (SQLAlchemy), api (FastAPI), review (label review), static/ (web UI)
-eval/       labels/ (gold), scoring.py, run_eval.py, results/
-scripts/    fetch_opinions.py, make_scanned.py
+app/        config, schemas (pydantic), ingest (PDF/OCR), extractor (v1–v3), models (SQLAlchemy), api (FastAPI),
+            chunking + embeddings + rag + rag_api (search and Q&A), review (label review), static/ (web UIs)
+eval/       labels/ (gold), scoring.py, run_eval.py, rag_questions.json, run_rag_eval.py, results/
+scripts/    fetch_opinions.py, make_scanned.py, index_corpus.py
 tests/      unit tests (schema, scoring, ingest, extractor retry loop), API tests against Postgres, label-review tests
 ```

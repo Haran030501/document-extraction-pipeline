@@ -1,0 +1,75 @@
+{
+  "summary": [
+    {
+      "config": "Keyword (no stopword filter)",
+      "lookup_r1": 0.9333333333333333,
+      "lookup_r5": 1.0,
+      "lookup_mrr": 0.9527777777777777,
+      "fact_r3": 0.8666666666666667,
+      "fact_r8": 0.9666666666666667,
+      "multi_coverage": 0.6666666666666666,
+      "multi_complete": 0.6
+    },
+    {
+      "config": "Keyword",
+      "lookup_r1": 0.9333333333333333,
+      "lookup_r5": 1.0,
+      "lookup_mrr": 0.9611111111111111,
+      "fact_r3": 0.8666666666666667,
+      "fact_r8": 0.9666666666666667,
+      "multi_coverage": 0.9333333333333333,
+      "multi_complete": 0.8
+    },
+    {
+      "config": "Vector",
+      "lookup_r1": 0.9,
+      "lookup_r5": 1.0,
+      "lookup_mrr": 0.9444444444444444,
+      "fact_r3": 0.8666666666666667,
+      "fact_r8": 0.9,
+      "multi_coverage": 0.7333333333333333,
+      "multi_complete": 0.6
+    },
+    {
+      "config": "Hybrid + cap of 3 chunks per case",
+      "lookup_r1": 0.9333333333333333,
+      "lookup_r5": 1.0,
+      "lookup_mrr": 0.9666666666666667,
+      "fact_r3": 0.8666666666666667,
+      "fact_r8": 0.9,
+      "multi_coverage": 0.8,
+      "multi_complete": 0.6
+    },
+    {
+      "config": "Hybrid (RRF, default)",
+      "lookup_r1": 0.9333333333333333,
+      "lookup_r5": 1.0,
+      "lookup_mrr": 0.9666666666666667,
+      "fact_r3": 0.8666666666666667,
+      "fact_r8": 0.9666666666666667,
+      "multi_coverage": 0.8,
+      "multi_complete": 0.6
+    }
+  ],
+  "fact_misses": {
+    "Keyword (no stopword filter)": [
+      "ca7_22_8016"
+    ],
+    "Keyword": [
+      "ca7_22_8016"
+    ],
+    "Vector": [
+      "ca5_18_30243",
+      "ca7_22_8016",
+      "ca10_21_1094"
+    ],
+    "Hybrid + cap of 3 chunks per case": [
+      "ca5_18_30243",
+      "ca6_23_1792",
+      "ca7_22_8016"
+    ],
+    "Hybrid (RRF, default)": [
+      "ca7_22_8016"
+    ]
+  }
+}
